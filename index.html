@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bio Scanner Cuántico - Descubre lo que tu cuerpo necesita</title>
+    <title>Escucha a Tu Cuerpo | La Red de Luz</title>
     <style>
         * {
             margin: 0;
@@ -11,11 +11,21 @@
             box-sizing: border-box;
         }
 
+        :root {
+            --gold-light: #e4cd85;
+            --gold-dark: #c08a2d;
+            --blue-accent: #163384;
+            --black: #000000;
+            --white: #ffffff;
+            --gray-light: #f8f9fa;
+            --shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
-            color: #2c3e50;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: var(--black);
+            background: linear-gradient(135deg, var(--white) 0%, var(--gray-light) 100%);
             overflow-x: hidden;
         }
 
@@ -31,10 +41,8 @@
             display: flex;
             align-items: center;
             position: relative;
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.9), rgba(118, 75, 162, 0.9)), 
-                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="a" cx="50%" cy="50%"><stop offset="0%" style="stop-color:%23ffffff;stop-opacity:0.1"/><stop offset="100%" style="stop-color:%23ffffff;stop-opacity:0"/></radialGradient></defs><circle cx="200" cy="300" r="3" fill="url(%23a)"><animate attributeName="r" values="0;5;0" dur="2s" repeatCount="indefinite"/></circle><circle cx="800" cy="200" r="2" fill="url(%23a)"><animate attributeName="r" values="0;4;0" dur="3s" repeatCount="indefinite"/></circle><circle cx="400" cy="700" r="1" fill="url(%23a)"><animate attributeName="r" values="0;3;0" dur="2.5s" repeatCount="indefinite"/></circle></svg>');
-            color: white;
-            text-align: center;
+            background: linear-gradient(135deg, var(--black) 0%, var(--blue-accent) 100%);
+            color: var(--white);
             overflow: hidden;
         }
 
@@ -45,19 +53,20 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: radial-gradient(circle at 30% 40%, rgba(255,255,255,0.1) 0%, transparent 50%),
-                        radial-gradient(circle at 80% 20%, rgba(255,255,255,0.1) 0%, transparent 50%);
-            animation: shimmer 3s ease-in-out infinite alternate;
+            background: radial-gradient(circle at 30% 70%, var(--gold-dark) 0%, transparent 50%);
+            opacity: 0.1;
+            animation: pulse 4s ease-in-out infinite;
         }
 
-        @keyframes shimmer {
-            0% { opacity: 0.5; }
-            100% { opacity: 1; }
+        @keyframes pulse {
+            0%, 100% { opacity: 0.1; }
+            50% { opacity: 0.3; }
         }
 
         .hero-content {
             position: relative;
             z-index: 2;
+            text-align: center;
             animation: fadeInUp 1s ease-out;
         }
 
@@ -74,466 +83,436 @@
 
         .hero h1 {
             font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 700;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-            letter-spacing: -0.02em;
+            font-weight: 300;
+            margin-bottom: 2rem;
+            background: linear-gradient(135deg, var(--gold-light), var(--gold-dark));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
-        .hero .subtitle {
+        .hero-subtitle {
             font-size: clamp(1.2rem, 2.5vw, 1.8rem);
-            margin-bottom: 2rem;
-            opacity: 0.95;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+
+        /* Pain Points Section */
+        .pain-section {
+            padding: 100px 0;
+            background: var(--white);
+        }
+
+        .pain-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 3rem;
+            margin: 2rem 0;
+            box-shadow: var(--shadow);
+            border-left: 4px solid var(--gold-dark);
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .pain-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+
+        .pain-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .pain-card h3 {
+            color: var(--blue-accent);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .pain-card p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #333;
+        }
+
+        /* Solution Section */
+        .solution-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--gray-light) 0%, var(--white) 100%);
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: var(--blue-accent);
+            margin-bottom: 3rem;
             font-weight: 300;
         }
 
-        .hero .description {
-            font-size: 1.1rem;
-            margin-bottom: 3rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-            opacity: 0.9;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
-            color: white;
-            padding: 18px 40px;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 25px rgba(238, 90, 36, 0.3);
-            border: none;
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: left 0.5s;
-        }
-
-        .cta-button:hover::before {
-            left: 100%;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 35px rgba(238, 90, 36, 0.4);
-        }
-
-        /* Content Sections */
-        section {
-            padding: 80px 0;
-            position: relative;
-        }
-
-        .section-white {
-            background: #ffffff;
-        }
-
-        .section-light {
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-        }
-
-        .section-dark {
-            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
-            color: white;
-        }
-
-        h2 {
-            font-size: clamp(2rem, 4vw, 3rem);
-            margin-bottom: 3rem;
-            text-align: center;
-            font-weight: 700;
-            position: relative;
-        }
-
-        h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background: linear-gradient(45deg, #667eea, #764ba2);
-            border-radius: 2px;
-        }
-
-        /* Benefits Grid */
-        .benefits-grid {
+        .solution-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            margin-top: 50px;
+            gap: 2rem;
+            margin-top: 3rem;
         }
 
-        .benefit-card {
-            background: white;
-            padding: 40px 30px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        .solution-card {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 2.5rem;
+            box-shadow: var(--shadow);
             transition: all 0.3s ease;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
+            border-top: 3px solid var(--gold-dark);
         }
 
-        .benefit-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(45deg, #667eea, #764ba2);
+        .solution-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 50px rgba(0,0,0,0.2);
         }
 
-        .benefit-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-        }
-
-        .benefit-icon {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(45deg, #667eea, #764ba2);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            font-size: 2rem;
-        }
-
-        .benefit-card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 15px;
-            color: #2c3e50;
-        }
-
-        .benefit-card p {
-            color: #7f8c8d;
-            line-height: 1.6;
-        }
-
-        /* Process Steps */
-        .process-steps {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-
-        .step {
-            text-align: center;
-            position: relative;
-        }
-
-        .step-number {
+        .solution-icon {
             width: 60px;
             height: 60px;
-            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
-            color: white;
+            background: linear-gradient(135deg, var(--gold-light), var(--gold-dark));
             border-radius: 50%;
+            margin: 0 auto 1.5rem;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 1.5rem;
-            font-weight: bold;
-            margin: 0 auto 20px;
-            box-shadow: 0 5px 15px rgba(238, 90, 36, 0.3);
+            color: var(--white);
         }
 
-        .step h3 {
-            font-size: 1.3rem;
-            margin-bottom: 15px;
-            color: white;
+        /* Value Proposition */
+        .value-section {
+            padding: 100px 0;
+            background: var(--blue-accent);
+            color: var(--white);
+            text-align: center;
         }
 
-        .step p {
-            color: rgba(255,255,255,0.9);
+        .value-content {
+            max-width: 800px;
+            margin: 0 auto;
         }
 
-        /* Testimonials */
-        .testimonials {
+        .value-list {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
         }
 
-        .testimonial {
-            background: white;
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        .value-item {
+            background: rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        .value-item h4 {
+            color: var(--gold-light);
+            margin-bottom: 1rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--black) 0%, var(--blue-accent) 100%);
+            color: var(--white);
+            text-align: center;
             position: relative;
         }
 
-        .testimonial::before {
-            content: '"';
-            position: absolute;
-            top: 10px;
-            left: 20px;
-            font-size: 4rem;
-            color: #667eea;
-            opacity: 0.3;
-            font-family: serif;
-        }
-
-        .testimonial-text {
-            font-style: italic;
-            margin-bottom: 20px;
-            color: #555;
-            line-height: 1.6;
-        }
-
-        .testimonial-author {
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--gold-light), var(--gold-dark));
+            color: var(--black);
+            padding: 1.5rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
             font-weight: 600;
-            color: #2c3e50;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(196, 138, 45, 0.3);
+            margin: 2rem 0;
         }
 
-        .testimonial-role {
-            color: #7f8c8d;
-            font-size: 0.9rem;
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(196, 138, 45, 0.5);
+            background: linear-gradient(135deg, var(--gold-dark), var(--gold-light));
         }
 
-        /* WhatsApp Button */
-        .whatsapp-btn {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 60px;
-            height: 60px;
-            background: #25d366;
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 3rem 0;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background: rgba(255,255,255,0.1);
+            padding: 1rem;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        .feature-icon {
+            width: 30px;
+            height: 30px;
+            background: var(--gold-light);
+            color: var(--black);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
-            z-index: 1000;
-            transition: all 0.3s ease;
-            animation: pulse 2s infinite;
+            font-size: 0.9rem;
         }
 
-        .whatsapp-btn:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
+        /* Floating Elements */
+        .floating-element {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, var(--gold-light), var(--gold-dark));
+            border-radius: 50%;
+            opacity: 0.1;
+            animation: float 6s ease-in-out infinite;
         }
 
-        @keyframes pulse {
-            0% { box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4); }
-            50% { box-shadow: 0 4px 20px rgba(37, 211, 102, 0.8); }
-            100% { box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4); }
+        .floating-element:nth-child(1) {
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
         }
 
-        .whatsapp-btn svg {
-            width: 30px;
-            height: 30px;
-            fill: white;
+        .floating-element:nth-child(2) {
+            top: 60%;
+            right: 10%;
+            animation-delay: 2s;
+        }
+
+        .floating-element:nth-child(3) {
+            bottom: 20%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
         }
 
         /* Responsive */
         @media (max-width: 768px) {
-            .hero {
-                padding: 40px 0;
+            .hero h1 {
+                font-size: 2.5rem;
             }
             
-            section {
-                padding: 60px 0;
+            .pain-card, .solution-card {
+                padding: 2rem;
             }
             
-            .benefits-grid,
-            .process-steps,
-            .testimonials {
-                grid-template-columns: 1fr;
-            }
-            
-            .whatsapp-btn {
-                bottom: 20px;
-                right: 20px;
+            .container {
+                padding: 0 15px;
             }
         }
 
-        /* Urgency Banner */
-        .urgency-banner {
-            background: linear-gradient(45deg, #e74c3c, #c0392b);
-            color: white;
-            text-align: center;
-            padding: 15px 0;
-            font-weight: 600;
-            animation: urgencyPulse 3s ease-in-out infinite;
+        /* Scroll Reveal Animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.6s ease;
         }
 
-        @keyframes urgencyPulse {
-            0%, 100% { background: linear-gradient(45deg, #e74c3c, #c0392b); }
-            50% { background: linear-gradient(45deg, #c0392b, #e74c3c); }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
 <body>
-    <!-- Urgency Banner -->
-    <div class="urgency-banner">
-        ⚡ CUPOS LIMITADOS - Solo 5 análisis disponibles esta semana ⚡
-    </div>
-
     <!-- Hero Section -->
     <section class="hero">
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        
         <div class="container">
             <div class="hero-content">
-                <h1>Tu Cuerpo Te Está Hablando...</h1>
-                <p class="subtitle">¿Estás Escuchando?</p>
-                <p class="description">
-                    Ese cansancio inexplicable, esa falta de energía, esos pequeños malestares que ignoras... 
-                    Tu organismo intenta decirte algo importante. <strong>Descúbrelo antes de que sea tarde.</strong>
-                </p>
-                <a href="#contacto" class="cta-button">
-                    Revelar lo que mi cuerpo necesita
-                </a>
+                <h1>¿Tu cuerpo te susurra... pero no lo escuchas?</h1>
+                <p class="hero-subtitle">Descubre lo que tu energía vital quiere decirte antes de que se convierta en síntoma</p>
             </div>
         </div>
     </section>
 
-    <!-- Benefits Section -->
-    <section id="beneficios" class="section-white">
+    <!-- Pain Points -->
+    <section class="pain-section">
         <div class="container">
-            <h2>¿Por qué miles de personas eligen nuestro Bio Scanner Cuántico?</h2>
-            <div class="benefits-grid">
-                <div class="benefit-card">
-                    <div class="benefit-icon">🔬</div>
-                    <h3>Análisis No Invasivo</h3>
-                    <p>Sin agujas, sin dolor, sin molestias. Solo necesitas estar presente mientras la tecnología cuántica hace el resto.</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">🏠</div>
-                    <h3>En la Comodidad de tu Hogar</h3>
-                    <p>Nos desplazamos hasta ti o acordamos un punto de encuentro. Tu tiempo es valioso, lo respetamos.</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">📊</div>
-                    <h3>Resultados Inmediatos</h3>
-                    <p>En minutos obtienes un panorama completo de tu estado interno, interpretado por especialistas.</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">📱</div>
-                    <h3>Rutina Personalizada</h3>
-                    <p>Recibe por WhatsApp tu plan específico con recomendaciones naturales adaptadas a tu organismo.</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">⚡</div>
-                    <h3>Prevención Inteligente</h3>
-                    <p>Detecta desequilibrios antes de que se conviertan en problemas mayores. La prevención es la mejor medicina.</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">🎯</div>
-                    <h3>Enfoque Natural</h3>
-                    <p>Soluciones basadas en el poder de la naturaleza, complementando (nunca sustituyendo) el cuidado médico tradicional.</p>
-                </div>
+            <div class="pain-card reveal">
+                <h3>¿Te ha pasado que no te sientes bien... pero tus estudios dicen que estás 'normal'?</h3>
+                <p>Te sacan sangre... esperas 24, 48 horas... y cuando por fin te entregan los resultados... te explican a medias, y tú sigues igual.</p>
+            </div>
+            
+            <div class="pain-card reveal">
+                <h3>Y lo peor... es que sentiste desde el principio que *algo no está bien*, pero no sabes qué.</h3>
+                <p>Esa intuición profunda que te dice que tu cuerpo necesita atención, pero los análisis convencionales no logran capturar la verdadera causa de tu malestar.</p>
+            </div>
+            
+            <div class="pain-card reveal">
+                <h3>No me malinterpretes... estamos agradecidos por los doctores y lo que hacen por nosotros.</h3>
+                <p>Pero hay momentos en los que uno simplemente quiere entender mejor a su cuerpo. Sin dolor. Sin tanto trámite. Sin sentirse como un expediente más.</p>
             </div>
         </div>
     </section>
 
-    <!-- Process Section -->
-    <section id="proceso" class="section-dark">
+    <!-- Solution -->
+    <section class="solution-section">
         <div class="container">
-            <h2>¿Cómo Funciona? Simple y Efectivo</h2>
-            <div class="process-steps">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <h3>Contacto Inicial</h3>
-                    <p>Agendas tu cita por WhatsApp. Confirmamos fecha, hora y ubicación según tu conveniencia.</p>
+            <h2 class="section-title reveal">¿Y si pudieras escuchar lo que tu cuerpo te quiere decir... en solo 5 minutos?</h2>
+            
+            <div class="solution-grid">
+                <div class="solution-card reveal">
+                    <div class="solution-icon">⚡</div>
+                    <h3>Análisis Energético Instantáneo</h3>
+                    <p>Con nuestro bioescáner eléctrico no invasivo, analizamos tu estado actual y te ayudamos a entender posibles desequilibrios energéticos.</p>
                 </div>
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <h3>Análisis Cuántico</h3>
-                    <p>Realizamos el escaneo no invasivo en 15-20 minutos. Te explicamos cada paso del proceso.</p>
+                
+                <div class="solution-card reveal">
+                    <div class="solution-icon">🔍</div>
+                    <h3>Detección Temprana</h3>
+                    <p>Identificamos patrones antes de que se manifiesten como enfermedades, dándote la oportunidad de actuar preventivamente.</p>
                 </div>
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <h3>Interpretación Personalizada</h3>
-                    <p>Revisamos juntos los resultados, explicándote qué significa cada indicador para tu salud.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">4</div>
-                    <h3>Rutina a Medida</h3>
-                    <p>Recibes por WhatsApp tu plan personalizado con recomendaciones específicas y naturales.</p>
+                
+                <div class="solution-card reveal">
+                    <div class="solution-icon">🎯</div>
+                    <h3>100% Personalizado</h3>
+                    <p>Cada lectura es única, como tu energía vital. Recibe información específica sobre tu estado energético actual.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section id="testimonios" class="section-light">
+    <!-- Value Proposition -->
+    <section class="value-section">
         <div class="container">
-            <h2>Lo que Dicen Nuestros Clientes</h2>
-            <div class="testimonials">
-                <div class="testimonial">
-                    <p class="testimonial-text">
-                        "Llevaba meses sintiéndome agotada sin razón aparente. El Bio Scanner detectó deficiencias que mis análisis de sangre no habían mostrado. En 3 semanas siguiendo las recomendaciones, mi energía cambió completamente."
-                    </p>
-                    <p class="testimonial-author">María Elena R.</p>
-                    <p class="testimonial-role">Ejecutiva, 42 años</p>
-                </div>
-                <div class="testimonial">
-                    <p class="testimonial-text">
-                        "Sufría de insomnio y dolores de cabeza frecuentes. El análisis cuántico identificó desequilibrios que nunca imaginé. La rutina personalizada me devolvió la calidad de sueño que había perdido."
-                    </p>
-                    <p class="testimonial-author">Carlos M.</p>
-                    <p class="testimonial-role">Ingeniero, 38 años</p>
-                </div>
-                <div class="testimonial">
-                    <p class="testimonial-text">
-                        "Como madre de tres hijos, pensé que era normal sentirme exhausta. El Bio Scanner me mostró que mi cuerpo necesitaba apoyo específico. Ahora tengo la energía para disfrutar a mi familia."
-                    </p>
-                    <p class="testimonial-author">Ana Patricia L.</p>
-                    <p class="testimonial-role">Ama de casa, 35 años</p>
+            <div class="value-content reveal">
+                <h2 class="section-title" style="color: var(--gold-light);">Al final, te entregamos una rutina sencilla, personalizada</h2>
+                <p style="font-size: 1.2rem; margin-bottom: 2rem;">Que puedes aplicar desde hoy... con o sin suplementos, dependiendo de tu caso.</p>
+                
+                <div class="value-list">
+                    <div class="value-item">
+                        <h4>⚡ Rápido</h4>
+                        <p>Solo 5 minutos de escaneo + interpretación personalizada</p>
+                    </div>
+                    <div class="value-item">
+                        <h4>🏠 Cómodo</h4>
+                        <p>Servicio a domicilio o punto de encuentro</p>
+                    </div>
+                    <div class="value-item">
+                        <h4>💝 Sin Dolor</h4>
+                        <p>Proceso completamente no invasivo</p>
+                    </div>
+                    <div class="value-item">
+                        <h4>📱 Acompañamiento</h4>
+                        <p>Seguimiento personalizado vía WhatsApp</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Final CTA Section -->
-    <section id="contacto" class="section-dark">
-        <div class="container" style="text-align: center;">
-            <h2>Tu Momento de Actuar es AHORA</h2>
-            <p style="font-size: 1.2rem; margin-bottom: 2rem; max-width: 700px; margin-left: auto; margin-right: auto; opacity: 0.9;">
-                Cada día que postpones escuchar a tu cuerpo es un día perdido de bienestar. 
-                <strong>Los síntomas menores de hoy pueden ser los problemas mayores de mañana.</strong>
-            </p>
-            <p style="font-size: 1rem; margin-bottom: 3rem; opacity: 0.8; font-style: italic;">
-                *Este servicio es complementario y no sustituye consultas o tratamientos médicos profesionales.
-            </p>
-            <a href="https://wa.me/1234567890?text=Hola,%20quiero%20agendar%20mi%20análisis%20con%20Bio%20Scanner%20Cuántico" class="cta-button" style="font-size: 1.2rem; padding: 20px 50px;">
-                Agendar Mi Análisis Ahora
-            </a>
-            <p style="margin-top: 2rem; color: #ff6b6b; font-weight: bold;">
-                ⏰ Solo quedan 3 cupos disponibles esta semana
-            </p>
+    <!-- Final CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="reveal">
+                <h2 style="font-size: 2.5rem; margin-bottom: 2rem; color: var(--gold-light);">No esperes a que tu cuerpo te grite lo que ya te está susurrando</h2>
+                
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon">📲</div>
+                        <span>Cupos limitados por agenda</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">⏱️</div>
+                        <span>5 minutos + interpretación</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🏠</div>
+                        <span>A domicilio o punto de encuentro</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">📦</div>
+                        <span>Incluye seguimiento WhatsApp</span>
+                    </div>
+                </div>
+                
+                <a href="#" class="cta-button" id="mainCTA">Quiero Escuchar a Mi Cuerpo</a>
+                
+                <p style="margin-top: 2rem; opacity: 0.8;">Agenda tu sesión hoy mismo</p>
+            </div>
         </div>
     </section>
-
-    <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/1234567890?text=Hola,%20quiero%20más%20información%20sobre%20el%20Bio%20Scanner%20Cuántico" class="whatsapp-btn" target="_blank">
-        <svg viewBox="0 0 24 24">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.088"/>
-        </svg>
-    </a>
 
     <script>
-        // Smooth scrolling for anchor links
+        // Scroll reveal animation
+        function reveal() {
+            const reveals = document.querySelectorAll('.reveal');
+            
+            reveals.forEach(element => {
+                const windowHeight = window.innerHeight;
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < windowHeight - elementVisible) {
+                    element.classList.add('active');
+                }
+            });
+        }
+
+        // Pain cards sequential animation
+        function animatePainCards() {
+            const painCards = document.querySelectorAll('.pain-card');
+            
+            painCards.forEach((card, index) => {
+                setTimeout(() => {
+                    card.classList.add('visible');
+                }, index * 300);
+            });
+        }
+
+        // CTA button interaction
+        document.getElementById('mainCTA').addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Add pulse effect
+            this.style.animation = 'pulse 0.6s ease-in-out';
+            
+            // Reset animation
+            setTimeout(() => {
+                this.style.animation = '';
+            }, 600);
+            
+            // Here you would typically redirect to booking page or open a modal
+            // For now, we'll show an alert
+            setTimeout(() => {
+                alert('¡Perfecto! Te redirigiremos al formulario de reserva.');
+                // window.location.href = 'booking.html';
+            }, 300);
+        });
+
+        // Smooth scrolling for internal links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -547,36 +526,23 @@
             });
         });
 
-        // Add scroll animation to cards
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        // Observe all cards and testimonials
-        document.querySelectorAll('.benefit-card, .testimonial, .step').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(20px)';
-            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(el);
+        // Initialize animations
+        window.addEventListener('scroll', reveal);
+        window.addEventListener('load', () => {
+            reveal();
+            animatePainCards();
         });
 
-        // Update WhatsApp numbers (replace with actual numbers)
-        const whatsappLinks = document.querySelectorAll('a[href*="wa.me"]');
-        const phoneNumber = '1234567890'; // Replace with actual WhatsApp number
-        
-        whatsappLinks.forEach(link => {
-            link.href = link.href.replace('1234567890', phoneNumber);
-        });
+        // Add pulse keyframes dynamically
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes pulse {
+                0% { transform: scale(1); }
+                50% { transform: scale(1.05); }
+                100% { transform: scale(1); }
+            }
+        `;
+        document.head.appendChild(style);
     </script>
 </body>
 </html>
