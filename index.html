@@ -3,593 +3,216 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Bioescáner: Escucha lo que tu cuerpo quiere decirte en solo 5 minutos. Servicio en Guaymas y Guadalajara.">
-    <meta property="og:title" content="Bioescáner - La Red de Luz">
-    <meta property="og:description" content="Descubre lo que tu cuerpo necesita en solo 5 minutos, sin dolor y 100% personalizado.">
+    <title>Bioescáner | La Red de Luz</title>
+    <meta name="description" content="¿Tus estudios dicen que estás 'normal' pero no te sientes bien? Descubre lo que tu cuerpo te quiere decir en solo 5 minutos con nuestro bioescáner no invasivo.">
     <meta property="og:type" content="website">
-    <title>Bioescáner - La Red de Luz</title>
-    <style>
-        /* Reset and base styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            overflow-x: hidden;
-        }
-
-        /* Header and Navigation */
-        header {
-            background: linear-gradient(135deg, #2c5530, #4a7c59);
-            color: white;
-            padding: 1rem 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            background: linear-gradient(45deg, #90EE90, #98FB98);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            padding: 0.5rem 1rem;
-            border-radius: 25px;
-        }
-
-        .nav-links a:hover {
-            background: rgba(255,255,255,0.2);
-            transform: translateY(-2px);
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="40" r="1.5" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="70" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="90" cy="80" r="2.5" fill="rgba(255,255,255,0.1)"/><circle cx="10" cy="60" r="1.2" fill="rgba(255,255,255,0.1)"/></svg>');
-            animation: float 20s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(180deg); }
-        }
-
-        .hero-content {
-            max-width: 800px;
-            z-index: 2;
-            position: relative;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-            animation: slideInDown 1s ease-out;
-        }
-
-        @keyframes slideInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-            animation: slideInUp 1s ease-out 0.5s both;
-        }
-
-        @keyframes slideInUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: linear-gradient(45deg, #FF6B6B, #FF8E53);
-            color: white;
-            padding: 1rem 2rem;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% { box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4); }
-            50% { box-shadow: 0 8px 25px rgba(255, 107, 107, 0.6); }
-            100% { box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4); }
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.6);
-        }
-
-        /* Features Section */
-        .features {
-            padding: 5rem 2rem;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: #2c3e50;
-            position: relative;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background: linear-gradient(45deg, #FF6B6B, #FF8E53);
-            border-radius: 2px;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .feature-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .feature-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-            transition: all 0.6s;
-        }
-
-        .feature-card:hover::before {
-            left: 100%;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-        }
-
-        .feature-icon {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(45deg, #667eea, #764ba2);
-            border-radius: 50%;
-            margin: 0 auto 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            color: white;
-            transition: all 0.3s ease;
-        }
-
-        .feature-card:hover .feature-icon {
-            transform: rotate(360deg);
-        }
-
-        /* Products Section */
-        .products {
-            padding: 5rem 2rem;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-        }
-
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .product-card {
-            background: rgba(255,255,255,0.1);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.2);
-            border-radius: 20px;
-            padding: 2rem;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-
-        .product-card:hover {
-            transform: translateY(-5px);
-            background: rgba(255,255,255,0.2);
-        }
-
-        .product-image {
-            width: 120px;
-            height: 120px;
-            background: linear-gradient(45deg, #FF6B6B, #FF8E53);
-            border-radius: 50%;
-            margin: 0 auto 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            transition: all 0.3s ease;
-        }
-
-        .product-card:hover .product-image {
-            transform: scale(1.1);
-        }
-
-        .price {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #FFD700;
-            margin: 1rem 0;
-        }
-
-        /* Testimonials Section */
-        .testimonials {
-            padding: 5rem 2rem;
-            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
-        }
-
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .testimonial-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .testimonial-card::before {
-            content: '"';
-            position: absolute;
-            top: -10px;
-            left: 20px;
-            font-size: 4rem;
-            color: #FF6B6B;
-            opacity: 0.3;
-        }
-
-        .testimonial-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-        }
-
-        .author {
-            margin-top: 1rem;
-            font-weight: bold;
-            color: #667eea;
-        }
-
-        /* Footer */
-        footer {
-            background: linear-gradient(135deg, #2c3e50, #34495e);
-            color: white;
-            text-align: center;
-            padding: 3rem 2rem 1rem;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-bottom: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .footer-links a {
-            color: white;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            padding: 0.5rem;
-            border-radius: 5px;
-        }
-
-        .footer-links a:hover {
-            background: rgba(255,255,255,0.1);
-            transform: translateY(-2px);
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero p {
-                font-size: 1.1rem;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .features-grid,
-            .products-grid,
-            .testimonials-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-links {
-                flex-direction: column;
-                gap: 1rem;
-            }
-        }
-
-        /* Mobile menu button */
-        .mobile-menu {
-            display: none;
-            background: none;
-            border: none;
-            color: white;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-        @media (max-width: 768px) {
-            .mobile-menu {
-                display: block;
-            }
-        }
-    </style>
+    <meta property="og:title" content="Bioescáner - Escucha lo que tu cuerpo te quiere decir">
+    <meta property="og:description" content="Sesión personalizada de bioescáner en 5 minutos. Servicio a domicilio en Guaymas y Guadalajara.">
+    <meta property="og:image" content="assets/images/og-image.jpg">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Bioescáner - Escucha lo que tu cuerpo te quiere decir">
+    <meta property="twitter:description" content="Sesión personalizada de bioescáner en 5 minutos. Servicio a domicilio en Guaymas y Guadalajara.">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <nav>
-            <div class="logo">NaturalVitality</div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#features">Benefits</a></li>
-                <li><a href="#products">Products</a></li>
-                <li><a href="#testimonials">Reviews</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <button class="mobile-menu">☰</button>
-        </nav>
-    </header>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Pure Natural Wellness</h1>
-            <p>Discover the power of nature with our premium, scientifically-backed natural supplements. Transform your health journey today.</p>
-            <a href="#products" class="cta-button">Shop Now</a>
-        </div>
-    </section>
-
-    <!-- Features Section -->
-    <section id="features" class="features">
+    <main>
+        <!-- HERO SECTION -->
+        <section class="hero">
+            <div class="hero-bg-media">
+                <div class="hero-gradient"></div>
+                <img class="hero-bg-img" src="assets/images/cuadrado.png" alt="Bioescáner fondo" loading="lazy">
+                <div class="hero-bg-overlay"></div>
+            </div>
+            <div class="container">
+                <div class="hero__content">
+                    <img src="assets/images/cuadrado.png" alt="La Red de Luz" class="hero-logo" loading="eager">
+                    <h1 class="hero__title">¿Te ha pasado que no te sientes bien… pero tus estudios dicen que estás 'normal'?</h1>
+                    <p class="hero__subtitle">Te sacan sangre… esperas 24, 48 horas… y cuando por fin te entregan los resultados… te explican a medias, y tú sigues igual.</p>
+                    <p class="hero__subtitle">Y lo peor… es que sentiste desde el principio que <em>algo no está bien</em>, pero no sabes qué.</p>
+                    <a href="#solucion" class="btn-primary hero-cta">Descubre la Solución</a>
+                </div>
+            </div>
+        </section>
+        <!-- EMPATÍA Y VALIDACIÓN -->
+        <section class="section empathy">
+            <div class="container">
+                <!-- Remove .empathy-content card, just show the paragraphs -->
+                <p class="empathy-text">No me malinterpretes… estamos agradecidos por los doctores y lo que hacen por nosotros.</p>
+                <p class="empathy-text">Pero hay momentos en los que uno simplemente quiere entender mejor a su cuerpo. Sin dolor. Sin tanto trámite. Sin sentirse como un expediente más.</p>
+            </div>
+        </section>
+        <!-- SOLUCIÓN -->
+        <section id="solucion" class="section solution">
+            <div class="container">
+                <h2 class="section-title">¿Y si pudieras escuchar lo que tu cuerpo te quiere decir… en solo 5 minutos?</h2>
+                <p class="section-subtitle">Con nuestro bioescáner eléctrico no invasivo, analizamos tu estado actual y te ayudamos a entender posibles desequilibrios energéticos antes de que se manifiesten como enfermedades.</p>
+                <div class="video-explain">
+                    <video src="assets/videos/explicativo-placeholder.mp4" poster="assets/images/cuadrado.png" controls style="max-width: 720px; border-radius: 18px; box-shadow: 0 8px 32px 0 rgba(31,38,135,0.10);"></video>
+                </div>
+                <div class="solution-grid">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">⏱️</div>
+                        <h3 class="benefit-title">5 minutos + interpretación personalizada</h3>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">🏠</div>
+                        <h3 class="benefit-title">Servicio a domicilio o punto de encuentro</h3>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">📱</div>
+                        <h3 class="benefit-title">Seguimiento vía WhatsApp</h3>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">📋</div>
+                        <h3 class="benefit-title">Cupos limitados por agenda</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- PROMO SERVICIOS GRATIS -->
+        <section class="section promo-bundle" id="promo-bundle">
+            <div class="container">
+                <div class="promo-card animated-bundle">
+                    <h2 class="promo-title gradient-gold">Reserva hoy y recibe <span class="promo-free">GRATIS</span></h2>
+                    <ul class="promo-list">
+                        <li><span class="promo-item-title">Informe de salud personalizado <span style="color:#e4cd85;font-weight:400;font-size:0.98em;">(se envía archivo digital)</span></span> <span class="promo-item-price">$300</span></li>
+                        <li><span class="promo-item-title">Plan nutricional express</span> <span class="promo-item-price">$300</span></li>
+                        <li><span class="promo-item-title">Pesaje, medición de grasa corporal, etc.</span> <span class="promo-item-price">$150</span></li>
+                        <li><span class="promo-item-title">Acceso a la comunidad la red de luz para el desarrollo integral</span> <span class="promo-item-price">$350</span></li>
+                        <li><span class="promo-item-title">10% de descuento en suplementos 100% naturales</span></li>
+                    </ul>
+                    <div class="promo-value-row">
+                        <span class="promo-value-label">Valor total:</span>
+                        <span class="promo-value-amount">$1,100</span>
+                    </div>
+                    <div class="promo-today-row">
+                        <span class="promo-today-label">Pero hoy solo pagas:</span>
+                        <span class="promo-today-amount highlight">$499</span>
+                        <span class="promo-today-or">o</span>
+                        <span class="promo-today-2x1">2x1 $599</span>
+                    </div>
+                    <div class="promo-limited">Promoción por tiempo limitado <span class="promo-timer" id="promo-timer"></span></div>
+                    <a href="#cta-section" class="btn-primary promo-cta pulse">¡Quiero mi promoción!</a>
+                </div>
+            </div>
+        </section>
+        <!-- PROPUESTA DE VALOR -->
+        <section class="section value-prop">
+            <div class="container">
+                <h2 class="section-title">Al final, te entregamos una rutina sencilla, personalizada, que puedes aplicar desde hoy…</h2>
+                <p class="section-subtitle">Es rápido, cómodo, sin dolor… y 100% personalizado. Con o sin suplementos, dependiendo de tu caso.</p>
+            </div>
+        </section>
+        <!-- CTA PRINCIPAL + FORMULARIO -->
+        <section class="section cta-section" id="cta-section">
+            <div class="container">
+                <h2 class="section-title">No esperes a que tu cuerpo te grite lo que ya te está susurrando</h2>
+                <div class="form-container">
+                    <form id="leadForm" autocomplete="off" novalidate>
+                        <div class="form-group">
+                            <label for="nombre" class="form-label">Nombre completo *</label>
+                            <input type="text" id="nombre" name="nombre" class="form-input" placeholder="Tu nombre completo" required autocomplete="name">
+                            <div class="form-error" id="error-nombre">Por favor ingresa tu nombre completo (mínimo 5 caracteres).</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="ciudad" class="form-label">Ciudad *</label>
+                            <select id="ciudad" name="ciudad" class="form-select" required autocomplete="address-level2">
+                                <option value="">Selecciona tu ciudad</option>
+                                <option value="guaymas">Guaymas</option>
+                                <option value="guadalajara">Guadalajara</option>
+                                <option value="otra">Otra ciudad</option>
+                            </select>
+                            <div class="form-error" id="error-ciudad">Selecciona una ciudad.</div>
+                        </div>
+                        <div class="form-group" id="otra-ciudad-group" style="display: none;">
+                            <label for="otra-ciudad" class="form-label">¿De qué ciudad? *</label>
+                            <input type="text" id="otra-ciudad" name="otra-ciudad" class="form-input" placeholder="Escribe tu ciudad">
+                            <div class="form-error" id="error-otra-ciudad">Por favor ingresa tu ciudad.</div>
+                        </div>
+                        <button type="submit" class="btn-submit">
+                            <span class="btn-text">Quiero Escuchar a Mi Cuerpo</span>
+                            <span class="loading" style="display: none;"></span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <!-- TESTIMONIOS -->
+        <section class="section testimonials">
+            <div class="container">
+                <h2 class="section-title">Testimonios</h2>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <img src="assets/images/testimonial-1.jpg" alt="Testimonio 1" class="testimonial-img" loading="lazy">
+                        <p class="testimonial-text">"Sentí que por fin alguien escuchó a mi cuerpo. El proceso fue rápido y la rutina personalizada me ayudó a mejorar mi energía en días."</p>
+                        <span class="testimonial-name">María G.</span>
+                    </div>
+                    <div class="testimonial-card">
+                        <img src="assets/images/testimonial-2.jpg" alt="Testimonio 2" class="testimonial-img" loading="lazy">
+                        <p class="testimonial-text">"Nunca había entendido tan fácil lo que necesitaba cambiar. El acompañamiento por WhatsApp fue clave para no soltarme."</p>
+                        <span class="testimonial-name">Carlos R.</span>
+                    </div>
+                    <div class="testimonial-card">
+                        <img src="assets/images/testimonial-3.jpg" alt="Testimonio 3" class="testimonial-img" loading="lazy">
+                        <p class="testimonial-text">"Me sorprendió lo rápido y cómodo que fue. Ahora recomiendo el bioescáner a todos mis amigos."</p>
+                        <span class="testimonial-name">Ana L.</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- FOOTER -->
+    <footer class="footer">
         <div class="container">
-            <h2 class="section-title">Why Choose Natural Supplements?</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">🌿</div>
-                    <h3>100% Natural</h3>
-                    <p>Our supplements are made from pure, organic ingredients sourced directly from nature. No artificial additives or harmful chemicals.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🔬</div>
-                    <h3>Scientifically Tested</h3>
-                    <p>Every product undergoes rigorous testing and quality control to ensure maximum potency and safety for your health.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">💪</div>
-                    <h3>Proven Results</h3>
-                    <p>Thousands of satisfied customers have experienced improved energy, better sleep, and enhanced overall wellness.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Products Section -->
-    <section id="products" class="products">
-        <div class="container">
-            <h2 class="section-title">Featured Products</h2>
-            <div class="products-grid">
-                <div class="product-card">
-                    <div class="product-image">🍃</div>
-                    <h3>Green Vitality Complex</h3>
-                    <p>Boost your energy with our premium blend of supergreens, spirulina, and chlorella.</p>
-                    <div class="price">$29.99</div>
-                    <a href="#" class="cta-button">Add to Cart</a>
-                </div>
-                <div class="product-card">
-                    <div class="product-image">🌙</div>
-                    <h3>Sleep Support Formula</h3>
-                    <p>Natural sleep aid with melatonin, valerian root, and chamomile for restful nights.</p>
-                    <div class="price">$24.99</div>
-                    <a href="#" class="cta-button">Add to Cart</a>
-                </div>
-                <div class="product-card">
-                    <div class="product-image">🧠</div>
-                    <h3>Brain Boost Blend</h3>
-                    <p>Enhance cognitive function with ginkgo biloba, omega-3, and natural nootropics.</p>
-                    <div class="price">$34.99</div>
-                    <a href="#" class="cta-button">Add to Cart</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials">
-        <div class="container">
-            <h2 class="section-title">What Our Customers Say</h2>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <p>These supplements have completely transformed my energy levels. I feel more vibrant and healthy than ever before!</p>
-                    <div class="author">- Sarah Johnson</div>
-                </div>
-                <div class="testimonial-card">
-                    <p>The sleep formula works like magic. I finally get the restful sleep I've been looking for naturally.</p>
-                    <div class="author">- Michael Chen</div>
-                </div>
-                <div class="testimonial-card">
-                    <p>Amazing quality and fast shipping. The brain boost blend has really helped me focus at work.</p>
-                    <div class="author">- Emily Rodriguez</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer id="contact">
-        <div class="footer-content">
-            <div class="footer-links">
-                <a href="#">About Us</a>
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms of Service</a>
-                <a href="#">FAQ</a>
-                <a href="#">Contact</a>
-            </div>
-            <p>&copy; 2025 NaturalVitality. All rights reserved. | Embrace Natural Wellness</p>
+            <p class="footer-text">&copy; 2025 La Red de Luz. Todos los derechos reservados. | <a href="aviso-privacidad.pdf" class="footer-link" target="_blank" rel="noopener">Aviso de privacidad</a></p>
         </div>
     </footer>
-
+    <script src="js/main.js"></script>
     <script>
-        // Simple smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Add scroll effect to header
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            if (window.scrollY > 100) {
-                header.style.background = 'linear-gradient(135deg, rgba(44, 85, 48, 0.95), rgba(74, 124, 89, 0.95))';
-                header.style.backdropFilter = 'blur(10px)';
-            } else {
-                header.style.background = 'linear-gradient(135deg, #2c5530, #4a7c59)';
-                header.style.backdropFilter = 'none';
+    // Parallax radial light ray effect: center of radial gradient follows mouse relative to each card
+    document.addEventListener('mousemove', function(e) {
+        const cards = document.querySelectorAll('.hero__content, .form-container, .promo-card, .value-prop .container, .testimonial-card, .benefit-card, .footer');
+        cards.forEach(card => {
+            const rect = card.getBoundingClientRect();
+            // Mouse position relative to card (0-1)
+            const relX = (e.clientX - rect.left) / rect.width;
+            const relY = (e.clientY - rect.top) / rect.height;
+            const after = card.querySelector('.glass-light-ray');
+            if (after) {
+                // Clamp values between 0 and 1
+                const x = Math.max(0, Math.min(1, relX));
+                const y = Math.max(0, Math.min(1, relY));
+                // Radial gradient center follows mouse
+                after.style.background = `radial-gradient(circle at ${x*100}% ${y*100}%, rgba(255,255,255,0.13) 0%, rgba(255,255,255,0.09) 38%, transparent 62%)`;
+                after.style.opacity = 1;
             }
         });
-
-        // Simple mobile menu toggle
-        const mobileMenu = document.querySelector('.mobile-menu');
-        const navLinks = document.querySelector('.nav-links');
-        
-        mobileMenu.addEventListener('click', function() {
-            if (navLinks.style.display === 'flex') {
-                navLinks.style.display = 'none';
-            } else {
-                navLinks.style.display = 'flex';
-                navLinks.style.flexDirection = 'column';
-                navLinks.style.position = 'absolute';
-                navLinks.style.top = '100%';
-                navLinks.style.left = '0';
-                navLinks.style.width = '100%';
-                navLinks.style.background = 'linear-gradient(135deg, #2c5530, #4a7c59)';
-                navLinks.style.padding = '1rem';
-            }
-        });
+    });
+    // Add the .glass-light-ray element to each card and the footer
+    /*
+    document.querySelectorAll('.hero__content, .form-container, .promo-card, .value-prop .container, .testimonial-card, .benefit-card, .footer').forEach(card => {
+        // Asegura que el contenedor tenga position: relative para posicionar el ray correctamente
+        if (getComputedStyle(card).position === 'static') {
+            card.style.position = 'relative';
+        }
+        if (!card.querySelector('.glass-light-ray')) {
+            const ray = document.createElement('div');
+            ray.className = 'glass-light-ray';
+            ray.style.cssText = `
+                pointer-events:none;
+                position:absolute;
+                top:-30%;left:-30%;width:160%;height:160%;
+                opacity:0;z-index:0;
+                background:radial-gradient(circle at 50% 50%, rgba(255,255,255,0.07) 0%, rgba(255,255,255,0.03) 38%, transparent 62%);
+                transition:opacity 0.3s,transform 0.7s cubic-bezier(.4,1.3,.6,1),background 0.3s;
+                border-radius:inherit;
+            `;
+            card.appendChild(ray);
+            card.addEventListener('mouseleave',()=>{ ray.style.opacity=0; });
+            card.addEventListener('mouseenter',()=>{ ray.style.opacity=1; });
+        }
+    });*/
     </script>
 </body>
 </html>

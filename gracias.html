@@ -3,202 +3,229 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Gracias por tu interés en el bioescáner. Tu cuerpo ya está más cerca de ser escuchado.">
-    <meta property="og:title" content="Gracias - Bioescáner La Red de Luz">
-    <meta property="og:description" content="Tu cuerpo ya está más cerca de ser escuchado. Siguiente paso: contacto por WhatsApp.">
+    <title>¡Gracias! | La Red de Luz</title>
+    <meta name="description" content="Gracias por confiar en nuestro bioescáner. Pronto nos pondremos en contacto contigo.">
     <meta property="og:type" content="website">
-    <title>Gracias - Bioescáner La Red de Luz</title>
+    <meta property="og:title" content="Gracias - La Red de Luz">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
     <link rel="stylesheet" href="css/styles.css">
     <style>
-        .timeline {
-            max-width: 600px;
-            margin: 3rem auto;
-            padding: 2rem;
+        body {
+            background: #f8f8f8;
         }
-        
-        .timeline-item {
+        .gracias-bg-overlay {
+            position: fixed;
+            inset: 0;
+            background: linear-gradient(120deg, #1a237e 0%, #1976d2 100%);
+            opacity: 0.65;
+            z-index: 0;
+        }
+        .gracias-bg-pattern {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+            /* SVG inline base64 for cross-browser pattern with alternated and rotated logos */
+            background-image:
+                url("data:image/svg+xml;utf8,<svg width='48' height='48' xmlns='http://www.w3.org/2000/svg'><g opacity='0.11'><image href='assets/images/cuadrado.png' x='0' y='0' width='24' height='24'/><g transform='rotate(180 36 36)'><image href='assets/images/cuadrado.png' x='24' y='24' width='24' height='24'/></g></g></svg>");
+            background-size: 48px 48px;
+            background-repeat: repeat;
+            opacity: 1;
+            mix-blend-mode: lighten;
+        }
+        .gracias-main-container {
             position: relative;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 1rem;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            max-width: 900px;
+            margin: 2rem auto 1.2rem auto;
+            padding: 0 12px;
+            z-index: 1;
         }
-
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -1rem;
-            top: 50%;
-            width: 2rem;
-            height: 2rem;
-            background: var(--gold-dark);
-            border-radius: 50%;
-            transform: translateY(-50%);
+        .gracias-card {
+            background: rgba(255,255,255,0.18);
+            border-radius: 28px;
+            box-shadow: 0 8px 48px 0 rgba(31,38,135,0.13);
+            padding: 1.7rem 1.5rem 2rem 1.5rem;
+            text-align: center;
+            backdrop-filter: blur(18px) saturate(160%);
+            -webkit-backdrop-filter: blur(18px) saturate(160%);
+            border: 1.5px solid rgba(255,255,255,0.32);
         }
-
-        .whatsapp-buttons {
-            display: grid;
-            gap: 1rem;
-            max-width: 600px;
-            margin: 2rem auto;
+        .gracias-card .hero-logo {
+            margin-bottom: 1.1rem;
+            max-width: 100px;
+            border-radius: 14px;
+            box-shadow: 0 2px 12px 0 rgba(31,38,135,0.10);
+            background: rgba(255,255,255,0.45);
+            padding: 0.4rem;
         }
-
-        .btn-whatsapp {
-            background: #25D366;
+        .gracias-card .hero__title {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #232323;
+            margin: 0 auto 1rem auto;
+            max-width: 650px;
+            line-height: 1.15;
+            text-shadow: 0 2px 8px rgba(255,255,255,0.18);
+        }
+        .gracias-card .hero__subtitle {
+            max-width: 650px;
+            margin: 0 auto 1.1rem auto;
+            font-size: 1.08rem;
+            color: #232323;
+            font-weight: 500;
+            line-height: 1.5;
+            text-shadow: 0 2px 8px rgba(255,255,255,0.13);
+        }
+        .gracias-card .hero__subtitle b {
+            color: #1a237e;
+        }
+        .gracias-card .apoyo-highlight {
+            display: inline-block;
+            margin-top: 0.7rem;
+            padding: 0.35em 1.1em;
+            background: rgba(30,30,30,0.82);
+            color: #e4cd85;
+            font-weight: 700;
+            border-radius: 18px;
+            font-size: 1.08em;
+            box-shadow: 0 2px 12px 0 rgba(0,0,0,0.13);
+            letter-spacing: 0.5px;
+        }
+        .gracias-video-explain {
+            margin: 1.1rem auto 1.1rem auto;
+            max-width: 720px;
+            aspect-ratio: 16/9;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 24px 0 rgba(31,38,135,0.10);
+            background: #000;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 0.5rem;
-            font-size: 1.25rem;
         }
-
-        .btn-whatsapp:hover {
-            background: #128C7E;
-        }
-
-        .testimonials {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            padding: 4rem 0;
-        }
-
-        .testimonial {
-            background: rgba(255, 255, 255, 0.95);
-            padding: 2rem;
-            border-radius: 1rem;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .testimonial img {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            margin-bottom: 1rem;
+        .gracias-video-explain video {
+            width: 100%;
+            height: 100%;
             object-fit: cover;
+            background: #000;
+            display: block;
+        }
+        .gracias-next-step {
+            font-size: 1.02rem;
+            color: #232323;
+            margin: 1.1rem 0 1.7rem 0;
+        }
+        .gracias-whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(255,255,255,0.18);
+            color: #128C7E;
+            font-weight: 700;
+            font-size: 1.13rem;
+            padding: 0.95rem 2.3rem;
+            border-radius: 40px;
+            border: 1.5px solid rgba(255,255,255,0.32);
+            box-shadow: 0 6px 24px 0 rgba(37, 211, 102, 0.13);
+            text-decoration: none;
+            transition: transform 0.15s, box-shadow 0.15s, background 0.2s, color 0.2s;
+            letter-spacing: 0.3px;
+            backdrop-filter: blur(12px) saturate(160%);
+            -webkit-backdrop-filter: blur(12px) saturate(160%);
+        }
+        .gracias-whatsapp-btn svg {
+            display: block;
+        }
+        .gracias-whatsapp-btn:hover, .gracias-whatsapp-btn:focus {
+            transform: translateY(-1px) scale(1.03);
+            box-shadow: 0 10px 32px 0 rgba(37, 211, 102, 0.18);
+            background: rgba(37, 211, 102, 0.18);
+            color: #128C7E;
+            text-decoration: none;
+        }
+        @media (max-width: 1000px) {
+            .gracias-main-container { max-width: 99vw; }
+            .gracias-card { padding: 1rem 0.5rem; }
+            .gracias-card .hero__title { font-size: 1.2rem; }
+            .gracias-card .hero-logo { max-width: 60px; }
+            .gracias-video-explain { max-width: 98vw; }
+        }
+        .footer {
+            background: rgba(255,255,255,0.18);
+            border-top: 1.5px solid rgba(255,255,255,0.32);
+            box-shadow: 0 -2px 24px 0 rgba(31,38,135,0.08);
+            backdrop-filter: blur(14px) saturate(160%);
+            -webkit-backdrop-filter: blur(14px) saturate(160%);
+            padding: 1.2rem 0 0.7rem 0;
+            margin-top: 2.5rem;
+        }
+        .footer-text {
+            color: #232323;
+            font-size: 1rem;
+            text-align: center;
+            text-shadow: 0 2px 8px rgba(255,255,255,0.13);
+        }
+        .footer-link {
+            color: #1a237e;
+            text-decoration: none;
+            transition: color 0.2s;
+            border-bottom: 1px solid #1a237e;
+        }
+        .footer-link:hover,
+        .footer-link:focus {
+            color: #e4cd85;
+            border-bottom: 1px solid #e4cd85;
         }
     </style>
 </head>
 <body>
+    <div class="gracias-bg-overlay"></div>
+    <div class="gracias-bg-pattern"></div>
     <main>
-        <section class="hero">
-            <div class="hero__content container">
-                <h1 class="hero__title">¡Perfecto! Tu cuerpo ya está más cerca de ser escuchado</h1>
-                <p class="hero__text">Hemos recibido tu información. Ahora viene la parte más importante...</p>
+        <div class="gracias-main-container">
+            <div class="gracias-card">
+                <!-- Logo removido del contenido principal para dejar solo el pattern de fondo -->
+                <h1 class="hero__title">¡Felicitaciones por dar el primer paso hacia tu bienestar!</h1>
+                <p class="hero__subtitle">
+                    Has tomado una decisión importante para entender y mejorar tu salud.<br>
+                    En <b>La Red de Luz</b> estamos comprometidos a acompañarte en este viaje de autodescubrimiento y sanación.<br>
+                    <span class="apoyo-highlight">¡Estamos listos para apoyarte!</span>
+                </p>
+                <div class="gracias-video-explain">
+                    <video src="assets/videos/explicativo-placeholder.mp4" poster="assets/images/cuadrado.png" controls></video>
+                </div>
+                <div class="gracias-next-step">
+                    Para agendar tu sesión de bioescáner, haz clic en el botón de abajo.<br>
+                    Te llevará directamente a WhatsApp donde podrás coordinar tu cita con nuestro equipo.
+                </div>
+                <a href="#" id="whatsappButton" class="gracias-whatsapp-btn">
+                    <svg viewBox="0 0 24 24" width="22" height="22">
+                        <path fill="currentColor" d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2zm.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 012.41 5.83c0 4.54-3.7 8.23-8.24 8.23-1.48 0-2.93-.39-4.19-1.15l-.3-.17-3.12.82.83-3.04-.2-.32a8.188 8.188 0 01-1.26-4.38c.01-4.54 3.7-8.24 8.25-8.24z"/>
+                    </svg>
+                    <span>Agendar mi sesión</span>
+                </a>
             </div>
-        </section>
-
-        <section class="next-steps">
+        </div>
+        <footer class="footer">
             <div class="container">
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <h3>Ahora</h3>
-                        <p>Contacto vía WhatsApp</p>
-                    </div>
-                    <div class="timeline-item">
-                        <h3>En 24 hrs</h3>
-                        <p>Llamada de pre-calificación</p>
-                    </div>
-                    <div class="timeline-item">
-                        <h3>Esta semana</h3>
-                        <p>Tu sesión de bioescáner</p>
-                    </div>
-                    <div class="timeline-item">
-                        <h3>Inmediato</h3>
-                        <p>Rutina personalizada</p>
-                    </div>
-                </div>
-
-                <div class="cta-section">
-                    <h2>¿Prefieres tomar la iniciativa?</h2>
-                    <p>Escríbenos ahora mismo y te responderemos al instante</p>
-                    
-                    <div class="whatsapp-buttons">
-                        <!-- Los botones se generarán dinámicamente con JavaScript -->
-                    </div>
-                </div>
+                <p class="footer-text">&copy; 2025 La Red de Luz. Todos los derechos reservados. | <a href="aviso-privacidad.pdf" class="footer-link" target="_blank" rel="noopener">Aviso de privacidad</a></p>
             </div>
-        </section>
-
-        <section class="testimonials-section">
-            <div class="container">
-                <h2>Lo que dicen nuestros clientes</h2>
-                <div class="testimonials">
-                    <div class="testimonial">
-                        <img src="assets/images/testimonial-1.jpg" alt="Testimonio de María">
-                        <h3>María L.</h3>
-                        <p>"El bioescáner me ayudó a entender exactamente lo que mi cuerpo necesitaba. Ahora me siento con más energía que nunca."</p>
-                    </div>
-                    <div class="testimonial">
-                        <img src="assets/images/testimonial-2.jpg" alt="Testimonio de Carlos">
-                        <h3>Carlos R.</h3>
-                        <p>"Increíble lo preciso que es. En 5 minutos obtuve más información que en meses de estudios tradicionales."</p>
-                    </div>
-                    <div class="testimonial">
-                        <img src="assets/images/testimonial-3.jpg" alt="Testimonio de Ana">
-                        <h3>Ana P.</h3>
-                        <p>"Lo mejor es el seguimiento personalizado. No te dejan solo después de la sesión, te acompañan en todo el proceso."</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+        </footer>
     </main>
-
     <script>
-        // WhatsApp configurations
-        const whatsappConfig = {
-            Guaymas: {
-                number: '526228558278',
-                text: 'Hola, acabo de completar el formulario para la sesión de bioescáner en Guaymas. Mi nombre es [NOMBRE] y quiero agendar mi cita lo antes posible.'
-            },
-            Guadalajara: {
-                number: '526221424577',
-                text: 'Hola, acabo de completar el formulario para la sesión de bioescáner en Guadalajara. Mi nombre es [NOMBRE] y quiero agendar mi cita lo antes posible.'
-            },
-            Otra: {
-                number: '526221424577',
-                text: 'Hola, me interesa la sesión de bioescáner pero estoy en [CIUDAD]. ¿Tienen servicio en mi zona?'
+        // WhatsApp button logic
+        const whatsappButton = document.getElementById('whatsappButton');
+        if (whatsappButton) {
+            const leadData = JSON.parse(localStorage.getItem('leadData') || '{}');
+            let phone = '6228558278'; // Guaymas default
+            let message = 'Estoy interesado en descubrir que dice mi cuerpo, quiero agendar una cita para hacerme mi escaneo.';
+            if (leadData.ciudad === 'guadalajara') {
+                phone = '3334567890'; // Cambia este número por el de Guadalajara si aplica
+            } else if (leadData.ciudad === 'otra' && leadData.otraCiudad) {
+                message += `\nCiudad: ${leadData.otraCiudad}`;
             }
-        };
-
-        // Generate WhatsApp URLs
-        const generateWhatsAppUrl = (number, text) => {
-            const encodedText = encodeURIComponent(text);
-            return `https://wa.me/${number}?text=${encodedText}`;
-        };
-
-        // Create WhatsApp buttons
-        const createWhatsAppButtons = () => {
-            const buttonsContainer = document.querySelector('.whatsapp-buttons');
-            const formData = JSON.parse(sessionStorage.getItem('formData') || '{}');
-            const { ciudad = 'Otra', nombre = '' } = formData;
-
-            const config = whatsappConfig[ciudad];
-            if (!config) return;
-
-            let buttonText = `Escribir a WhatsApp ${ciudad === 'Otra' ? '' : ciudad}`;
-            let messageText = config.text
-                .replace('[NOMBRE]', nombre)
-                .replace('[CIUDAD]', ciudad);
-
-            const button = document.createElement('a');
-            button.href = generateWhatsAppUrl(config.number, messageText);
-            button.className = 'btn btn-whatsapp';
-            button.target = '_blank';
-            button.rel = 'noopener noreferrer';
-            button.innerHTML = `
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm.029 18.88c-1.161 0-2.305-.292-3.318-.844l-3.677.964.984-3.595c-.607-1.052-.927-2.246-.926-3.468.001-3.825 3.113-6.937 6.937-6.937 1.856.001 3.598.723 4.907 2.034 1.31 1.311 2.031 3.054 2.03 4.908-.001 3.825-3.113 6.938-6.937 6.938z"/>
-                </svg>
-                ${buttonText}
-            `;
-
-            buttonsContainer.appendChild(button);
-        };
-
-        // Initialize
-        document.addEventListener('DOMContentLoaded', createWhatsAppButtons);
+            whatsappButton.href = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+        }
     </script>
 </body>
 </html>
