@@ -1,48 +1,84 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Escucha a Tu Cuerpo | La Red de Luz</title>
+    <title>NaturalVitality - Premium Natural Supplements</title>
     <style>
+        /* Reset and base styles */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        :root {
-            --gold-light: #e4cd85;
-            --gold-dark: #c08a2d;
-            --blue-accent: #163384;
-            --black: #000000;
-            --white: #ffffff;
-            --gray-light: #f8f9fa;
-            --shadow: 0 10px 40px rgba(0,0,0,0.1);
-        }
-
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-family: 'Arial', sans-serif;
             line-height: 1.6;
-            color: var(--black);
-            background: linear-gradient(135deg, var(--white) 0%, var(--gray-light) 100%);
+            color: #333;
             overflow-x: hidden;
         }
 
-        .container {
+        /* Header and Navigation */
+        header {
+            background: linear-gradient(135deg, #2c5530, #4a7c59);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, #90EE90, #98FB98);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+        }
+
+        .nav-links a:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
         }
 
         /* Hero Section */
         .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
             display: flex;
             align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
             position: relative;
-            background: linear-gradient(135deg, var(--black) 0%, var(--blue-accent) 100%);
-            color: var(--white);
             overflow: hidden;
         }
 
@@ -53,27 +89,32 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: radial-gradient(circle at 30% 70%, var(--gold-dark) 0%, transparent 50%);
-            opacity: 0.1;
-            animation: pulse 4s ease-in-out infinite;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="40" r="1.5" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="70" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="90" cy="80" r="2.5" fill="rgba(255,255,255,0.1)"/><circle cx="10" cy="60" r="1.2" fill="rgba(255,255,255,0.1)"/></svg>');
+            animation: float 20s ease-in-out infinite;
         }
 
-        @keyframes pulse {
-            0%, 100% { opacity: 0.1; }
-            50% { opacity: 0.3; }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
         }
 
         .hero-content {
-            position: relative;
+            max-width: 800px;
             z-index: 2;
-            text-align: center;
-            animation: fadeInUp 1s ease-out;
+            position: relative;
         }
 
-        @keyframes fadeInUp {
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            animation: slideInDown 1s ease-out;
+        }
+
+        @keyframes slideInDown {
             from {
                 opacity: 0;
-                transform: translateY(30px);
+                transform: translateY(-50px);
             }
             to {
                 opacity: 1;
@@ -81,438 +122,427 @@
             }
         }
 
-        .hero h1 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 300;
+        .hero p {
+            font-size: 1.3rem;
             margin-bottom: 2rem;
-            background: linear-gradient(135deg, var(--gold-light), var(--gold-dark));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            animation: slideInUp 1s ease-out 0.5s both;
         }
 
-        .hero-subtitle {
-            font-size: clamp(1.2rem, 2.5vw, 1.8rem);
-            margin-bottom: 3rem;
-            opacity: 0.9;
-            animation: fadeInUp 1s ease-out 0.3s both;
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
-        /* Pain Points Section */
-        .pain-section {
-            padding: 100px 0;
-            background: var(--white);
-        }
-
-        .pain-card {
-            background: var(--white);
-            border-radius: 20px;
-            padding: 3rem;
-            margin: 2rem 0;
-            box-shadow: var(--shadow);
-            border-left: 4px solid var(--gold-dark);
-            transition: all 0.3s ease;
-            opacity: 0;
-            transform: translateY(30px);
-        }
-
-        .pain-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
-        }
-
-        .pain-card.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .pain-card h3 {
-            color: var(--blue-accent);
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .pain-card p {
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #FF6B6B, #FF8E53);
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
             font-size: 1.1rem;
-            line-height: 1.8;
-            color: #333;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+            animation: pulse 2s infinite;
         }
 
-        /* Solution Section */
-        .solution-section {
-            padding: 100px 0;
-            background: linear-gradient(135deg, var(--gray-light) 0%, var(--white) 100%);
-            text-align: center;
+        @keyframes pulse {
+            0% { box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4); }
+            50% { box-shadow: 0 8px 25px rgba(255, 107, 107, 0.6); }
+            100% { box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4); }
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.6);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .section-title {
-            font-size: clamp(2rem, 4vw, 3rem);
-            color: var(--blue-accent);
+            text-align: center;
+            font-size: 2.5rem;
             margin-bottom: 3rem;
-            font-weight: 300;
+            color: #2c3e50;
+            position: relative;
         }
 
-        .solution-grid {
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(45deg, #FF6B6B, #FF8E53);
+            border-radius: 2px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: all 0.6s;
+        }
+
+        .feature-card:hover::before {
+            left: 100%;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover .feature-icon {
+            transform: rotate(360deg);
+        }
+
+        /* Products Section */
+        .products {
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .product-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.2);
+        }
+
+        .product-image {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(45deg, #FF6B6B, #FF8E53);
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            transition: all 0.3s ease;
+        }
+
+        .product-card:hover .product-image {
+            transform: scale(1.1);
+        }
+
+        .price {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #FFD700;
+            margin: 1rem 0;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+        }
+
+        .testimonials-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
         }
 
-        .solution-card {
-            background: var(--white);
-            border-radius: 15px;
-            padding: 2.5rem;
-            box-shadow: var(--shadow);
-            transition: all 0.3s ease;
-            border-top: 3px solid var(--gold-dark);
-        }
-
-        .solution-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 50px rgba(0,0,0,0.2);
-        }
-
-        .solution-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, var(--gold-light), var(--gold-dark));
-            border-radius: 50%;
-            margin: 0 auto 1.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            color: var(--white);
-        }
-
-        /* Value Proposition */
-        .value-section {
-            padding: 100px 0;
-            background: var(--blue-accent);
-            color: var(--white);
-            text-align: center;
-        }
-
-        .value-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .value-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
-        }
-
-        .value-item {
-            background: rgba(255,255,255,0.1);
+        .testimonial-card {
+            background: white;
             padding: 2rem;
             border-radius: 15px;
-            backdrop-filter: blur(10px);
-        }
-
-        .value-item h4 {
-            color: var(--gold-light);
-            margin-bottom: 1rem;
-        }
-
-        /* CTA Section */
-        .cta-section {
-            padding: 100px 0;
-            background: linear-gradient(135deg, var(--black) 0%, var(--blue-accent) 100%);
-            color: var(--white);
-            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
             position: relative;
         }
 
-        .cta-button {
-            display: inline-block;
-            background: linear-gradient(135deg, var(--gold-light), var(--gold-dark));
-            color: var(--black);
-            padding: 1.5rem 3rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.2rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 30px rgba(196, 138, 45, 0.3);
-            margin: 2rem 0;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(196, 138, 45, 0.5);
-            background: linear-gradient(135deg, var(--gold-dark), var(--gold-light));
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin: 3rem 0;
-        }
-
-        .feature-item {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            background: rgba(255,255,255,0.1);
-            padding: 1rem;
-            border-radius: 10px;
-            backdrop-filter: blur(10px);
-        }
-
-        .feature-icon {
-            width: 30px;
-            height: 30px;
-            background: var(--gold-light);
-            color: var(--black);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.9rem;
-        }
-
-        /* Floating Elements */
-        .floating-element {
+        .testimonial-card::before {
+            content: '"';
             position: absolute;
-            width: 100px;
-            height: 100px;
-            background: linear-gradient(135deg, var(--gold-light), var(--gold-dark));
-            border-radius: 50%;
-            opacity: 0.1;
-            animation: float 6s ease-in-out infinite;
+            top: -10px;
+            left: 20px;
+            font-size: 4rem;
+            color: #FF6B6B;
+            opacity: 0.3;
         }
 
-        .floating-element:nth-child(1) {
-            top: 10%;
-            left: 10%;
-            animation-delay: 0s;
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
         }
 
-        .floating-element:nth-child(2) {
-            top: 60%;
-            right: 10%;
-            animation-delay: 2s;
+        .author {
+            margin-top: 1rem;
+            font-weight: bold;
+            color: #667eea;
         }
 
-        .floating-element:nth-child(3) {
-            bottom: 20%;
-            left: 20%;
-            animation-delay: 4s;
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: white;
+            text-align: center;
+            padding: 3rem 2rem 1rem;
         }
 
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0px);
-            }
-            50% {
-                transform: translateY(-20px);
-            }
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
-        /* Responsive */
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            padding: 0.5rem;
+            border-radius: 5px;
+        }
+
+        .footer-links a:hover {
+            background: rgba(255,255,255,0.1);
+            transform: translateY(-2px);
+        }
+
+        /* Responsive Design */
         @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
             .hero h1 {
                 font-size: 2.5rem;
             }
-            
-            .pain-card, .solution-card {
-                padding: 2rem;
+
+            .hero p {
+                font-size: 1.1rem;
             }
-            
-            .container {
-                padding: 0 15px;
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .features-grid,
+            .products-grid,
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 1rem;
             }
         }
 
-        /* Scroll Reveal Animation */
-        .reveal {
-            opacity: 0;
-            transform: translateY(50px);
-            transition: all 0.6s ease;
+        /* Mobile menu button */
+        .mobile-menu {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
         }
 
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
+        @media (max-width: 768px) {
+            .mobile-menu {
+                display: block;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">NaturalVitality</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#features">Benefits</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#testimonials">Reviews</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="mobile-menu">☰</button>
+        </nav>
+    </header>
+
     <!-- Hero Section -->
-    <section class="hero">
-        <div class="floating-element"></div>
-        <div class="floating-element"></div>
-        <div class="floating-element"></div>
-        
-        <div class="container">
-            <div class="hero-content">
-                <h1>¿Tu cuerpo te susurra... pero no lo escuchas?</h1>
-                <p class="hero-subtitle">Descubre lo que tu energía vital quiere decirte antes de que se convierta en síntoma</p>
-            </div>
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Pure Natural Wellness</h1>
+            <p>Discover the power of nature with our premium, scientifically-backed natural supplements. Transform your health journey today.</p>
+            <a href="#products" class="cta-button">Shop Now</a>
         </div>
     </section>
 
-    <!-- Pain Points -->
-    <section class="pain-section">
+    <!-- Features Section -->
+    <section id="features" class="features">
         <div class="container">
-            <div class="pain-card reveal">
-                <h3>¿Te ha pasado que no te sientes bien... pero tus estudios dicen que estás 'normal'?</h3>
-                <p>Te sacan sangre... esperas 24, 48 horas... y cuando por fin te entregan los resultados... te explican a medias, y tú sigues igual.</p>
-            </div>
-            
-            <div class="pain-card reveal">
-                <h3>Y lo peor... es que sentiste desde el principio que *algo no está bien*, pero no sabes qué.</h3>
-                <p>Esa intuición profunda que te dice que tu cuerpo necesita atención, pero los análisis convencionales no logran capturar la verdadera causa de tu malestar.</p>
-            </div>
-            
-            <div class="pain-card reveal">
-                <h3>No me malinterpretes... estamos agradecidos por los doctores y lo que hacen por nosotros.</h3>
-                <p>Pero hay momentos en los que uno simplemente quiere entender mejor a su cuerpo. Sin dolor. Sin tanto trámite. Sin sentirse como un expediente más.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Solution -->
-    <section class="solution-section">
-        <div class="container">
-            <h2 class="section-title reveal">¿Y si pudieras escuchar lo que tu cuerpo te quiere decir... en solo 5 minutos?</h2>
-            
-            <div class="solution-grid">
-                <div class="solution-card reveal">
-                    <div class="solution-icon">⚡</div>
-                    <h3>Análisis Energético Instantáneo</h3>
-                    <p>Con nuestro bioescáner eléctrico no invasivo, analizamos tu estado actual y te ayudamos a entender posibles desequilibrios energéticos.</p>
+            <h2 class="section-title">Why Choose Natural Supplements?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🌿</div>
+                    <h3>100% Natural</h3>
+                    <p>Our supplements are made from pure, organic ingredients sourced directly from nature. No artificial additives or harmful chemicals.</p>
                 </div>
-                
-                <div class="solution-card reveal">
-                    <div class="solution-icon">🔍</div>
-                    <h3>Detección Temprana</h3>
-                    <p>Identificamos patrones antes de que se manifiesten como enfermedades, dándote la oportunidad de actuar preventivamente.</p>
+                <div class="feature-card">
+                    <div class="feature-icon">🔬</div>
+                    <h3>Scientifically Tested</h3>
+                    <p>Every product undergoes rigorous testing and quality control to ensure maximum potency and safety for your health.</p>
                 </div>
-                
-                <div class="solution-card reveal">
-                    <div class="solution-icon">🎯</div>
-                    <h3>100% Personalizado</h3>
-                    <p>Cada lectura es única, como tu energía vital. Recibe información específica sobre tu estado energético actual.</p>
+                <div class="feature-card">
+                    <div class="feature-icon">💪</div>
+                    <h3>Proven Results</h3>
+                    <p>Thousands of satisfied customers have experienced improved energy, better sleep, and enhanced overall wellness.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Value Proposition -->
-    <section class="value-section">
+    <!-- Products Section -->
+    <section id="products" class="products">
         <div class="container">
-            <div class="value-content reveal">
-                <h2 class="section-title" style="color: var(--gold-light);">Al final, te entregamos una rutina sencilla, personalizada</h2>
-                <p style="font-size: 1.2rem; margin-bottom: 2rem;">Que puedes aplicar desde hoy... con o sin suplementos, dependiendo de tu caso.</p>
-                
-                <div class="value-list">
-                    <div class="value-item">
-                        <h4>⚡ Rápido</h4>
-                        <p>Solo 5 minutos de escaneo + interpretación personalizada</p>
-                    </div>
-                    <div class="value-item">
-                        <h4>🏠 Cómodo</h4>
-                        <p>Servicio a domicilio o punto de encuentro</p>
-                    </div>
-                    <div class="value-item">
-                        <h4>💝 Sin Dolor</h4>
-                        <p>Proceso completamente no invasivo</p>
-                    </div>
-                    <div class="value-item">
-                        <h4>📱 Acompañamiento</h4>
-                        <p>Seguimiento personalizado vía WhatsApp</p>
-                    </div>
+            <h2 class="section-title">Featured Products</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image">🍃</div>
+                    <h3>Green Vitality Complex</h3>
+                    <p>Boost your energy with our premium blend of supergreens, spirulina, and chlorella.</p>
+                    <div class="price">$29.99</div>
+                    <a href="#" class="cta-button">Add to Cart</a>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">🌙</div>
+                    <h3>Sleep Support Formula</h3>
+                    <p>Natural sleep aid with melatonin, valerian root, and chamomile for restful nights.</p>
+                    <div class="price">$24.99</div>
+                    <a href="#" class="cta-button">Add to Cart</a>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">🧠</div>
+                    <h3>Brain Boost Blend</h3>
+                    <p>Enhance cognitive function with ginkgo biloba, omega-3, and natural nootropics.</p>
+                    <div class="price">$34.99</div>
+                    <a href="#" class="cta-button">Add to Cart</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Final CTA -->
-    <section class="cta-section">
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
         <div class="container">
-            <div class="reveal">
-                <h2 style="font-size: 2.5rem; margin-bottom: 2rem; color: var(--gold-light);">No esperes a que tu cuerpo te grite lo que ya te está susurrando</h2>
-                
-                <div class="features-grid">
-                    <div class="feature-item">
-                        <div class="feature-icon">📲</div>
-                        <span>Cupos limitados por agenda</span>
-                    </div>
-                    <div class="feature-item">
-                        <div class="feature-icon">⏱️</div>
-                        <span>5 minutos + interpretación</span>
-                    </div>
-                    <div class="feature-item">
-                        <div class="feature-icon">🏠</div>
-                        <span>A domicilio o punto de encuentro</span>
-                    </div>
-                    <div class="feature-item">
-                        <div class="feature-icon">📦</div>
-                        <span>Incluye seguimiento WhatsApp</span>
-                    </div>
+            <h2 class="section-title">What Our Customers Say</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p>These supplements have completely transformed my energy levels. I feel more vibrant and healthy than ever before!</p>
+                    <div class="author">- Sarah Johnson</div>
                 </div>
-                
-                <a href="#" class="cta-button" id="mainCTA">Quiero Escuchar a Mi Cuerpo</a>
-                
-                <p style="margin-top: 2rem; opacity: 0.8;">Agenda tu sesión hoy mismo</p>
+                <div class="testimonial-card">
+                    <p>The sleep formula works like magic. I finally get the restful sleep I've been looking for naturally.</p>
+                    <div class="author">- Michael Chen</div>
+                </div>
+                <div class="testimonial-card">
+                    <p>Amazing quality and fast shipping. The brain boost blend has really helped me focus at work.</p>
+                    <div class="author">- Emily Rodriguez</div>
+                </div>
             </div>
         </div>
     </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#">About Us</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">FAQ</a>
+                <a href="#">Contact</a>
+            </div>
+            <p>&copy; 2025 NaturalVitality. All rights reserved. | Embrace Natural Wellness</p>
+        </div>
+    </footer>
 
     <script>
-        // Scroll reveal animation
-        function reveal() {
-            const reveals = document.querySelectorAll('.reveal');
-            
-            reveals.forEach(element => {
-                const windowHeight = window.innerHeight;
-                const elementTop = element.getBoundingClientRect().top;
-                const elementVisible = 150;
-                
-                if (elementTop < windowHeight - elementVisible) {
-                    element.classList.add('active');
-                }
-            });
-        }
-
-        // Pain cards sequential animation
-        function animatePainCards() {
-            const painCards = document.querySelectorAll('.pain-card');
-            
-            painCards.forEach((card, index) => {
-                setTimeout(() => {
-                    card.classList.add('visible');
-                }, index * 300);
-            });
-        }
-
-        // CTA button interaction
-        document.getElementById('mainCTA').addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            // Add pulse effect
-            this.style.animation = 'pulse 0.6s ease-in-out';
-            
-            // Reset animation
-            setTimeout(() => {
-                this.style.animation = '';
-            }, 600);
-            
-            // Here you would typically redirect to booking page or open a modal
-            // For now, we'll show an alert
-            setTimeout(() => {
-                alert('¡Perfecto! Te redirigiremos al formulario de reserva.');
-                // window.location.href = 'booking.html';
-            }, 300);
-        });
-
-        // Smooth scrolling for internal links
+        // Simple smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -526,23 +556,36 @@
             });
         });
 
-        // Initialize animations
-        window.addEventListener('scroll', reveal);
-        window.addEventListener('load', () => {
-            reveal();
-            animatePainCards();
+        // Add scroll effect to header
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'linear-gradient(135deg, rgba(44, 85, 48, 0.95), rgba(74, 124, 89, 0.95))';
+                header.style.backdropFilter = 'blur(10px)';
+            } else {
+                header.style.background = 'linear-gradient(135deg, #2c5530, #4a7c59)';
+                header.style.backdropFilter = 'none';
+            }
         });
 
-        // Add pulse keyframes dynamically
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes pulse {
-                0% { transform: scale(1); }
-                50% { transform: scale(1.05); }
-                100% { transform: scale(1); }
+        // Simple mobile menu toggle
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenu.addEventListener('click', function() {
+            if (navLinks.style.display === 'flex') {
+                navLinks.style.display = 'none';
+            } else {
+                navLinks.style.display = 'flex';
+                navLinks.style.flexDirection = 'column';
+                navLinks.style.position = 'absolute';
+                navLinks.style.top = '100%';
+                navLinks.style.left = '0';
+                navLinks.style.width = '100%';
+                navLinks.style.background = 'linear-gradient(135deg, #2c5530, #4a7c59)';
+                navLinks.style.padding = '1rem';
             }
-        `;
-        document.head.appendChild(style);
+        });
     </script>
 </body>
 </html>
