@@ -187,7 +187,8 @@ function setupWhatsappButton() {
     ) {
         phone = '6221424577'; // Cambia este número si es necesario
     }
-    let message = 'Hola 👋 me interesa hacerme el bioescáner eléctrico. Últimamente he sentido algunas molestias o cambios en mi cuerpo y quiero entender mejor qué está pasando. ¿Me puedes dar más información para agendar una cita, por favor?';
+    const nombre = leadData.nombre ? leadData.nombre.trim() : '';
+    let message = `Hola, soy ${nombre} 👋 me interesa hacerme el bioescáner eléctrico. Últimamente he sentido algunas molestias o cambios en mi cuerpo y quiero entender mejor qué está pasando. ¿Me puedes dar más información para agendar una cita, por favor?`;
     if (leadData.ciudad === 'otra' && leadData.otraCiudad) {
         message += `\nCiudad: ${leadData.otraCiudad}`;
     }
