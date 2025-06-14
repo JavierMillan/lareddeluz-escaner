@@ -168,11 +168,40 @@ if (promoTimer) {
 }
 
 // WhatsApp functionality for thank you page
-const whatsappButton = document.getElementById('whatsappButton');
-if (whatsappButton) {
+function setupWhatsappButton() {
+    const whatsappButton = document.getElementById('whatsappButton');
+    if (!whatsappButton) return;
     const leadData = JSON.parse(localStorage.getItem('leadData') || '{}');
-    const phone = '622855827';
-    const message = encodeURIComponent('Estoy interesado en descubrir que dice mi cuerpo, quiero agendar una cita para hacerme mi escaneo.');
-    
-    whatsappButton.href = `https://wa.me/${phone}?text=${message}`;
+    let phone = '6221424577'; // Default (Other)
+    // Guaymas
+    if (
+        (leadData.ciudad && leadData.ciudad.trim().toLowerCase() === 'guaymas') ||
+        (leadData.otraCiudad && leadData.otraCiudad.trim().toLowerCase() === 'guaymas')
+    ) {
+        phone = '6228558278';
+    }
+    // Guadalajara
+    else if (
+        (leadData.ciudad && leadData.ciudad.trim().toLowerCase() === 'guadalajara') ||
+        (leadData.otraCiudad && leadData.otraCiudad.trim().toLowerCase() === 'guadalajara')
+    ) {
+        phone = '6221424577'; // Cambia este número si es necesario
+    }
+    let message = 'Hola 👋 me interesa hacerme el bioescáner eléctrico. Últimamente he sentido algunas molestias o cambios en mi cuerpo y quiero entender mejor qué está pasando. ¿Me puedes dar más información para agendar una cita, por favor?';
+    if (leadData.ciudad === 'otra' && leadData.otraCiudad) {
+        message += `\nCiudad: ${leadData.otraCiudad}`;
+    }
+    const url = `https://api.whatsapp.com/send?phone=521${phone}&text=${encodeURIComponent(message)}`;
+    window.open(url, '_blank', 'noopener');
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    const whatsappButton = document.getElementById('whatsappButton');
+    if (whatsappButton) {
+        whatsappButton.onclick = function(e) {
+            e.preventDefault();
+            setupWhatsappButton();
+        };
+    }
+    window.setupWhatsappButton = setupWhatsappButton;
+});
