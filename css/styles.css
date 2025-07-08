@@ -216,6 +216,36 @@ main {
     color: var(--gold-light);
 }
 
+/* Comparación de precios: fondo claro para contraste */
+.section.price-comparison {
+    background: var(--white);
+    color: var(--black);
+}
+.table-wrapper {
+    overflow-x: auto;
+    width: 100%;
+}
+.price-table {
+    width: 100%;
+    min-width: 320px;
+    border-collapse: collapse;
+    margin: var(--spacing-md) 0;
+}
+.price-table th,
+.price-table td {
+    border: 1px solid var(--gold-dark);
+    padding: 0.75rem;
+    text-align: left;
+}
+.price-table thead {
+    background: rgba(228,205,133,0.2);
+}
+.price-table tbody tr:nth-child(even) {
+    background: var(--gray-light);
+}
+.price-note {
+    margin-top: var(--spacing-sm);
+}
 /* Testimonios: fondo negro con glassmorphism y dorado */
 .section.testimonials {
     background: linear-gradient(120deg, #10131a 90%, #163384 100%);
