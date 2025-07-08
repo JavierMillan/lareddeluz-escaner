@@ -909,6 +909,14 @@ p {
     color: var(--white);
 }
 
+/* Disclaimer text */
+.disclaimer {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    text-align: center;
+    margin: 1rem auto;
+}
+
 /* Scrollbar Styles */
 ::-webkit-scrollbar {
     width: 12px;
