@@ -3,10 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>¡Gracias! | La Red de Luz</title>
-    <meta name="description" content="Gracias por confiar en nuestro bioescáner. Pronto nos pondremos en contacto contigo.">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Gracias - La Red de Luz">
+    <title>¡Información enviada! | Bioescáner</title>
+    <meta name="description" content="Hemos recibido tu información. Envía un WhatsApp para coordinar tu bioescáner.">
     <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -14,333 +12,206 @@
             theme: {
                 extend: {
                     colors: {
-                        gold: {
-                            light: '#e4cd85',
-                            DEFAULT: '#d4af37',
-                            dark: '#c08a2d'
-                        },
-                        blue: {
-                            primary: '#163384',
-                            secondary: '#2c5aa0'
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'system-ui', 'sans-serif']
-                    },
-                    animation: {
-                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                        'fade-in': 'fadeIn 0.8s ease-out'
+                        gold: { light: '#e4cd85', DEFAULT: '#d4af37', dark: '#c08a2d' },
+                        blue: { primary: '#163384', secondary: '#2c5aa0' }
                     }
                 }
             }
         }
     </script>
     <style>
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
         .glass {
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(15px);
             border: 1px solid rgba(255, 255, 255, 0.3);
         }
-        .pattern-bg {
-            background-image: 
-                radial-gradient(circle at 20% 80%, rgba(228, 205, 133, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(22, 51, 132, 0.1) 0%, transparent 50%);
-        }
     </style>
 </head>
-<body class="bg-gradient-to-br from-blue-primary via-blue-secondary to-blue-primary min-h-screen text-white font-sans pattern-bg">
-    
-    <!-- Background Pattern -->
-    <div class="fixed inset-0 opacity-5 pointer-events-none">
-        <div class="absolute inset-0 bg-gradient-to-r from-transparent via-gold-light/20 to-transparent transform rotate-12"></div>
-        <div class="absolute inset-0 bg-gradient-to-l from-transparent via-blue-primary/20 to-transparent transform -rotate-12"></div>
-    </div>
+<body class="bg-gradient-to-br from-blue-primary via-blue-secondary to-blue-primary min-h-screen text-white font-sans">
 
-    <main class="relative z-10 py-12">
+    <main class="py-12">
         <div class="container mx-auto px-6">
-            <div class="max-w-4xl mx-auto">
+            <div class="max-w-3xl mx-auto">
                 
-                <!-- Main Thank You Card -->
-                <div class="glass rounded-3xl p-8 md:p-12 text-center animate-fade-in">
+                <!-- Success message -->
+                <div class="glass rounded-2xl p-8 text-center mb-8">
                     
-                    <!-- Success Icon -->
-                    <div class="w-20 h-20 bg-gradient-to-r from-green-400 to-green-600 rounded-full mx-auto mb-8 flex items-center justify-center animate-pulse-slow">
-                        <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <!-- Success icon -->
+                    <div class="w-16 h-16 bg-green-500 rounded-full mx-auto mb-6 flex items-center justify-center">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
                         </svg>
                     </div>
                     
-                    <!-- Main Headline -->
-                    <h1 class="text-4xl md:text-6xl font-bold mb-6 text-white">
-                        ¡Felicitaciones por calificar!
+                    <h1 class="text-3xl md:text-4xl font-bold mb-4 text-white">
+                        ¡Perfecto! Calificas para el bioescáner
                     </h1>
                     
-                    <!-- Subtitle -->
-                    <div class="text-xl md:text-2xl mb-8 text-white/90 leading-relaxed max-w-3xl mx-auto">
-                        <p>Has demostrado que estás <span class="font-bold text-gold-light">realmente comprometido/a</span> con encontrar respuestas sobre tu salud.</p>
-                        <p>Eres exactamente el tipo de persona con la que trabajamos en <span class="font-bold text-gold-light">La Red de Luz</span>.</p>
-                        
-                        <div class="inline-block mt-4 px-6 py-3 bg-gradient-to-r from-gold-light to-gold-dark text-blue-primary font-bold rounded-2xl">
-                            🎯 LEAD CALIFICADO - PRIORIDAD ALTA
-                        </div>
+                    <p class="text-lg text-white/90 mb-6">
+                        Basándome en tus respuestas, el bioescáner puede darte las respuestas que estás buscando.
+                    </p>
+                    
+                    <!-- Next step -->
+                    <div class="bg-gold-light/20 rounded-xl p-6 mb-6">
+                        <h2 class="text-xl font-bold text-gold-light mb-3">Siguiente paso:</h2>
+                        <p class="text-white/90">
+                            Envía un WhatsApp para coordinar tu cita. Es rápido y directo.
+                        </p>
                     </div>
                     
-                    <!-- Video Section -->
-                    <div class="max-w-3xl mx-auto mb-8">
-                        <div class="aspect-video bg-black/50 rounded-2xl overflow-hidden glass border-gold-light/30">
-                            <video 
-                                class="w-full h-full object-cover" 
-                                poster="assets/images/cuadrado.png" 
-                                controls
-                                preload="metadata"
-                            >
-                                <source src="assets/videos/explicativo-placeholder.mp4" type="video/mp4">
-                                Tu navegador no soporta el elemento de video.
-                            </video>
-                        </div>
-                    </div>
-                    
-                    <!-- Next Steps -->
-                    <div class="text-lg md:text-xl text-white/90 mb-8 leading-relaxed">
-                        <p><strong>Como eres un lead pre-calificado</strong>, tendrás atención prioritaria.</p>
-                        <p>Haz clic en el botón de abajo para conectar inmediatamente con nuestro equipo especializado.</p>
-                    </div>
-                    
-                    <!-- WhatsApp CTA Button -->
+                    <!-- WhatsApp button -->
                     <button 
                         id="whatsappButton" 
-                        class="inline-flex items-center space-x-3 px-8 py-4 bg-gradient-to-r from-green-500 to-green-600 text-white font-bold text-lg rounded-full hover:scale-105 hover:shadow-2xl transition-all duration-300 group animate-pulse-slow"
+                        class="inline-flex items-center space-x-3 px-8 py-4 bg-green-500 hover:bg-green-600 text-white font-bold text-lg rounded-full hover:scale-105 transition-all duration-300 mb-4"
                     >
-                        <svg class="w-6 h-6 group-hover:scale-110 transition-transform duration-300" viewBox="0 0 24 24" fill="currentColor">
+                        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2zm.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 012.41 5.83c0 4.54-3.7 8.23-8.24 8.23-1.48 0-2.93-.39-4.19-1.15l-.3-.17-3.12.82.83-3.04-.2-.32a8.188 8.188 0 01-1.26-4.38c.01-4.54 3.7-8.24 8.25-8.24z"/>
                         </svg>
-                        <span>Conectar con equipo especializado</span>
-                        <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                        </svg>
+                        <span>Enviar WhatsApp ahora</span>
                     </button>
                     
-                    <!-- Priority Benefits -->
-                    <div class="mt-8 glass rounded-2xl p-6 bg-gold-light/10 border-gold-light/30">
-                        <h3 class="text-xl font-bold text-gold-light mb-4">Como lead calificado recibes:</h3>
-                        <div class="grid md:grid-cols-2 gap-4 text-left">
-                            <div class="flex items-center space-x-3">
-                                <span class="text-2xl">🚀</span>
-                                <span>Atención prioritaria inmediata</span>
-                            </div>
-                            <div class="flex items-center space-x-3">
-                                <span class="text-2xl">📞</span>
-                                <span>Llamada de pre-calificación hoy</span>
-                            </div>
-                            <div class="flex items-center space-x-3">
-                                <span class="text-2xl">🎁</span>
-                                <span>Bonos incluidos ($800 valor)</span>
-                            </div>
-                            <div class="flex items-center space-x-3">
-                                <span class="text-2xl">🔒</span>
-                                <span>Garantía total de satisfacción</span>
-                            </div>
+                    <p class="text-white/70 text-sm">
+                        El mensaje ya está preparado con tu información
+                    </p>
+                </div>
+                
+                <!-- What you get -->
+                <div class="glass rounded-2xl p-6 mb-8">
+                    <h3 class="text-xl font-bold text-gold-light mb-4 text-center">Tu bioescáner incluye:</h3>
+                    <div class="grid md:grid-cols-2 gap-3">
+                        <div class="flex items-center space-x-3">
+                            <span class="text-gold-light">•</span>
+                            <span>Análisis de 45 parámetros en 5 minutos</span>
                         </div>
+                        <div class="flex items-center space-x-3">
+                            <span class="text-gold-light">•</span>
+                            <span>Interpretación clara y personalizada</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <span class="text-gold-light">•</span>
+                            <span>Plan específico de recomendaciones</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <span class="text-gold-light">•</span>
+                            <span>Servicio a domicilio o punto de encuentro</span>
+                        </div>
+                    </div>
+                    <div class="text-center mt-4 pt-4 border-t border-white/20">
+                        <p class="text-2xl font-bold text-gold-light">$499 MXN</p>
+                        <p class="text-white/70 text-sm">Pago en efectivo al momento del servicio</p>
                     </div>
                 </div>
                 
-                <!-- Process Timeline -->
-                <div class="mt-16 glass rounded-3xl p-8 animate-fade-in">
-                    <h2 class="text-3xl font-bold text-center mb-12 text-gold-light">Tu proceso prioritario</h2>
-                    
-                    <div class="grid md:grid-cols-4 gap-8">
-                        <!-- Step 1 -->
-                        <div class="text-center group">
-                            <div class="w-16 h-16 bg-gradient-to-r from-gold-light to-gold-dark rounded-full mx-auto mb-4 flex items-center justify-center font-bold text-blue-primary text-xl group-hover:scale-110 transition-transform duration-300">
-                                1
-                            </div>
-                            <h3 class="font-semibold text-gold-light mb-2">Contacto inmediato</h3>
-                            <p class="text-white/80 text-sm">Respuesta prioritaria en menos de 5 minutos</p>
-                        </div>
-                        
-                        <!-- Step 2 -->
-                        <div class="text-center group">
-                            <div class="w-16 h-16 bg-gradient-to-r from-gold-light to-gold-dark rounded-full mx-auto mb-4 flex items-center justify-center font-bold text-blue-primary text-xl group-hover:scale-110 transition-transform duration-300">
-                                2
-                            </div>
-                            <h3 class="font-semibold text-gold-light mb-2">Confirmación rápida</h3>
-                            <p class="text-white/80 text-sm">Llamada de 5 minutos para confirmar datos</p>
-                        </div>
-                        
-                        <!-- Step 3 -->
-                        <div class="text-center group">
-                            <div class="w-16 h-16 bg-gradient-to-r from-gold-light to-gold-dark rounded-full mx-auto mb-4 flex items-center justify-center font-bold text-blue-primary text-xl group-hover:scale-110 transition-transform duration-300">
-                                3
-                            </div>
-                            <h3 class="font-semibold text-gold-light mb-2">Cita prioritaria</h3>
-                            <p class="text-white/80 text-sm">Cupo reservado en horario premium</p>
-                        </div>
-                        
-                        <!-- Step 4 -->
-                        <div class="text-center group">
-                            <div class="w-16 h-16 bg-gradient-to-r from-gold-light to-gold-dark rounded-full mx-auto mb-4 flex items-center justify-center font-bold text-blue-primary text-xl group-hover:scale-110 transition-transform duration-300">
-                                4
-                            </div>
-                            <h3 class="font-semibold text-gold-light mb-2">Sesión completa</h3>
-                            <p class="text-white/80 text-sm">Bioescáner + bonos + seguimiento</p>
-                        </div>
+                <!-- Simple testimonials -->
+                <div class="grid md:grid-cols-3 gap-4">
+                    <div class="glass rounded-xl p-4 text-center">
+                        <p class="text-white/90 text-sm italic mb-2">
+                            "Finalmente entendí por qué me sentía cansada. Muy práctico."
+                        </p>
+                        <div class="text-gold-light font-semibold text-xs">Laura M.</div>
                     </div>
-                </div>
-                
-                <!-- Testimonials de leads calificados -->
-                <div class="mt-16 animate-fade-in">
-                    <h2 class="text-3xl font-bold text-center mb-12 text-white">Clientes que también calificaron</h2>
                     
-                    <div class="grid md:grid-cols-3 gap-8">
-                        <div class="glass rounded-2xl p-6 hover:scale-105 transition-all duration-300">
-                            <div class="w-12 h-12 bg-gradient-to-r from-gold-light to-gold-dark rounded-full mx-auto mb-4 flex items-center justify-center text-xl">👩</div>
-                            <p class="text-white/90 mb-4 italic text-center">
-                                "Gasté $4,000 sin respuestas. En 5 minutos de bioescáner encontré la causa real de mi fatiga."
-                            </p>
-                            <div class="text-gold-light font-semibold text-center">María G.</div>
-                            <div class="text-white/60 text-sm text-center">Lead calificado - Guaymas</div>
-                        </div>
-                        
-                        <div class="glass rounded-2xl p-6 hover:scale-105 transition-all duration-300">
-                            <div class="w-12 h-12 bg-gradient-to-r from-gold-light to-gold-dark rounded-full mx-auto mb-4 flex items-center justify-center text-xl">👨</div>
-                            <p class="text-white/90 mb-4 italic text-center">
-                                "Después de 15 estudios médicos sin resultados, el bioescáner me dio las respuestas que necesitaba."
-                            </p>
-                            <div class="text-gold-light font-semibold text-center">Carlos R.</div>
-                            <div class="text-white/60 text-sm text-center">Lead calificado - Guadalajara</div>
-                        </div>
-                        
-                        <div class="glass rounded-2xl p-6 hover:scale-105 transition-all duration-300">
-                            <div class="w-12 h-12 bg-gradient-to-r from-gold-light to-gold-dark rounded-full mx-auto mb-4 flex items-center justify-center text-xl">👩</div>
-                            <p class="text-white/90 mb-4 italic text-center">
-                                "Por fin entendí por qué tenía dolor de espalda constante. Valió cada peso invertido."
-                            </p>
-                            <div class="text-gold-light font-semibold text-center">Ana L.</div>
-                            <div class="text-white/60 text-sm text-center">Lead calificado - Hermosillo</div>
-                        </div>
+                    <div class="glass rounded-xl p-4 text-center">
+                        <p class="text-white/90 text-sm italic mb-2">
+                            "Después de estudios sin respuestas, esto me ayudó mucho."
+                        </p>
+                        <div class="text-gold-light font-semibold text-xs">Roberto C.</div>
+                    </div>
+                    
+                    <div class="glass rounded-xl p-4 text-center">
+                        <p class="text-white/90 text-sm italic mb-2">
+                            "No me presionaron a comprar nada. Solo herramientas útiles."
+                        </p>
+                        <div class="text-gold-light font-semibold text-xs">Ana S.</div>
                     </div>
                 </div>
             </div>
         </div>
     </main>
     
-    <!-- Disclaimer -->
-    <div class="py-6 bg-gray-900/50 text-center backdrop-blur-sm">
-        <p class="text-gray-300 text-sm">Este servicio no sustituye un diagnóstico médico profesional.</p>
-    </div>
-
     <!-- Footer -->
-    <footer class="py-8 bg-black/50 backdrop-blur-sm">
+    <footer class="py-6 bg-black/50">
         <div class="container mx-auto px-6 text-center">
-            <p class="text-white/70">
-                &copy; 2025 La Red de Luz. Todos los derechos reservados. | 
-                <a href="aviso-privacidad.pdf" class="text-gold-light hover:text-gold-dark transition-colors duration-200 underline" target="_blank" rel="noopener">
-                    Aviso de privacidad
-                </a>
+            <p class="text-white/70 text-sm">
+                Bioescáner - Servicio de <a href="https://lareddeluz.com" class="text-gold-light hover:underline" target="_blank">La Red de Luz</a>
             </p>
         </div>
     </footer>
 
-    <!-- JavaScript -->
     <script>
-        // WhatsApp functionality with city detection
         function setupWhatsappButton() {
             const whatsappButton = document.getElementById('whatsappButton');
             if (!whatsappButton) return;
 
             const leadData = JSON.parse(localStorage.getItem('leadData') || '{}');
             
-            // Only proceed if user is qualified
-            if (!leadData.qualified) {
-                window.location.href = 'index.html';
-                return;
+            // Use detected city data from landing page
+            let phone = leadData.phone || '6221424577'; // Use stored phone or default
+            const cityName = leadData.cityName || 'Guadalajara';
+            
+            // Fallback city detection if data is missing
+            if (!leadData.phone) {
+                if (leadData.ciudad === 'guaymas' || 
+                    (leadData.ciudad === 'otra' && leadData.otraCiudad && leadData.otraCiudad.toLowerCase().includes('guaymas'))) {
+                    phone = '6228558278';
+                }
             }
 
-            // Use phone from stored data (already detected in landing page)
-            const phone = leadData.phone || '6221424577';
-            const nombre = leadData.nombre ? leadData.nombre.trim() : 'Cliente Calificado';
-            const ciudad = leadData.cityName || leadData.ciudad || 'tu ciudad';
-            const whatsappNum = leadData.whatsapp || 'No proporcionado';
+            const nombre = leadData.nombre ? leadData.nombre.trim() : 'Cliente interesado';
+            const ciudad = leadData.cityName || 
+                         (leadData.ciudad === 'otra' ? leadData.otraCiudad : 
+                         leadData.ciudad === 'guaymas' ? 'Guaymas' :
+                         leadData.ciudad === 'guadalajara' ? 'Guadalajara' : 'mi ciudad');
 
-            // Enhanced message for qualified leads
-            let message = `🔥 LEAD CALIFICADO - PRIORIDAD ALTA 🔥
+            // Enhanced message with campaign tracking
+            let message = `Hola! Soy ${nombre}
 
-Hola, soy ${nombre} y acabo de completar el proceso de calificación para el bioescáner.
+Acabo de completar el cuestionario para el bioescáner y califiqué para el servicio.
 
-📋 MIS RESPUESTAS AL QUIZ:
-${getQuizSummary(leadData.quizResults || {})}
+📍 Ciudad: ${ciudad}
+📱 WhatsApp: ${leadData.whatsapp || 'Por confirmar'}
+🎯 Campaña: ${leadData.source || 'web'}
 
-📍 CIUDAD: ${ciudad}
-📱 WHATSAPP: ${whatsappNum}
-🌐 FUENTE: ${leadData.source || 'website'}
+Estoy buscando respuestas sobre mi bienestar porque he tenido estudios médicos que no me dan claridad sobre lo que siento.
 
-✅ Estoy PRE-CALIFICADO y listo para agendar.
-✅ Comprendo que la inversión es $499 por la sesión completa.
-✅ Necesito respuestas REALES después de gastar tanto en estudios sin resultados.
-✅ Estoy dispuesto/a a cambiar lo que sea necesario para mejorar mi salud.
+Mis respuestas del quiz:
+• Tengo síntomas persistentes que me preocupan
+• He hecho múltiples intentos sin respuestas satisfactorias  
+• Estoy dispuesto/a a invertir $499 si me da respuestas claras
 
-¿Cuándo puedo agendar mi cita prioritaria en ${ciudad}?`;
+¿Cuándo podríamos coordinar mi cita de bioescáner?
+
+Gracias!`;
 
             const url = `https://api.whatsapp.com/send?phone=521${phone}&text=${encodeURIComponent(message)}`;
             
             whatsappButton.addEventListener('click', function(e) {
                 e.preventDefault();
                 window.open(url, '_blank', 'noopener');
+                
+                // Track conversion
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'whatsapp_click', {
+                        'city': ciudad,
+                        'campaign': leadData.source,
+                        'qualified': 'yes'
+                    });
+                }
             });
         }
 
-        function getQuizSummary(quizResults) {
-            const answers = {
-                q1: {
-                    'menos-1000': 'Menos de $1,000 invertidos',
-                    '1000-3000': '$1,000-$3,000 invertidos', 
-                    'mas-3000': 'Más de $3,000 invertidos ✅'
-                },
-                q2: {
-                    'no-cambios': 'No dispuesto a cambios',
-                    'algunos-cambios': 'Cambios menores',
-                    'todos-cambios': 'Dispuesto a cambios necesarios ✅'
-                }
-            };
-
-            let summary = '';
-            for (let question in quizResults) {
-                const answer = quizResults[question];
-                const text = answers[question] && answers[question][answer] || answer;
-                summary += `• ${text}\n`;
-            }
-            return summary || '• Lead pre-calificado ✅';
-        }
-
-        // Initialize on page load
         document.addEventListener('DOMContentLoaded', function() {
             setupWhatsappButton();
             
-            // Add fade-in animation to elements
-            const elements = document.querySelectorAll('.animate-fade-in');
-            elements.forEach((el, index) => {
-                setTimeout(() => {
-                    el.style.animationDelay = `${index * 0.2}s`;
-                    el.classList.add('opacity-100');
-                }, 100);
-            });
-        });
-
-        // Optional: Add some interactive effects
-        document.querySelectorAll('.glass').forEach(element => {
-            element.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-2px)';
-                this.style.boxShadow = '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)';
-            });
-            
-            element.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0)';
-                this.style.boxShadow = '';
-            });
+            // Update city-specific content if available
+            const leadData = JSON.parse(localStorage.getItem('leadData') || '{}');
+            if (leadData.cityName) {
+                // Update any city references in the page
+                const cityElements = document.querySelectorAll('.city-name');
+                cityElements.forEach(el => {
+                    el.textContent = leadData.cityName;
+                });
+            }
         });
     </script>
 </body>

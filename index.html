@@ -1,203 +1,297 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>¿Cansado de que te digan "Todo está normal"? | Bioescáner La Red de Luz</title>
-    <meta name="description" content="Para personas que YA gastaron en estudios médicos sin respuestas. Bioescáner de 45 parámetros en 5 minutos.">
-    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <title>¿Sientes que algo no está bien pero no sabes qué? | Bioescáner</title>
+    <meta name="description"
+        content="Bioescáner de 45 parámetros en 5 minutos. Para personas cansadas de estudios que no dan respuestas claras.">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        gold: { light: '#e4cd85', DEFAULT: '#d4af37', dark: '#c08a2d' },
-                        blue: { primary: '#163384', secondary: '#2c5aa0' },
-                        red: { frustration: '#d32f2f' },
-                        green: { relief: '#2e7d32' }
+                        gold: { light: '#e4cd85', dark: '#c08a2d' },
+                        blue: { primary: '#163384', secondary: '#2c5aa0' }
                     }
                 }
             }
         }
     </script>
     <style>
-        .glass { background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2); }
+        .glass {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
     </style>
 </head>
+
 <body class="bg-gradient-to-br from-blue-primary via-blue-secondary to-blue-primary min-h-screen text-white font-sans">
 
-    <!-- HERO SECTION -->
-    <section class="min-h-screen flex items-center justify-center relative overflow-hidden">
-        <div class="container mx-auto px-6 relative z-10">
-            <div class="max-w-5xl mx-auto text-center">
-                
-                <!-- PRE-HEADLINE con ciudad detectada -->
-                <div class="inline-flex items-center px-4 py-2 bg-red-frustration/20 border border-red-frustration/50 text-red-200 text-sm font-medium rounded-full mb-4">
-                    ⚠️ Solo para personas de <span id="cityDisplay" class="font-bold text-gold-light mx-1">tu ciudad</span> que YA gastaron en estudios médicos
-                </div>
-                
-                <!-- HEADLINE PRINCIPAL -->
+    <!-- HERO -->
+    <section class="min-h-screen flex items-center justify-center">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center">
+
                 <h1 class="text-4xl md:text-6xl font-bold mb-8 text-white leading-tight">
-                    <span class="text-red-400">¿Tu cuerpo te pide ayuda</span><br>
-                    <span class="text-gold-light">pero no sabes cómo escucharlo?</span>
+                    ¿Sientes que algo no está bien<br>
+                    <span class="text-gold-light">pero no sabes qué?</span>
                 </h1>
-                
-                <!-- SUBHEADLINE -->
-                <p class="text-xl md:text-2xl mb-12 text-white/90 leading-relaxed max-w-4xl mx-auto">
-                    Sabemos lo frustrante que es <span class="text-red-300 font-semibold">invertir en estudios médicos</span> y seguir sintiéndote perdido/a...
-                    <br><span class="text-gold-light font-bold">Estamos aquí para acompañarte a honrar tu cuerpo</span>
+
+                <p class="text-xl md:text-2xl mb-8 text-white/90 max-w-3xl mx-auto">
+                    Bioescáner de <strong>45 parámetros en 5 minutos</strong><br>
+                    Para personas cansadas de estudios que no dan respuestas claras
                 </p>
-                
-                <!-- SOCIAL PROOF con ciudad -->
-                <div class="glass rounded-2xl p-6 mb-12 max-w-2xl mx-auto">
-                    <div class="flex items-center justify-center space-x-4 text-gold-light font-semibold">
-                        <span>⭐⭐⭐⭐⭐</span>
-                        <span>+<span id="clientCount">125</span> personas de <span id="cityDisplay2" class="font-bold">tu ciudad</span> ya encontraron respuestas</span>
-                    </div>
+
+                <div class="glass rounded-2xl p-4 mb-8 max-w-md mx-auto">
+                    <p class="text-gold-light font-semibold">⭐⭐⭐⭐⭐ +200 personas ya obtuvieron respuestas</p>
                 </div>
-                
-                <!-- CTA PRINCIPAL -->
-                <a href="#quiz" class="inline-flex items-center px-10 py-5 bg-gradient-to-r from-gold-light to-gold-dark text-blue-primary font-bold text-xl rounded-full hover:scale-105 hover:shadow-2xl transition-all duration-300">
-                    Ver si calificas en <span id="cityDisplay3" class="ml-1 font-black">tu ciudad</span>
+
+                <!-- RED DE LUZ INTRO -->
+                <div class="glass rounded-xl p-6 mb-8 max-w-2xl mx-auto text-left">
+                    <h3 class="text-lg font-bold text-gold-light mb-3">¿Por qué La Red de Luz incluye el pilar físico?
+                    </h3>
+                    <p class="text-white/90 text-sm leading-relaxed">
+                        Creemos en el crecimiento integral: <strong>mental, emocional, físico y espiritual</strong>.
+                        Tu cuerpo es la base que sostiene todo lo demás. Sin bienestar físico, es difícil avanzar
+                        en otras áreas de tu vida. Por eso desarrollamos esta herramienta complementaria.
+                    </p>
+                    <p class="text-gold-light text-xs mt-2">
+                        <a href="https://lareddeluz.com" target="_blank" class="hover:underline">→ Conoce más sobre La
+                            Red de Luz</a>
+                    </p>
+                </div>
+
+                <a href="#quiz"
+                    class="inline-flex items-center px-10 py-4 bg-gradient-to-r from-gold-light to-gold-dark text-blue-primary font-bold text-xl rounded-full hover:scale-105 transition-all">
+                    Ver si califico
                     <svg class="w-6 h-6 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
                     </svg>
                 </a>
-                
-                <!-- Disponibilidad por ciudad -->
-                <div class="mt-6">
-                    <p class="text-white/70 text-sm">
-                        📍 <span id="availabilityText">Verificando disponibilidad en tu zona...</span> • <span id="slotsText">Cupos limitados</span>
+
+                <p class="text-white/70 text-sm mt-4">
+                    • Disponible en Guaymas y Guadalajara • $499 MXN
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROBLEMA/SOLUCIÓN -->
+    <section class="py-16 bg-gray-900/50">
+        <div class="container mx-auto px-6">
+            <div class="max-w-6xl mx-auto">
+
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-white">
+                    ¿Te suena familiar?
+                </h2>
+
+                <div class="grid md:grid-cols-2 gap-8 mb-16">
+                    <div class="glass rounded-2xl p-6">
+                        <h3 class="text-xl font-bold text-red-300 mb-4">Lo que has vivido:</h3>
+                        <ul class="space-y-3 text-white/90">
+                            <li>• Cansancio que no mejora con descanso</li>
+                            <li>• Estudios médicos que dicen "todo normal"</li>
+                            <li>• Síntomas que van y vienen sin explicación</li>
+                            <li>• Frustración de no encontrar respuestas</li>
+                            <li>• Sientes que falta algo en tu bienestar</li>
+                        </ul>
+                    </div>
+
+                    <div class="glass rounded-2xl p-6 border-gold-light/50">
+                        <h3 class="text-xl font-bold text-green-300 mb-4">Lo que necesitas:</h3>
+                        <ul class="space-y-3 text-white/90">
+                            <li>• Respuestas claras y específicas</li>
+                            <li>• Un enfoque que vea tu salud completa</li>
+                            <li>• Herramientas prácticas para mejorar</li>
+                            <li>• Alguien que realmente te escuche</li>
+                            <li>• Un proceso rápido y sin complicaciones</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- QUÉ ES -->
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-white mb-6">¿Qué es el bioescáner?</h2>
+                    <p class="text-xl text-white/80 max-w-3xl mx-auto mb-8">
+                        Una herramienta complementaria que analiza <strong>45 parámetros de tu cuerpo</strong>
+                        en 5 minutos para darte información específica sobre tu bienestar.
                     </p>
+
+                    <!-- DISCLAIMER -->
+                    <div class="glass rounded-xl p-6 max-w-4xl mx-auto mb-8">
+                        <h3 class="text-lg font-bold text-gold-light mb-3">⚡ Importante entender:</h3>
+                        <p class="text-white/90 text-left leading-relaxed">
+                            <strong>Esto NO es un estudio médico</strong> y no busca serlo. Es una <strong>alternativa
+                                complementaria</strong>
+                            para personas que no han encontrado respuestas en procesos tradicionales. No porque sea
+                            alternativo
+                            significa que no funciona - simplemente te brinda un <strong>panorama general e
+                                integral</strong>
+                            de lo que tu cuerpo quiere comunicarte desde otra perspectiva.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="glass rounded-xl p-6 text-center">
+                        <div class="text-3xl mb-3">⏱️</div>
+                        <h3 class="font-bold text-gold-light mb-2">Rápido</h3>
+                        <p class="text-white/80">5 min de escaneo + interpretación</p>
+                    </div>
+                    <div class="glass rounded-xl p-6 text-center">
+                        <div class="text-3xl mb-3">🏠</div>
+                        <h3 class="font-bold text-gold-light mb-2">A domicilio</h3>
+                        <p class="text-white/80">Vamos donde te sea cómodo</p>
+                    </div>
+                    <div class="glass rounded-xl p-6 text-center">
+                        <div class="text-3xl mb-3">📋</div>
+                        <h3 class="font-bold text-gold-light mb-2">Plan específico</h3>
+                        <p class="text-white/80">Recomendaciones para tu caso</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- QUIZ SECTION -->
-    <section id="quiz" class="py-20 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900">
+    <!-- PROCESO -->
+    <section class="py-16 bg-blue-primary/30">
         <div class="container mx-auto px-6">
-            <div class="max-w-4xl mx-auto text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold mb-6 text-white">
-                    Vamos a conocerte mejor para acompañarte en <span id="cityDisplay4" class="text-gold-light">tu ciudad</span>
-                </h2>
-                <p class="text-xl text-white/80">Estas preguntas nos ayudan a entender tu proceso y brindarte el mejor cuidado.</p>
+            <div class="max-w-6xl mx-auto text-center">
+                <h2 class="text-3xl font-bold text-white mb-12">¿Cómo funciona?</h2>
+
+                <div class="grid md:grid-cols-4 gap-6">
+                    <div class="text-center">
+                        <div
+                            class="w-16 h-16 bg-gold-light rounded-full mx-auto mb-4 flex items-center justify-center font-bold text-blue-primary text-xl">
+                            1</div>
+                        <h3 class="font-bold text-gold-light mb-2">Contacto</h3>
+                        <p class="text-white/80 text-sm">Coordinamos tu cita</p>
+                    </div>
+                    <div class="text-center">
+                        <div
+                            class="w-16 h-16 bg-gold-light rounded-full mx-auto mb-4 flex items-center justify-center font-bold text-blue-primary text-xl">
+                            2</div>
+                        <h3 class="font-bold text-gold-light mb-2">Escaneo</h3>
+                        <p class="text-white/80 text-sm">5 minutos, no invasivo</p>
+                    </div>
+                    <div class="text-center">
+                        <div
+                            class="w-16 h-16 bg-gold-light rounded-full mx-auto mb-4 flex items-center justify-center font-bold text-blue-primary text-xl">
+                            3</div>
+                        <h3 class="font-bold text-gold-light mb-2">Resultados</h3>
+                        <p class="text-white/80 text-sm">Te explicamos todo claro</p>
+                    </div>
+                    <div class="text-center">
+                        <div
+                            class="w-16 h-16 bg-gold-light rounded-full mx-auto mb-4 flex items-center justify-center font-bold text-blue-primary text-xl">
+                            4</div>
+                        <h3 class="font-bold text-gold-light mb-2">Plan</h3>
+                        <p class="text-white/80 text-sm">Recomendaciones específicas</p>
+                    </div>
+                </div>
             </div>
-            
+        </div>
+    </section>
+
+    <!-- QUIZ -->
+    <section id="quiz" class="py-16 bg-gray-900/50">
+        <div class="container mx-auto px-6">
             <div class="max-w-3xl mx-auto">
+                <h2 class="text-3xl font-bold text-center mb-8 text-white">¿Calificas para el bioescáner?</h2>
+                <p class="text-center text-white/80 mb-12">3 preguntas rápidas:</p>
+
                 <div id="quiz-container" class="space-y-6">
-                    
-                    <!-- Pregunta 1: Experiencia previa -->
-                    <div class="quiz-question glass rounded-2xl p-8" data-question="1">
-                        <h3 class="text-2xl font-bold mb-6 text-gold-light">1. ¿Cómo ha sido tu experiencia buscando respuestas sobre tu salud?</h3>
-                        <div class="space-y-4">
-                            <label class="quiz-option flex items-center p-4 rounded-xl cursor-pointer hover:bg-white/10">
-                                <input type="radio" name="q1" value="primera-vez" class="mr-4">
-                                <span>Es la primera vez que busco respuestas más profundas</span>
+
+                    <div class="quiz-question glass rounded-xl p-6" data-question="1">
+                        <h3 class="text-xl font-bold mb-4 text-gold-light">1. ¿En qué ciudad estás?</h3>
+                        <div class="space-y-3">
+                            <label
+                                class="quiz-option flex items-center p-3 rounded-lg cursor-pointer hover:bg-white/10">
+                                <input type="radio" name="q1" value="guaymas" class="mr-3">
+                                <span>Guaymas, Sonora ✓</span>
                             </label>
-                            <label class="quiz-option flex items-center p-4 rounded-xl cursor-pointer hover:bg-white/10">
-                                <input type="radio" name="q1" value="algunos-estudios" class="mr-4">
-                                <span>He hecho algunos estudios pero sin claridad total</span>
+                            <label
+                                class="quiz-option flex items-center p-3 rounded-lg cursor-pointer hover:bg-white/10">
+                                <input type="radio" name="q1" value="guadalajara" class="mr-3">
+                                <span>Guadalajara, Jalisco ✓</span>
                             </label>
-                            <label class="quiz-option flex items-center p-4 rounded-xl cursor-pointer hover:bg-white/10">
-                                <input type="radio" name="q1" value="muchos-estudios" class="mr-4">
-                                <span>He invertido mucho en estudios sin encontrar respuestas satisfactorias ✅</span>
+                            <label
+                                class="quiz-option flex items-center p-3 rounded-lg cursor-pointer hover:bg-white/10">
+                                <input type="radio" name="q1" value="otra-ciudad" class="mr-3">
+                                <span>Otra ciudad (consultar disponibilidad)</span>
                             </label>
                         </div>
                     </div>
 
-                    <!-- Pregunta 2: Compromiso con el bienestar -->
-                    <div class="quiz-question glass rounded-2xl p-8 hidden" data-question="2">
-                        <h3 class="text-2xl font-bold mb-6 text-gold-light">2. ¿Cómo te sientes sobre hacer cambios para honrar tu cuerpo?</h3>
-                        <div class="space-y-4">
-                            <label class="quiz-option flex items-center p-4 rounded-xl cursor-pointer hover:bg-white/10">
-                                <input type="radio" name="q2" value="resistente" class="mr-4">
-                                <span>Me resisto a cambiar, prefiero mantener mis hábitos actuales</span>
+                    <div class="quiz-question glass rounded-xl p-6 hidden" data-question="2">
+                        <h3 class="text-xl font-bold mb-4 text-gold-light">2. ¿Cuál describe mejor tu situación?</h3>
+                        <div class="space-y-3">
+                            <label
+                                class="quiz-option flex items-center p-3 rounded-lg cursor-pointer hover:bg-white/10">
+                                <input type="radio" name="q2" value="sin-problemas" class="mr-3">
+                                <span>Me siento bien, solo tengo curiosidad</span>
                             </label>
-                            <label class="quiz-option flex items-center p-4 rounded-xl cursor-pointer hover:bg-white/10">
-                                <input type="radio" name="q2" value="abierto-pero-limitado" class="mr-4">
-                                <span>Estoy abierto/a pero solo a cambios muy pequeños</span>
+                            <label
+                                class="quiz-option flex items-center p-3 rounded-lg cursor-pointer hover:bg-white/10">
+                                <input type="radio" name="q2" value="molestias-ocasionales" class="mr-3">
+                                <span>Tengo molestias ocasionales pero nada preocupante</span>
                             </label>
-                            <label class="quiz-option flex items-center p-4 rounded-xl cursor-pointer hover:bg-white/10">
-                                <input type="radio" name="q2" value="completamente-comprometido" class="mr-4">
-                                <span>Estoy listo/a para transformar lo que sea necesario por mi bienestar ✅</span>
-                            </label>
-                        </div>
-                    </div>
-
-                    <!-- Pregunta 3: Urgencia y motivación -->
-                    <div class="quiz-question glass rounded-2xl p-8 hidden" data-question="3">
-                        <h3 class="text-2xl font-bold mb-6 text-gold-light">3. ¿Qué te motiva a buscar respuestas en este momento?</h3>
-                        <div class="space-y-4">
-                            <label class="quiz-option flex items-center p-4 rounded-xl cursor-pointer hover:bg-white/10">
-                                <input type="radio" name="q3" value="curiosidad" class="mr-4">
-                                <span>Simple curiosidad, no tengo síntomas preocupantes</span>
-                            </label>
-                            <label class="quiz-option flex items-center p-4 rounded-xl cursor-pointer hover:bg-white/10">
-                                <input type="radio" name="q3" value="prevencion" class="mr-4">
-                                <span>Quiero prevenir problemas futuros y optimizar mi salud</span>
-                            </label>
-                            <label class="quiz-option flex items-center p-4 rounded-xl cursor-pointer hover:bg-white/10">
-                                <input type="radio" name="q3" value="necesidad-urgente" class="mr-4">
-                                <span>Siento que algo no está bien y necesito respuestas ahora ✅</span>
+                            <label
+                                class="quiz-option flex items-center p-3 rounded-lg cursor-pointer hover:bg-white/10">
+                                <input type="radio" name="q2" value="sintomas-persistentes" class="mr-3">
+                                <span>Tengo síntomas persistentes que me preocupan ✓</span>
                             </label>
                         </div>
                     </div>
 
-                    <!-- Pregunta 4: Inversión en bienestar -->
-                    <div class="quiz-question glass rounded-2xl p-8 hidden" data-question="4">
-                        <h3 class="text-2xl font-bold mb-6 text-gold-light">4. ¿Cómo ves la inversión en tu bienestar integral?</h3>
-                        <div class="space-y-4">
-                            <label class="quiz-option flex items-center p-4 rounded-xl cursor-pointer hover:bg-white/10">
-                                <input type="radio" name="q4" value="busco-gratis" class="mr-4">
-                                <span>Busco opciones gratuitas o muy económicas</span>
+                    <div class="quiz-question glass rounded-xl p-6 hidden" data-question="3">
+                        <h3 class="text-xl font-bold mb-4 text-gold-light">3. ¿Estás dispuesto/a a invertir $499?</h3>
+                        <div class="space-y-3">
+                            <label
+                                class="quiz-option flex items-center p-3 rounded-lg cursor-pointer hover:bg-white/10">
+                                <input type="radio" name="q3" value="muy-caro" class="mr-3">
+                                <span>Me parece muy caro</span>
                             </label>
-                            <label class="quiz-option flex items-center p-4 rounded-xl cursor-pointer hover:bg-white/10">
-                                <input type="radio" name="q4" value="inversion-moderada" class="mr-4">
-                                <span>Puedo invertir moderadamente si veo valor real</span>
+                            <label
+                                class="quiz-option flex items-center p-3 rounded-lg cursor-pointer hover:bg-white/10">
+                                <input type="radio" name="q3" value="pensarlo" class="mr-3">
+                                <span>Necesito pensarlo más</span>
                             </label>
-                            <label class="quiz-option flex items-center p-4 rounded-xl cursor-pointer hover:bg-white/10">
-                                <input type="radio" name="q4" value="inversion-seria" class="mr-4">
-                                <span>Mi salud es prioridad, estoy dispuesto/a a invertir lo necesario ✅</span>
-                            </label>
-                        </div>
-                    </div>
-
-                    <!-- Pregunta 5: Expectativas -->
-                    <div class="quiz-question glass rounded-2xl p-8 hidden" data-question="5">
-                        <h3 class="text-2xl font-bold mb-6 text-gold-light">5. ¿Qué esperas de este proceso de acompañamiento?</h3>
-                        <div class="space-y-4">
-                            <label class="quiz-option flex items-center p-4 rounded-xl cursor-pointer hover:bg-white/10">
-                                <input type="radio" name="q5" value="solucion-magica" class="mr-4">
-                                <span>Una solución mágica e instantánea sin esfuerzo de mi parte</span>
-                            </label>
-                            <label class="quiz-option flex items-center p-4 rounded-xl cursor-pointer hover:bg-white/10">
-                                <input type="radio" name="q5" value="informacion-basica" class="mr-4">
-                                <span>Información básica para entender mejor mi estado</span>
-                            </label>
-                            <label class="quiz-option flex items-center p-4 rounded-xl cursor-pointer hover:bg-white/10">
-                                <input type="radio" name="q5" value="transformacion-integral" class="mr-4">
-                                <span>Un proceso integral de transformación y acompañamiento genuino ✅</span>
+                            <label
+                                class="quiz-option flex items-center p-3 rounded-lg cursor-pointer hover:bg-white/10">
+                                <input type="radio" name="q3" value="si-vale-pena" class="mr-3">
+                                <span>Sí, si me da respuestas claras vale la pena ✓</span>
                             </label>
                         </div>
                     </div>
 
                     <!-- NO CALIFICA -->
-                    <div id="no-califica" class="glass bg-red-frustration/20 rounded-2xl p-8 hidden text-center">
-                        <h3 class="text-2xl font-bold mb-4 text-red-300">Te agradecemos tu interés</h3>
-                        <p class="text-white/80 mb-6">Por el momento, nuestro programa está diseñado para personas en un momento diferente de su proceso de bienestar. Te animamos a seguir explorando y regresar cuando sientas que estás listo/a para un acompañamiento más profundo.</p>
-                        <button onclick="location.reload()" class="px-6 py-3 bg-gold-light text-blue-primary rounded-lg font-semibold">
-                            Volver a comenzar
+                    <div id="no-califica" class="glass rounded-xl p-6 hidden text-center bg-red-500/20">
+                        <h3 class="text-xl font-bold mb-4 text-red-300">Puede que no sea el momento indicado</h3>
+                        <p class="text-white/80 mb-6">
+                            Por tus respuestas, creo que nuestro servicio podría no ser la mejor opción para ti en este
+                            momento.
+                        </p>
+                        <button onclick="location.reload()"
+                            class="px-6 py-3 bg-gold-light text-blue-primary rounded-lg font-semibold">
+                            Responder de nuevo
                         </button>
                     </div>
 
                     <!-- SÍ CALIFICA -->
-                    <div id="si-califica" class="glass bg-green-relief/20 rounded-2xl p-8 hidden text-center">
-                        <h3 class="text-2xl font-bold mb-4 text-green-300">¡Qué hermoso! Estás listo/a para este proceso en <span id="cityDisplay5" class="text-gold-light">tu ciudad</span></h3>
-                        <p class="text-white/90 mb-6">Tus respuestas nos muestran que tienes la apertura y el compromiso necesarios para honrar tu cuerpo. Estamos emocionados de acompañarte en este viaje de autodescubrimiento.</p>
-                        <a href="#formulario" class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-gold-light to-gold-dark text-blue-primary font-bold text-lg rounded-full">
-                            Continuar con mi proceso en <span id="cityDisplay6" class="ml-1">tu ciudad</span>
+                    <div id="si-califica" class="glass rounded-xl p-6 hidden text-center bg-green-600/20">
+                        <h3 class="text-xl font-bold mb-4 text-green-300">¡Perfecto! Calificas para el bioescáner</h3>
+                        <p class="text-white/90 mb-6">
+                            Por tus respuestas, el bioescáner puede darte las respuestas que estás buscando.
+                        </p>
+                        <a href="#precio"
+                            class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-gold-light to-gold-dark text-blue-primary font-bold text-lg rounded-full">
+                            Ver tu sesión completa
                         </a>
                     </div>
                 </div>
@@ -205,118 +299,517 @@
         </div>
     </section>
 
-    <!-- FORMULARIO -->
-    <section id="formulario" class="py-20 bg-black hidden">
+    <!-- PRECIO CON PSICOLOGÍA -->
+    <!-- PRECIO CON PSICOLOGÍA -->
+    <section id="precio" class="py-16 bg-blue-primary/30 hidden">
         <div class="container mx-auto px-6">
-            <div class="max-w-lg mx-auto glass rounded-3xl p-8">
-                <div class="bg-gradient-to-r from-red-frustration to-red-500 text-white text-center py-3 px-6 rounded-xl mb-8 font-semibold">
-                    🚨 Cupo reservado en <span id="cityDisplay7">tu ciudad</span>
+            <div class="max-w-6xl mx-auto">
+
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-white">
+                        Tu sesión completa de bioescáner
+                    </h2>
+                    <p class="text-xl text-white/80 max-w-3xl mx-auto">
+                        Una inversión inteligente en información que puede cambiar cómo entiendes tu cuerpo
+                    </p>
                 </div>
-                
-                <form id="leadForm" class="space-y-6">
-                    <div>
-                        <label class="block text-gold-light font-semibold mb-2">Nombre completo *</label>
-                        <input type="text" id="nombre" class="w-full px-4 py-3 bg-white/90 text-gray-900 rounded-xl" required>
+
+                <!-- PSICOLOGÍA: QUITAR MIEDOS -->
+                <div class="grid md:grid-cols-3 gap-6 mb-12">
+                    <div class="glass rounded-xl p-6 text-center">
+                        <div class="text-3xl mb-4">🤝</div>
+                        <h3 class="font-bold text-gold-light mb-3">Proceso familiar</h3>
+                        <p class="text-white/80 text-sm">
+                            Solo sostienes unos sensores en tus manos. Similar a un oxímetro
+                            o monitor de presión. Nada invasivo, nada extraño.
+                        </p>
                     </div>
-                    <div>
-                        <label class="block text-gold-light font-semibold mb-2">WhatsApp *</label>
-                        <input type="tel" id="whatsapp" class="w-full px-4 py-3 bg-white/90 text-gray-900 rounded-xl" required>
+
+                    <div class="glass rounded-xl p-6 text-center">
+                        <div class="text-3xl mb-4">🎯</div>
+                        <h3 class="font-bold text-gold-light mb-3">Resultados prácticos</h3>
+                        <p class="text-white/80 text-sm">
+                            45 parámetros específicos en un reporte claro que puedes entender.
+                            Información real que puedes usar inmediatamente.
+                        </p>
                     </div>
-                    
-                    <!-- Ciudad detectada automáticamente -->
-                    <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-xl">
-                        <div class="flex items-center">
-                            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
-                            </svg>
-                            <span class="font-semibold">Ciudad detectada: <span id="cityConfirm">Cargando...</span></span>
+
+                    <div class="glass rounded-xl p-6 text-center">
+                        <div class="text-3xl mb-4">💰</div>
+                        <h3 class="font-bold text-gold-light mb-3">Sin presión de ventas</h3>
+                        <p class="text-white/80 text-sm">
+                            Pagas $449 y recibes tu sesión completa. Sin paquetes ni presión.
+                            Los suplementos son opcionales.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="grid lg:grid-cols-2 gap-8 mb-8">
+
+                    <!-- LO QUE INCLUYE -->
+                    <div class="glass rounded-2xl p-8">
+                        <h3 class="text-2xl font-bold text-gold-light mb-6 text-center">Tu sesión incluye:</h3>
+
+                        <div class="space-y-4 mb-8">
+                            <div class="flex items-start space-x-4">
+                                <div
+                                    class="bg-gold-light rounded-full w-8 h-8 flex items-center justify-center text-blue-primary font-bold text-sm">
+                                    1</div>
+                                <div>
+                                    <h4 class="font-bold text-white mb-1">Bioescáner de 45 parámetros</h4>
+                                    <p class="text-white/80 text-sm">Análisis no invasivo de 5 minutos</p>
+                                    <p class="text-gold-light text-xs">Valor individual: $200</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-4">
+                                <div
+                                    class="bg-gold-light rounded-full w-8 h-8 flex items-center justify-center text-blue-primary font-bold text-sm">
+                                    2</div>
+                                <div>
+                                    <h4 class="font-bold text-white mb-1">Interpretación personalizada</h4>
+                                    <p class="text-white/80 text-sm">Te explicamos cada resultado en términos claros</p>
+                                    <p class="text-gold-light text-xs">Valor individual: $150</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-4">
+                                <div
+                                    class="bg-gold-light rounded-full w-8 h-8 flex items-center justify-center text-blue-primary font-bold text-sm">
+                                    3</div>
+                                <div>
+                                    <h4 class="font-bold text-white mb-1">Plan de nutrición básico</h4>
+                                    <p class="text-white/80 text-sm">Guía alimentaria personalizada para tu caso</p>
+                                    <p class="text-gold-light text-xs">Valor individual: $200</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-4">
+                                <div
+                                    class="bg-gold-light rounded-full w-8 h-8 flex items-center justify-center text-blue-primary font-bold text-sm">
+                                    4</div>
+                                <div>
+                                    <h4 class="font-bold text-white mb-1">Consulta de composición corporal</h4>
+                                    <p class="text-white/80 text-sm">Báscula bluetooth para datos de peso, grasa y
+                                        músculo</p>
+                                    <p class="text-gold-light text-xs">Valor individual: $100</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-4">
+                                <div
+                                    class="bg-gold-light rounded-full w-8 h-8 flex items-center justify-center text-blue-primary font-bold text-sm">
+                                    5</div>
+                                <div>
+                                    <h4 class="font-bold text-white mb-1">Servicio a domicilio</h4>
+                                    <p class="text-white/80 text-sm">Vamos donde te sea más cómodo</p>
+                                    <p class="text-gold-light text-xs">Valor individual: $80</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-4">
+                                <div
+                                    class="bg-gold-light rounded-full w-8 h-8 flex items-center justify-center text-blue-primary font-bold text-sm">
+                                    6</div>
+                                <div>
+                                    <h4 class="font-bold text-white mb-1">Acceso a comunidad Red de Luz</h4>
+                                    <p class="text-white/80 text-sm">Crecimiento integral y acompañamiento continuo</p>
+                                    <p class="text-gold-light text-xs">Valor individual: $300</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-4">
+                                <div
+                                    class="bg-gold-light rounded-full w-8 h-8 flex items-center justify-center text-blue-primary font-bold text-sm">
+                                    7</div>
+                                <div>
+                                    <h4 class="font-bold text-white mb-1">Bonos incluidos</h4>
+                                    <p class="text-white/80 text-sm">10% descuento en suplementos + oferta 2x1 por $599
+                                    </p>
+                                    <p class="text-gold-light text-xs">Valor individual: $150</p>
+                                </div>
+                            </div>
                         </div>
-                        <p class="text-sm mt-1">Si esta no es tu ciudad, contáctanos para verificar disponibilidad.</p>
+
+                        <!-- PRECIO FINAL -->
+                        <div class="border-t border-white/20 pt-6 text-center">
+                            <div class="mb-4">
+                                <p class="text-white/70 line-through text-lg">Valor total: $1,180</p>
+                                <p class="text-3xl font-bold text-gold-light">Tu precio hoy: $449</p>
+                                <p class="text-green-400 font-semibold text-lg">Ahorras $731 (62% descuento)</p>
+                            </div>
+                        </div>
                     </div>
-                    
-                    <button type="submit" class="w-full bg-gradient-to-r from-gold-light to-gold-dark text-blue-primary font-bold py-4 rounded-xl">
-                        Solicitar cupo prioritario
-                    </button>
-                </form>
+
+                    <!-- COMPARACIÓN CON ESTUDIOS MÉDICOS -->
+                    <div class="glass rounded-2xl p-8">
+                        <h3 class="text-2xl font-bold text-gold-light mb-6 text-center">💡 Comparación inteligente</h3>
+
+                        <div class="mb-6">
+                            <h4 class="font-bold text-white mb-4">Si fueras al médico por separado:</h4>
+                            <div class="space-y-3 text-sm">
+                                <div class="flex justify-between">
+                                    <span class="text-white/90">🫀 Panel cardiovascular</span>
+                                    <span class="text-white font-semibold">$850</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-white/90">🩸 Exámenes de azúcar/diabetes</span>
+                                    <span class="text-white font-semibold">$650</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-white/90">🧠 Estudios cerebrovasculares</span>
+                                    <span class="text-white font-semibold">$1,200</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-white/90">🫁 Panel gastrointestinal</span>
+                                    <span class="text-white font-semibold">$750</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-white/90">⚡ Sistema nervioso</span>
+                                    <span class="text-white font-semibold">$950</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-white/90">🫘 Función hepática</span>
+                                    <span class="text-white font-semibold">$480</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-white/90">🥞 Función pancreática</span>
+                                    <span class="text-white font-semibold">$520</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-white/90">🦴 Densidad ósea</span>
+                                    <span class="text-white font-semibold">$680</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-white/90">🩺 Consultas especializadas (3)</span>
+                                    <span class="text-white font-semibold">$2,400</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-white/90">⏰ Tiempo invertido (días/semanas)</span>
+                                    <span class="text-white font-semibold">Invaluable</span>
+                                </div>
+                            </div>
+
+                            <div class="border-t border-white/20 mt-4 pt-4">
+                                <div class="flex justify-between text-lg font-bold">
+                                    <span class="text-red-300">Total estudios separados:</span>
+                                    <span class="text-red-300">$8,480+</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-green-600/20 rounded-lg p-4 mb-6">
+                            <p class="text-white font-semibold mb-2">💡 Piénsalo así:</p>
+                            <p class="text-white/90 text-sm leading-relaxed">
+                                Los estudios médicos tradicionales te costarían <strong>más de $8,000</strong> y
+                                tomarían
+                                semanas o meses en completarse. Aquí obtienes un panorama integral de 45 parámetros
+                                en 5 minutos de escaneo y 30 de explicación por solo <strong>$449</strong>.
+                            </p>
+                            <p class="text-green-300 text-sm font-semibold mt-2">
+                                Eso es 95% menos costo y 99% menos tiempo.
+                            </p>
+                        </div>
+
+                        <div class="text-center">
+                            <p class="text-white/80 text-sm mb-4">
+                                <strong>Nota:</strong> El bioescáner es complementario, no sustituye estudios médicos
+                                cuando son necesarios. Pero te da un panorama general excelente para tomar decisiones
+                                informadas.
+                            </p>
+                            <div class="bg-blue-600/20 rounded-lg p-3">
+                                <p class="text-blue-200 text-sm font-semibold">
+                                    🎯 Perfecto para personas que quieren información rápida y práctica sobre su
+                                    bienestar integral
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTA FINAL -->
+                <div class="text-center">
+                    <a href="#formulario"
+                        class="inline-flex items-center px-12 py-5 bg-gradient-to-r from-gold-light to-gold-dark text-blue-primary font-bold text-2xl rounded-full hover:scale-105 transition-all duration-300 mb-4">
+                        Agendar mi bioescáner - $449
+                    </a>
+                    <p class="text-white/70 text-sm">Pago en efectivo al momento del servicio</p>
+                    <p class="text-gold-light text-sm mt-2">⚡ Oferta especial válida por tiempo limitado</p>
+                </div>
             </div>
         </div>
     </section>
 
+    <!-- FORMULARIO -->
+    <section id="formulario" class="py-16 bg-black/50 hidden">
+        <div class="container mx-auto px-6">
+            <div class="max-w-md mx-auto glass rounded-2xl p-8">
+
+                <h3 class="text-2xl font-bold text-gold-light mb-4 text-center">Reserva tu cita</h3>
+                <p class="text-white/80 mb-6 text-center">Datos básicos para contactarte:</p>
+
+                <form id="leadForm" class="space-y-4">
+                    <div>
+                        <label class="block text-gold-light font-semibold mb-1">Nombre completo *</label>
+                        <input type="text" id="nombre" class="w-full px-4 py-3 bg-white/90 text-gray-900 rounded-lg"
+                            required>
+                    </div>
+                    <div>
+                        <label class="block text-gold-light font-semibold mb-1">WhatsApp *</label>
+                        <input type="tel" id="whatsapp" class="w-full px-4 py-3 bg-white/90 text-gray-900 rounded-lg"
+                            required>
+                    </div>
+
+                    <button type="submit"
+                        class="w-full bg-gradient-to-r from-gold-light to-gold-dark text-blue-primary font-bold py-4 rounded-lg hover:scale-105 transition-all">
+                        <span class="btn-text">Solicitar información</span>
+                        <span class="loading" style="display: none;"></span>
+                    </button>
+                </form>
+
+                <p class="text-white/70 text-xs mt-4 text-center">
+                    La ciudad se detectó automáticamente en el quiz
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-16 bg-gray-900/50">
+        <div class="container mx-auto px-6">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="text-3xl font-bold text-center mb-12 text-white">Preguntas frecuentes</h2>
+
+                <div class="space-y-4">
+                    <div class="faq-item glass rounded-xl overflow-hidden">
+                        <button
+                            class="faq-question w-full px-6 py-4 text-left font-semibold text-white hover:bg-white/5">
+                            <span>¿Es lo mismo que ir al médico?</span>
+                            <svg class="faq-icon w-5 h-5 float-right mt-1 transition-transform" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div class="faq-answer px-6 pb-4 text-white/80" style="display: none;">
+                            No. Es un servicio complementario que no sustituye la atención médica. Si tienes síntomas
+                            graves, siempre consulta a tu médico.
+                        </div>
+                    </div>
+
+                    <div class="faq-item glass rounded-xl overflow-hidden">
+                        <button
+                            class="faq-question w-full px-6 py-4 text-left font-semibold text-white hover:bg-white/5">
+                            <span>¿Duele o es invasivo?</span>
+                            <svg class="faq-icon w-5 h-5 float-right mt-1 transition-transform" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div class="faq-answer px-6 pb-4 text-white/80" style="display: none;">
+                            Para nada. Solo sostienes unos sensores en las manos por 5 minutos. Es similar a un oxímetro
+                            o monitor de presión. Sin agujas, sin molestias, sin dolor.
+                        </div>
+                    </div>
+
+                    <div class="faq-item glass rounded-xl overflow-hidden">
+                        <button
+                            class="faq-question w-full px-6 py-4 text-left font-semibold text-white hover:bg-white/5">
+                            <span>¿Tengo que comprar suplementos o productos?</span>
+                            <svg class="faq-icon w-5 h-5 float-right mt-1 transition-transform" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div class="faq-answer px-6 pb-4 text-white/80" style="display: none;">
+                            No tienes ninguna obligación de comprar nada. Pagas $499 por tu sesión completa y eso
+                            incluye todo. Si mencionamos suplementos, es solo una recomendación opcional - la decisión
+                            es 100% tuya.
+                        </div>
+                    </div>
+
+                    <div class="faq-item glass rounded-xl overflow-hidden">
+                        <button
+                            class="faq-question w-full px-6 py-4 text-left font-semibold text-white hover:bg-white/5">
+                            <span>¿Cuánto tiempo toma todo el proceso?</span>
+                            <svg class="faq-icon w-5 h-5 float-right mt-1 transition-transform" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div class="faq-answer px-6 pb-4 text-white/80" style="display: none;">
+                            La cita completa dura aproximadamente 35 minutos: 5 minutos de escaneo y 30 minutos para
+                            explicarte los resultados, responder tus preguntas y darte tu plan personalizado.
+                        </div>
+                    </div>
+
+                    <div class="faq-item glass rounded-xl overflow-hidden">
+                        <button
+                            class="faq-question w-full px-6 py-4 text-left font-semibold text-white hover:bg-white/5">
+                            <span>¿Qué tan confiables son los resultados?</span>
+                            <svg class="faq-icon w-5 h-5 float-right mt-1 transition-transform" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div class="faq-answer px-6 pb-4 text-white/80" style="display: none;">
+                            El bioescáner te da información complementaria, no un diagnóstico médico. Es una herramienta
+                            que puede ayudarte a entender patrones en tu cuerpo, pero siempre debe usarse junto con
+                            atención médica tradicional cuando sea necesario.
+                        </div>
+                    </div>
+
+                    <div class="faq-item glass rounded-xl overflow-hidden">
+                        <button
+                            class="faq-question w-full px-6 py-4 text-left font-semibold text-white hover:bg-white/5">
+                            <span>¿Funciona para cualquier edad?</span>
+                            <svg class="faq-icon w-5 h-5 float-right mt-1 transition-transform" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div class="faq-answer px-6 pb-4 text-white/80" style="display: none;">
+                            Trabajamos principalmente con adultos (18+ años). Para menores de edad requerimos
+                            autorización de los padres y presencia de un tutor durante la sesión.
+                        </div>
+                    </div>
+
+                    <div class="faq-item glass rounded-xl overflow-hidden">
+                        <button
+                            class="faq-question w-full px-6 py-4 text-left font-semibold text-white hover:bg-white/5">
+                            <span>¿Qué pasa si vivo en otra ciudad?</span>
+                            <svg class="faq-icon w-5 h-5 float-right mt-1 transition-transform" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div class="faq-answer px-6 pb-4 text-white/80" style="display: none;">
+                            Actualmente ofrecemos servicio directo en Guaymas y Guadalajara. Para otras ciudades,
+                            contáctanos - a veces organizamos visitas o podemos recomendarte facilitadores certificados
+                            en tu zona.
+                        </div>
+                    </div>
+
+                    <div class="faq-item glass rounded-xl overflow-hidden">
+                        <button
+                            class="faq-question w-full px-6 py-4 text-left font-semibold text-white hover:bg-white/5">
+                            <span>¿Necesito prepararme de alguna manera?</span>
+                            <svg class="faq-icon w-5 h-5 float-right mt-1 transition-transform" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div class="faq-answer px-6 pb-4 text-white/80" style="display: none;">
+                            No necesitas preparación especial. Solo ven como te sientas cómodo/a. Te recomendamos estar
+                            hidratado/a y, si tomas medicamentos, continúa tu rutina normal.
+                        </div>
+                    </div>
+
+                    <div class="faq-item glass rounded-xl overflow-hidden">
+                        <button
+                            class="faq-question w-full px-6 py-4 text-left font-semibold text-white hover:bg-white/5">
+                            <span>¿Puedo llevar a alguien conmigo?</span>
+                            <svg class="faq-icon w-5 h-5 float-right mt-1 transition-transform" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div class="faq-answer px-6 pb-4 text-white/80" style="display: none;">
+                            Por supuesto. Muchas personas vienen acompañadas de familia o amigos. Solo avísanos al
+                            agendar para que podamos acomodar el espacio adecuadamente.
+                        </div>
+                    </div>
+
+                    <div class="faq-item glass rounded-xl overflow-hidden">
+                        <button
+                            class="faq-question w-full px-6 py-4 text-left font-semibold text-white hover:bg-white/5">
+                            <span>¿Qué formas de pago aceptan?</span>
+                            <svg class="faq-icon w-5 h-5 float-right mt-1 transition-transform" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div class="faq-answer px-6 pb-4 text-white/80" style="display: none;">
+                            Aceptamos efectivo y transferencias bancarias. El pago se realiza al momento de tu sesión,
+                            no pedimos anticipos ni pagos por adelantado.
+                        </div>
+                    </div>
+
+                    <div class="faq-item glass rounded-xl overflow-hidden">
+                        <button
+                            class="faq-question w-full px-6 py-4 text-left font-semibold text-white hover:bg-white/5">
+                            <span>¿Qué pasa si no me siento satisfecho/a?</span>
+                            <svg class="faq-icon w-5 h-5 float-right mt-1 transition-transform" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div class="faq-answer px-6 pb-4 text-white/80" style="display: none;">
+                            Tu satisfacción es importante para nosotros. Si sientes que no recibiste valor por tu
+                            inversión, conversamos contigo para entender qué pasó y buscamos una solución. Queremos que
+                            tengas una experiencia positiva.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="py-16 bg-blue-primary">
+        <div class="container mx-auto px-6 text-center">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="text-3xl md:text-5xl font-bold mb-6 text-white">
+                    Deja de adivinar qué le pasa a tu cuerpo
+                </h2>
+                <p class="text-xl text-white/90 mb-8">
+                    Obtén información clara en 5 minutos. Sin estudios largos, sin esperar resultados.
+                </p>
+                <a href="#quiz"
+                    class="inline-flex items-center px-10 py-4 bg-gradient-to-r from-gold-light to-gold-dark text-blue-primary font-bold text-xl rounded-full hover:scale-105 transition-all">
+                    Ver si califico - $499
+                </a>
+                <p class="text-white/60 text-sm mt-4">
+                    Disponible en Guaymas y Guadalajara • Servicio a domicilio
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-8 bg-black/70">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-white/70 mb-2">
+                Bioescáner - Servicio de <a href="https://lareddeluz.com" class="text-gold-light hover:underline"
+                    target="_blank">La Red de Luz</a>
+            </p>
+            <p class="text-white/50 text-sm">
+                &copy; 2025 • <a href="aviso-privacidad.pdf" class="hover:underline" target="_blank">Aviso de
+                    privacidad</a>
+            </p>
+        </div>
+    </footer>
+
     <script>
-        // URL Parameters y City Detection
-        const urlParams = new URLSearchParams(window.location.search);
-        const cityParam = urlParams.get('ciudad') || urlParams.get('city') || urlParams.get('c');
-        
-        // Configuración por ciudad
-        const cityConfig = {
-            'guaymas': {
-                name: 'Guaymas',
-                clientCount: 247,
-                phone: '6228558278',
-                availability: 'Disponible inmediatamente',
-                slots: '2 cupos disponibles hoy'
-            },
-            'guadalajara': {
-                name: 'Guadalajara',
-                clientCount: 428,
-                phone: '6221424577',
-                availability: 'Disponible inmediatamente',
-                slots: '1 cupo disponible hoy'
-            },
-            'hermosillo': {
-                name: 'Hermosillo',
-                clientCount: 156,
-                phone: '6221424577',
-                availability: 'Consultar disponibilidad',
-                slots: 'Lista de espera'
-            }
-        };
-        
-        // Ciudad detectada
-        let detectedCity = 'guadalajara'; // Default
-        if (cityParam) {
-            const cityKey = cityParam.toLowerCase();
-            if (cityConfig[cityKey]) {
-                detectedCity = cityKey;
-            }
-        }
-        
-        const currentCity = cityConfig[detectedCity];
-        
-        // Actualizar todos los elementos de ciudad en la página
-        function updateCityElements() {
-            const cityElements = [
-                'cityDisplay', 'cityDisplay2', 'cityDisplay3', 'cityDisplay4', 
-                'cityDisplay5', 'cityDisplay6', 'cityDisplay7', 'cityConfirm'
-            ];
-            
-            cityElements.forEach(id => {
-                const element = document.getElementById(id);
-                if (element) {
-                    element.textContent = currentCity.name;
-                }
-            });
-            
-            // Actualizar contadores específicos
-            const clientCountEl = document.getElementById('clientCount');
-            if (clientCountEl) clientCountEl.textContent = currentCity.clientCount;
-            
-            const availabilityEl = document.getElementById('availabilityText');
-            if (availabilityEl) availabilityEl.textContent = currentCity.availability;
-            
-            const slotsEl = document.getElementById('slotsText');
-            if (slotsEl) slotsEl.textContent = currentCity.slots;
-        }
-        
         // Quiz Logic
         let currentQuestion = 1;
         let quizAnswers = {};
 
         document.querySelectorAll('input[type="radio"]').forEach(radio => {
-            radio.addEventListener('change', function() {
+            radio.addEventListener('change', function () {
                 quizAnswers[this.name] = this.value;
-                
-                if (currentQuestion < 5) {
+
+                if (currentQuestion < 3) {
                     document.querySelector(`[data-question="${currentQuestion}"]`).classList.add('hidden');
                     currentQuestion++;
                     document.querySelector(`[data-question="${currentQuestion}"]`).classList.remove('hidden');
@@ -328,17 +821,15 @@
 
         function evaluateQuiz() {
             document.querySelectorAll('.quiz-question').forEach(q => q.classList.add('hidden'));
-            
-            // Criterios más estrictos para mejor calificación
-            const qualifies = 
-                quizAnswers.q1 === 'muchos-estudios' &&
-                quizAnswers.q2 === 'completamente-comprometido' &&
-                quizAnswers.q3 === 'necesidad-urgente' &&
-                quizAnswers.q4 === 'inversion-seria' &&
-                quizAnswers.q5 === 'transformacion-integral';
 
-            if (qualifies) {
+            // Calificación: ubicación + síntomas + presupuesto
+            const hasLocation = (quizAnswers.q1 === 'guaymas' || quizAnswers.q1 === 'guadalajara' || quizAnswers.q1 === 'otra-ciudad');
+            const hasSymptoms = quizAnswers.q2 === 'sintomas-persistentes';
+            const willingToInvest = quizAnswers.q3 === 'si-vale-pena';
+
+            if (hasLocation && hasSymptoms && willingToInvest) {
                 document.getElementById('si-califica').classList.remove('hidden');
+                document.getElementById('precio').classList.remove('hidden');
                 document.getElementById('formulario').classList.remove('hidden');
             } else {
                 document.getElementById('no-califica').classList.remove('hidden');
@@ -346,24 +837,59 @@
         }
 
         // Form submission
-        document.getElementById('leadForm').addEventListener('submit', function(e) {
+        document.getElementById('leadForm').addEventListener('submit', function (e) {
             e.preventDefault();
-            
-            // Guardar datos incluyendo ciudad detectada
+
+            // Loading state
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const btnText = submitBtn.querySelector('.btn-text');
+            const loading = submitBtn.querySelector('.loading');
+
+            submitBtn.disabled = true;
+            btnText.style.display = 'none';
+            loading.style.display = 'inline-block';
+            loading.innerHTML = '<span style="display:inline-block;width:1em;height:1em;border:2px solid #163384;border-top:2px solid transparent;border-radius:50%;animation:spin 0.7s linear infinite;"></span>';
+
+            // Save data
             const formData = {
                 nombre: document.getElementById('nombre').value,
                 whatsapp: document.getElementById('whatsapp').value,
-                ciudad: detectedCity,
-                cityName: currentCity.name,
-                phone: currentCity.phone,
+                ciudad: quizAnswers.q1, // del quiz
                 quizResults: quizAnswers,
                 qualified: true,
-                source: 'campaign_' + detectedCity,
+                source: 'bioscanner_landing',
                 timestamp: new Date().toISOString()
             };
-            
+
             localStorage.setItem('leadData', JSON.stringify(formData));
-            window.location.href = 'gracias.html';
+
+            setTimeout(() => {
+                window.location.href = 'gracias.html';
+            }, 1200);
+        });
+
+        // FAQ accordion
+        document.querySelectorAll('.faq-question').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const item = btn.parentElement;
+                const answer = item.querySelector('.faq-answer');
+                const icon = btn.querySelector('.faq-icon');
+                const wasActive = item.classList.contains('active');
+
+                // Close all
+                document.querySelectorAll('.faq-item').forEach(otherItem => {
+                    otherItem.classList.remove('active');
+                    otherItem.querySelector('.faq-answer').style.display = 'none';
+                    otherItem.querySelector('.faq-icon').style.transform = 'rotate(0deg)';
+                });
+
+                // Toggle current
+                if (!wasActive) {
+                    item.classList.add('active');
+                    answer.style.display = 'block';
+                    icon.style.transform = 'rotate(180deg)';
+                }
+            });
         });
 
         // Smooth scrolling
@@ -375,21 +901,11 @@
             });
         });
 
-        // Initialize on page load
-        document.addEventListener('DOMContentLoaded', function() {
-            updateCityElements();
-            
-            // Log para tracking
-            console.log('City detected:', currentCity.name, 'from URL param:', cityParam);
-            
-            // Google Analytics event (si tienes GA configurado)
-            if (typeof gtag !== 'undefined') {
-                gtag('event', 'city_detected', {
-                    'city': currentCity.name,
-                    'source': cityParam ? 'url_param' : 'default'
-                });
-            }
-        });
+        // CSS animation
+        const style = document.createElement('style');
+        style.innerHTML = `@keyframes spin { 0%{transform:rotate(0deg);} 100%{transform:rotate(360deg);} }`;
+        document.head.appendChild(style);
     </script>
 </body>
+
 </html>
