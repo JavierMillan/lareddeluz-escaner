@@ -34,19 +34,19 @@
                 
                 <!-- PRE-HEADLINE con ciudad detectada -->
                 <div class="inline-flex items-center px-4 py-2 bg-red-frustration/20 border border-red-frustration/50 text-red-200 text-sm font-medium rounded-full mb-4">
-                    ⚠️ Solo para personas de <span id="cityDisplay" class="font-bold text-gold-light ml-1">tu ciudad </span> que YA gastaron en estudios médicos
+                    ⚠️ Solo para personas de <span id="cityDisplay" class="font-bold text-gold-light mx-1">tu ciudad</span> que YA gastaron en estudios médicos
                 </div>
                 
                 <!-- HEADLINE PRINCIPAL -->
                 <h1 class="text-4xl md:text-6xl font-bold mb-8 text-white leading-tight">
-                    <span class="text-red-400">¿Gastaste $3,000+ en estudios</span><br>
-                    <span class="text-gold-light">y sigues sin respuestas?</span>
+                    <span class="text-red-400">¿Tu cuerpo te pide ayuda</span><br>
+                    <span class="text-gold-light">pero no sabes cómo escucharlo?</span>
                 </h1>
                 
                 <!-- SUBHEADLINE -->
                 <p class="text-xl md:text-2xl mb-12 text-white/90 leading-relaxed max-w-4xl mx-auto">
-                    Si ya viviste el <span class="text-red-300 font-semibold">círculo vicioso</span> de laboratorios, doctores con prisa y "todo está normal"...
-                    <br><span class="text-gold-light font-bold">esto es exactamente para ti</span>
+                    Sabemos lo frustrante que es <span class="text-red-300 font-semibold">invertir en estudios médicos</span> y seguir sintiéndote perdido/a...
+                    <br><span class="text-gold-light font-bold">Estamos aquí para acompañarte a honrar tu cuerpo</span>
                 </p>
                 
                 <!-- SOCIAL PROOF con ciudad -->
@@ -80,67 +80,124 @@
         <div class="container mx-auto px-6">
             <div class="max-w-4xl mx-auto text-center mb-16">
                 <h2 class="text-4xl md:text-5xl font-bold mb-6 text-white">
-                    ¿Eres el candidato ideal en <span id="cityDisplay4" class="text-gold-light">tu ciudad</span>?
+                    Vamos a conocerte mejor para acompañarte en <span id="cityDisplay4" class="text-gold-light">tu ciudad</span>
                 </h2>
-                <p class="text-xl text-white/80">Solo trabajamos con personas realmente comprometidas.</p>
+                <p class="text-xl text-white/80">Estas preguntas nos ayudan a entender tu proceso y brindarte el mejor cuidado.</p>
             </div>
             
             <div class="max-w-3xl mx-auto">
                 <div id="quiz-container" class="space-y-6">
                     
-                    <!-- Pregunta 1 -->
+                    <!-- Pregunta 1: Experiencia previa -->
                     <div class="quiz-question glass rounded-2xl p-8" data-question="1">
-                        <h3 class="text-2xl font-bold mb-6 text-gold-light">1. ¿Cuánto has gastado en estudios médicos?</h3>
+                        <h3 class="text-2xl font-bold mb-6 text-gold-light">1. ¿Cómo ha sido tu experiencia buscando respuestas sobre tu salud?</h3>
                         <div class="space-y-4">
                             <label class="quiz-option flex items-center p-4 rounded-xl cursor-pointer hover:bg-white/10">
-                                <input type="radio" name="q1" value="menos-1000" class="mr-4">
-                                <span>Menos de $1,000</span>
+                                <input type="radio" name="q1" value="primera-vez" class="mr-4">
+                                <span>Es la primera vez que busco respuestas más profundas</span>
                             </label>
                             <label class="quiz-option flex items-center p-4 rounded-xl cursor-pointer hover:bg-white/10">
-                                <input type="radio" name="q1" value="1000-3000" class="mr-4">
-                                <span>$1,000 - $3,000</span>
+                                <input type="radio" name="q1" value="algunos-estudios" class="mr-4">
+                                <span>He hecho algunos estudios pero sin claridad total</span>
                             </label>
                             <label class="quiz-option flex items-center p-4 rounded-xl cursor-pointer hover:bg-white/10">
-                                <input type="radio" name="q1" value="mas-3000" class="mr-4">
-                                <span>Más de $3,000 ✅</span>
+                                <input type="radio" name="q1" value="muchos-estudios" class="mr-4">
+                                <span>He invertido mucho en estudios sin encontrar respuestas satisfactorias ✅</span>
                             </label>
                         </div>
                     </div>
 
-                    <!-- Pregunta 2 -->
+                    <!-- Pregunta 2: Compromiso con el bienestar -->
                     <div class="quiz-question glass rounded-2xl p-8 hidden" data-question="2">
-                        <h3 class="text-2xl font-bold mb-6 text-gold-light">2. ¿Dispuesto a cambiar hábitos?</h3>
+                        <h3 class="text-2xl font-bold mb-6 text-gold-light">2. ¿Cómo te sientes sobre hacer cambios para honrar tu cuerpo?</h3>
                         <div class="space-y-4">
                             <label class="quiz-option flex items-center p-4 rounded-xl cursor-pointer hover:bg-white/10">
-                                <input type="radio" name="q2" value="no-cambios" class="mr-4">
-                                <span>No planeo cambiar nada</span>
+                                <input type="radio" name="q2" value="resistente" class="mr-4">
+                                <span>Me resisto a cambiar, prefiero mantener mis hábitos actuales</span>
                             </label>
                             <label class="quiz-option flex items-center p-4 rounded-xl cursor-pointer hover:bg-white/10">
-                                <input type="radio" name="q2" value="algunos-cambios" class="mr-4">
-                                <span>Algunos cambios menores</span>
+                                <input type="radio" name="q2" value="abierto-pero-limitado" class="mr-4">
+                                <span>Estoy abierto/a pero solo a cambios muy pequeños</span>
                             </label>
                             <label class="quiz-option flex items-center p-4 rounded-xl cursor-pointer hover:bg-white/10">
-                                <input type="radio" name="q2" value="todos-cambios" class="mr-4">
-                                <span>Lo que sea necesario ✅</span>
+                                <input type="radio" name="q2" value="completamente-comprometido" class="mr-4">
+                                <span>Estoy listo/a para transformar lo que sea necesario por mi bienestar ✅</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Pregunta 3: Urgencia y motivación -->
+                    <div class="quiz-question glass rounded-2xl p-8 hidden" data-question="3">
+                        <h3 class="text-2xl font-bold mb-6 text-gold-light">3. ¿Qué te motiva a buscar respuestas en este momento?</h3>
+                        <div class="space-y-4">
+                            <label class="quiz-option flex items-center p-4 rounded-xl cursor-pointer hover:bg-white/10">
+                                <input type="radio" name="q3" value="curiosidad" class="mr-4">
+                                <span>Simple curiosidad, no tengo síntomas preocupantes</span>
+                            </label>
+                            <label class="quiz-option flex items-center p-4 rounded-xl cursor-pointer hover:bg-white/10">
+                                <input type="radio" name="q3" value="prevencion" class="mr-4">
+                                <span>Quiero prevenir problemas futuros y optimizar mi salud</span>
+                            </label>
+                            <label class="quiz-option flex items-center p-4 rounded-xl cursor-pointer hover:bg-white/10">
+                                <input type="radio" name="q3" value="necesidad-urgente" class="mr-4">
+                                <span>Siento que algo no está bien y necesito respuestas ahora ✅</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Pregunta 4: Inversión en bienestar -->
+                    <div class="quiz-question glass rounded-2xl p-8 hidden" data-question="4">
+                        <h3 class="text-2xl font-bold mb-6 text-gold-light">4. ¿Cómo ves la inversión en tu bienestar integral?</h3>
+                        <div class="space-y-4">
+                            <label class="quiz-option flex items-center p-4 rounded-xl cursor-pointer hover:bg-white/10">
+                                <input type="radio" name="q4" value="busco-gratis" class="mr-4">
+                                <span>Busco opciones gratuitas o muy económicas</span>
+                            </label>
+                            <label class="quiz-option flex items-center p-4 rounded-xl cursor-pointer hover:bg-white/10">
+                                <input type="radio" name="q4" value="inversion-moderada" class="mr-4">
+                                <span>Puedo invertir moderadamente si veo valor real</span>
+                            </label>
+                            <label class="quiz-option flex items-center p-4 rounded-xl cursor-pointer hover:bg-white/10">
+                                <input type="radio" name="q4" value="inversion-seria" class="mr-4">
+                                <span>Mi salud es prioridad, estoy dispuesto/a a invertir lo necesario ✅</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Pregunta 5: Expectativas -->
+                    <div class="quiz-question glass rounded-2xl p-8 hidden" data-question="5">
+                        <h3 class="text-2xl font-bold mb-6 text-gold-light">5. ¿Qué esperas de este proceso de acompañamiento?</h3>
+                        <div class="space-y-4">
+                            <label class="quiz-option flex items-center p-4 rounded-xl cursor-pointer hover:bg-white/10">
+                                <input type="radio" name="q5" value="solucion-magica" class="mr-4">
+                                <span>Una solución mágica e instantánea sin esfuerzo de mi parte</span>
+                            </label>
+                            <label class="quiz-option flex items-center p-4 rounded-xl cursor-pointer hover:bg-white/10">
+                                <input type="radio" name="q5" value="informacion-basica" class="mr-4">
+                                <span>Información básica para entender mejor mi estado</span>
+                            </label>
+                            <label class="quiz-option flex items-center p-4 rounded-xl cursor-pointer hover:bg-white/10">
+                                <input type="radio" name="q5" value="transformacion-integral" class="mr-4">
+                                <span>Un proceso integral de transformación y acompañamiento genuino ✅</span>
                             </label>
                         </div>
                     </div>
 
                     <!-- NO CALIFICA -->
                     <div id="no-califica" class="glass bg-red-frustration/20 rounded-2xl p-8 hidden text-center">
-                        <h3 class="text-2xl font-bold mb-4 text-red-300">No calificas en este momento</h3>
-                        <p class="text-white/80 mb-6">Trabajamos con personas comprometidas con su salud.</p>
-                        <button onclick="location.reload()" class="px-6 py-3 bg-gray-600 text-white rounded-lg">
-                            Volver a intentar
+                        <h3 class="text-2xl font-bold mb-4 text-red-300">Te agradecemos tu interés</h3>
+                        <p class="text-white/80 mb-6">Por el momento, nuestro programa está diseñado para personas en un momento diferente de su proceso de bienestar. Te animamos a seguir explorando y regresar cuando sientas que estás listo/a para un acompañamiento más profundo.</p>
+                        <button onclick="location.reload()" class="px-6 py-3 bg-gold-light text-blue-primary rounded-lg font-semibold">
+                            Volver a comenzar
                         </button>
                     </div>
 
                     <!-- SÍ CALIFICA -->
                     <div id="si-califica" class="glass bg-green-relief/20 rounded-2xl p-8 hidden text-center">
-                        <h3 class="text-2xl font-bold mb-4 text-green-300">¡Perfecto! Calificas en <span id="cityDisplay5" class="text-gold-light">tu ciudad</span></h3>
-                        <p class="text-white/90 mb-6">Tienes cupo disponible para esta semana.</p>
+                        <h3 class="text-2xl font-bold mb-4 text-green-300">¡Qué hermoso! Estás listo/a para este proceso en <span id="cityDisplay5" class="text-gold-light">tu ciudad</span></h3>
+                        <p class="text-white/90 mb-6">Tus respuestas nos muestran que tienes la apertura y el compromiso necesarios para honrar tu cuerpo. Estamos emocionados de acompañarte en este viaje de autodescubrimiento.</p>
                         <a href="#formulario" class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-gold-light to-gold-dark text-blue-primary font-bold text-lg rounded-full">
-                            Solicitar cupo en <span id="cityDisplay6" class="ml-1">tu ciudad</span>
+                            Continuar con mi proceso en <span id="cityDisplay6" class="ml-1">tu ciudad</span>
                         </a>
                     </div>
                 </div>
@@ -259,7 +316,7 @@
             radio.addEventListener('change', function() {
                 quizAnswers[this.name] = this.value;
                 
-                if (currentQuestion < 2) {
+                if (currentQuestion < 5) {
                     document.querySelector(`[data-question="${currentQuestion}"]`).classList.add('hidden');
                     currentQuestion++;
                     document.querySelector(`[data-question="${currentQuestion}"]`).classList.remove('hidden');
@@ -272,7 +329,15 @@
         function evaluateQuiz() {
             document.querySelectorAll('.quiz-question').forEach(q => q.classList.add('hidden'));
             
-            if (quizAnswers.q1 === 'mas-3000' && quizAnswers.q2 === 'todos-cambios') {
+            // Criterios más estrictos para mejor calificación
+            const qualifies = 
+                quizAnswers.q1 === 'muchos-estudios' &&
+                quizAnswers.q2 === 'completamente-comprometido' &&
+                quizAnswers.q3 === 'necesidad-urgente' &&
+                quizAnswers.q4 === 'inversion-seria' &&
+                quizAnswers.q5 === 'transformacion-integral';
+
+            if (qualifies) {
                 document.getElementById('si-califica').classList.remove('hidden');
                 document.getElementById('formulario').classList.remove('hidden');
             } else {
