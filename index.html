@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>¿Cansado de que te digan "Todo está normal"? | Bioescáner La Red de Luz</title>
-    <meta name="description" content="Para personas que YA gastaron en estudios médicos sin respuestas. Bioescáner de 45 parámetros en 5 minutos. Solo si estás dispuesto/a a invertir en tu salud.">
+    <meta name="description" content="Para personas que YA gastaron en estudios médicos sin respuestas. Bioescáner de 45 parámetros en 5 minutos.">
     <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -16,203 +16,131 @@
                         blue: { primary: '#163384', secondary: '#2c5aa0' },
                         red: { frustration: '#d32f2f' },
                         green: { relief: '#2e7d32' }
-                    },
-                    animation: {
-                        'pulse-slow': 'pulse 3s infinite',
-                        'bounce-gentle': 'bounce 2s infinite',
-                        'fade-in': 'fadeIn 0.6s ease-out'
                     }
                 }
             }
         }
     </script>
     <style>
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
         .glass { background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2); }
-        .glass-strong { background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.3); }
     </style>
 </head>
 <body class="bg-gradient-to-br from-blue-primary via-blue-secondary to-blue-primary min-h-screen text-white font-sans">
 
-    <!-- HERO SECTION - HOOK INMEDIATO -->
+    <!-- HERO SECTION -->
     <section class="min-h-screen flex items-center justify-center relative overflow-hidden">
         <div class="container mx-auto px-6 relative z-10">
             <div class="max-w-5xl mx-auto text-center">
                 
-                <!-- PRE-HEADLINE (Filtro psicológico) -->
+                <!-- PRE-HEADLINE con ciudad detectada -->
                 <div class="inline-flex items-center px-4 py-2 bg-red-frustration/20 border border-red-frustration/50 text-red-200 text-sm font-medium rounded-full mb-4">
-                    ⚠️ Solo para personas que YA gastaron en estudios médicos sin respuestas
+                    ⚠️ Solo para personas de <span id="cityDisplay" class="font-bold text-gold-light ml-1">tu ciudad </span> que YA gastaron en estudios médicos
                 </div>
                 
-                <!-- HEADLINE PRINCIPAL (Pain + Promise) -->
-                <h1 class="text-5xl md:text-7xl font-bold mb-8 text-white leading-tight">
+                <!-- HEADLINE PRINCIPAL -->
+                <h1 class="text-4xl md:text-6xl font-bold mb-8 text-white leading-tight">
                     <span class="text-red-400">¿Gastaste $3,000+ en estudios</span><br>
                     <span class="text-gold-light">y sigues sin respuestas?</span>
                 </h1>
                 
-                <!-- SUBHEADLINE (Agitar el dolor) -->
-                <p class="text-2xl md:text-3xl mb-12 text-white/90 leading-relaxed max-w-4xl mx-auto">
+                <!-- SUBHEADLINE -->
+                <p class="text-xl md:text-2xl mb-12 text-white/90 leading-relaxed max-w-4xl mx-auto">
                     Si ya viviste el <span class="text-red-300 font-semibold">círculo vicioso</span> de laboratorios, doctores con prisa y "todo está normal"...
                     <br><span class="text-gold-light font-bold">esto es exactamente para ti</span>
                 </p>
                 
-                <!-- SOCIAL PROOF INMEDIATO -->
+                <!-- SOCIAL PROOF con ciudad -->
                 <div class="glass rounded-2xl p-6 mb-12 max-w-2xl mx-auto">
                     <div class="flex items-center justify-center space-x-4 text-gold-light font-semibold">
                         <span>⭐⭐⭐⭐⭐</span>
-                        <span>+847 personas ya encontraron sus respuestas</span>
+                        <span>+<span id="clientCount">125</span> personas de <span id="cityDisplay2" class="font-bold">tu ciudad</span> ya encontraron respuestas</span>
                     </div>
-                    <p class="text-white/80 text-sm mt-2">"Por fin alguien escuchó lo que mi cuerpo me decía" - María G.</p>
                 </div>
                 
-                <!-- CTA PRINCIPAL (Micro-compromiso) -->
-                <div class="space-y-4">
-                    <a href="#quiz" class="inline-flex items-center px-10 py-5 bg-gradient-to-r from-gold-light to-gold-dark text-blue-primary font-bold text-xl rounded-full hover:scale-105 hover:shadow-2xl transition-all duration-300 animate-bounce-gentle">
-                        Ver si calificas para el bioescáner
-                        <svg class="w-6 h-6 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-                        </svg>
-                    </a>
-                    <p class="text-white/70 text-sm">📍 Disponible en Guaymas y Guadalajara • Cupos limitados</p>
+                <!-- CTA PRINCIPAL -->
+                <a href="#quiz" class="inline-flex items-center px-10 py-5 bg-gradient-to-r from-gold-light to-gold-dark text-blue-primary font-bold text-xl rounded-full hover:scale-105 hover:shadow-2xl transition-all duration-300">
+                    Ver si calificas en <span id="cityDisplay3" class="ml-1 font-black">tu ciudad</span>
+                    <svg class="w-6 h-6 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                </a>
+                
+                <!-- Disponibilidad por ciudad -->
+                <div class="mt-6">
+                    <p class="text-white/70 text-sm">
+                        📍 <span id="availabilityText">Verificando disponibilidad en tu zona...</span> • <span id="slotsText">Cupos limitados</span>
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SECCIÓN FILTRO + CALIFICACIÓN -->
+    <!-- QUIZ SECTION -->
     <section id="quiz" class="py-20 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900">
         <div class="container mx-auto px-6">
             <div class="max-w-4xl mx-auto text-center mb-16">
                 <h2 class="text-4xl md:text-5xl font-bold mb-6 text-white">
-                    ¿Eres el candidato ideal para el bioescáner?
+                    ¿Eres el candidato ideal en <span id="cityDisplay4" class="text-gold-light">tu ciudad</span>?
                 </h2>
-                <p class="text-xl text-white/80">Responde honestamente. Solo trabajamos con personas realmente comprometidas con su salud.</p>
+                <p class="text-xl text-white/80">Solo trabajamos con personas realmente comprometidas.</p>
             </div>
             
-            <!-- QUIZ DE CALIFICACIÓN -->
             <div class="max-w-3xl mx-auto">
                 <div id="quiz-container" class="space-y-6">
                     
-                    <!-- Pregunta 1: Filtro económico -->
+                    <!-- Pregunta 1 -->
                     <div class="quiz-question glass rounded-2xl p-8" data-question="1">
-                        <h3 class="text-2xl font-bold mb-6 text-gold-light">1. ¿Cuánto has gastado en estudios médicos en el último año?</h3>
+                        <h3 class="text-2xl font-bold mb-6 text-gold-light">1. ¿Cuánto has gastado en estudios médicos?</h3>
                         <div class="space-y-4">
-                            <label class="quiz-option flex items-center p-4 rounded-xl cursor-pointer hover:bg-white/10 transition-colors">
-                                <input type="radio" name="q1" value="menos-1000" class="mr-4 w-5 h-5">
-                                <span class="text-lg">Menos de $1,000 (primera vez buscando respuestas)</span>
+                            <label class="quiz-option flex items-center p-4 rounded-xl cursor-pointer hover:bg-white/10">
+                                <input type="radio" name="q1" value="menos-1000" class="mr-4">
+                                <span>Menos de $1,000</span>
                             </label>
-                            <label class="quiz-option flex items-center p-4 rounded-xl cursor-pointer hover:bg-white/10 transition-colors">
-                                <input type="radio" name="q1" value="1000-3000" class="mr-4 w-5 h-5">
-                                <span class="text-lg">Entre $1,000 - $3,000 (varios estudios sin respuestas claras)</span>
+                            <label class="quiz-option flex items-center p-4 rounded-xl cursor-pointer hover:bg-white/10">
+                                <input type="radio" name="q1" value="1000-3000" class="mr-4">
+                                <span>$1,000 - $3,000</span>
                             </label>
-                            <label class="quiz-option flex items-center p-4 rounded-xl cursor-pointer hover:bg-white/10 transition-colors">
-                                <input type="radio" name="q1" value="mas-3000" class="mr-4 w-5 h-5">
-                                <span class="text-lg">Más de $3,000 (muchos estudios, cero resultados útiles) ✅</span>
+                            <label class="quiz-option flex items-center p-4 rounded-xl cursor-pointer hover:bg-white/10">
+                                <input type="radio" name="q1" value="mas-3000" class="mr-4">
+                                <span>Más de $3,000 ✅</span>
                             </label>
                         </div>
                     </div>
 
-                    <!-- Pregunta 2: Filtro de compromiso -->
+                    <!-- Pregunta 2 -->
                     <div class="quiz-question glass rounded-2xl p-8 hidden" data-question="2">
-                        <h3 class="text-2xl font-bold mb-6 text-gold-light">2. ¿Qué tan dispuesto/a estás a cambiar hábitos si obtienes respuestas claras?</h3>
+                        <h3 class="text-2xl font-bold mb-6 text-gold-light">2. ¿Dispuesto a cambiar hábitos?</h3>
                         <div class="space-y-4">
-                            <label class="quiz-option flex items-center p-4 rounded-xl cursor-pointer hover:bg-white/10 transition-colors">
-                                <input type="radio" name="q2" value="no-cambios" class="mr-4 w-5 h-5">
-                                <span class="text-lg">Solo quiero información, no planeo cambiar nada</span>
+                            <label class="quiz-option flex items-center p-4 rounded-xl cursor-pointer hover:bg-white/10">
+                                <input type="radio" name="q2" value="no-cambios" class="mr-4">
+                                <span>No planeo cambiar nada</span>
                             </label>
-                            <label class="quiz-option flex items-center p-4 rounded-xl cursor-pointer hover:bg-white/10 transition-colors">
-                                <input type="radio" name="q2" value="algunos-cambios" class="mr-4 w-5 h-5">
-                                <span class="text-lg">Haría algunos cambios menores si no son muy difíciles</span>
+                            <label class="quiz-option flex items-center p-4 rounded-xl cursor-pointer hover:bg-white/10">
+                                <input type="radio" name="q2" value="algunos-cambios" class="mr-4">
+                                <span>Algunos cambios menores</span>
                             </label>
-                            <label class="quiz-option flex items-center p-4 rounded-xl cursor-pointer hover:bg-white/10 transition-colors">
-                                <input type="radio" name="q2" value="todos-cambios" class="mr-4 w-5 h-5">
-                                <span class="text-lg">Estoy dispuesto/a a cambiar lo que sea necesario para sentirme bien ✅</span>
-                            </label>
-                        </div>
-                    </div>
-
-                    <!-- Pregunta 3: Filtro de urgencia -->
-                    <div class="quiz-question glass rounded-2xl p-8 hidden" data-question="3">
-                        <h3 class="text-2xl font-bold mb-6 text-gold-light">3. ¿Cuál describe mejor tu situación actual?</h3>
-                        <div class="space-y-4">
-                            <label class="quiz-option flex items-center p-4 rounded-xl cursor-pointer hover:bg-white/10 transition-colors">
-                                <input type="radio" name="q3" value="curioso" class="mr-4 w-5 h-5">
-                                <span class="text-lg">Solo tengo curiosidad, me siento bien en general</span>
-                            </label>
-                            <label class="quiz-option flex items-center p-4 rounded-xl cursor-pointer hover:bg-white/10 transition-colors">
-                                <input type="radio" name="q3" value="molestias-leves" class="mr-4 w-5 h-5">
-                                <span class="text-lg">Tengo algunas molestias pero puedo vivir con ellas</span>
-                            </label>
-                            <label class="quiz-option flex items-center p-4 rounded-xl cursor-pointer hover:bg-white/10 transition-colors">
-                                <input type="radio" name="q3" value="necesito-respuestas" class="mr-4 w-5 h-5">
-                                <span class="text-lg">NECESITO respuestas YA, esto está afectando mi vida diaria ✅</span>
+                            <label class="quiz-option flex items-center p-4 rounded-xl cursor-pointer hover:bg-white/10">
+                                <input type="radio" name="q2" value="todos-cambios" class="mr-4">
+                                <span>Lo que sea necesario ✅</span>
                             </label>
                         </div>
                     </div>
 
-                    <!-- Pregunta 4: Filtro de inversión -->
-                    <div class="quiz-question glass rounded-2xl p-8 hidden" data-question="4">
-                        <h3 class="text-2xl font-bold mb-6 text-gold-light">4. Si el bioescáner te da respuestas claras y un plan específico, ¿invertirías $499 en tu salud?</h3>
-                        <div class="space-y-4">
-                            <label class="quiz-option flex items-center p-4 rounded-xl cursor-pointer hover:bg-white/10 transition-colors">
-                                <input type="radio" name="q4" value="muy-caro" class="mr-4 w-5 h-5">
-                                <span class="text-lg">Es demasiado, busco algo gratis</span>
-                            </label>
-                            <label class="quiz-option flex items-center p-4 rounded-xl cursor-pointer hover:bg-white/10 transition-colors">
-                                <input type="radio" name="q4" value="pensarlo" class="mr-4 w-5 h-5">
-                                <span class="text-lg">Tendría que pensarlo mucho</span>
-                            </label>
-                            <label class="quiz-option flex items-center p-4 rounded-xl cursor-pointer hover:bg-white/10 transition-colors">
-                                <input type="radio" name="q4" value="si-invierto" class="mr-4 w-5 h-5">
-                                <span class="text-lg">Sí, es menos de lo que ya gasté sin resultados ✅</span>
-                            </label>
-                        </div>
+                    <!-- NO CALIFICA -->
+                    <div id="no-califica" class="glass bg-red-frustration/20 rounded-2xl p-8 hidden text-center">
+                        <h3 class="text-2xl font-bold mb-4 text-red-300">No calificas en este momento</h3>
+                        <p class="text-white/80 mb-6">Trabajamos con personas comprometidas con su salud.</p>
+                        <button onclick="location.reload()" class="px-6 py-3 bg-gray-600 text-white rounded-lg">
+                            Volver a intentar
+                        </button>
                     </div>
 
-                    <!-- RESULTADO NO CALIFICA -->
-                    <div id="no-califica" class="glass bg-red-frustration/20 border-red-frustration/30 rounded-2xl p-8 hidden text-center">
-                        <h3 class="text-3xl font-bold mb-4 text-red-300">Lo sentimos, pero el bioescáner no es para ti en este momento</h3>
-                        <p class="text-xl mb-6 text-white/80">Trabajamos exclusivamente con personas que ya han invertido en su salud y están comprometidas con encontrar soluciones reales.</p>
-                        <p class="text-lg text-white/70">Te recomendamos comenzar con tu médico familiar y regresar cuando estés listo/a para una inversión seria en tu bienestar.</p>
-                        <div class="mt-8">
-                            <button onclick="location.reload()" class="px-6 py-3 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors">
-                                Volver a intentar
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- RESULTADO SÍ CALIFICA -->
-                    <div id="si-califica" class="glass bg-green-relief/20 border-green-relief/30 rounded-2xl p-8 hidden text-center">
-                        <h3 class="text-3xl font-bold mb-4 text-green-300">¡Perfecto! Eres exactamente el tipo de persona que buscamos</h3>
-                        <p class="text-xl mb-6 text-white/90">Has demostrado que estás comprometido/a con tu salud y dispuesto/a a invertir en respuestas reales.</p>
-                        
-                        <div class="bg-gold-light/10 border border-gold-light/30 rounded-xl p-6 mb-8">
-                            <h4 class="text-2xl font-bold text-gold-light mb-4">Tu sesión incluye:</h4>
-                            <div class="grid md:grid-cols-2 gap-4 text-left">
-                                <div class="flex items-center space-x-3">
-                                    <span class="text-2xl">⚡</span>
-                                    <span>Análisis de 45 parámetros (5 min)</span>
-                                </div>
-                                <div class="flex items-center space-x-3">
-                                    <span class="text-2xl">📋</span>
-                                    <span>Interpretación personalizada</span>
-                                </div>
-                                <div class="flex items-center space-x-3">
-                                    <span class="text-2xl">🎯</span>
-                                    <span>Plan de acción específico</span>
-                                </div>
-                                <div class="flex items-center space-x-3">
-                                    <span class="text-2xl">📱</span>
-                                    <span>Seguimiento por WhatsApp</span>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <a href="#formulario" class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-gold-light to-gold-dark text-blue-primary font-bold text-lg rounded-full hover:scale-105 transition-all duration-300">
-                            Solicitar mi cupo prioritario
-                            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
-                            </svg>
+                    <!-- SÍ CALIFICA -->
+                    <div id="si-califica" class="glass bg-green-relief/20 rounded-2xl p-8 hidden text-center">
+                        <h3 class="text-2xl font-bold mb-4 text-green-300">¡Perfecto! Calificas en <span id="cityDisplay5" class="text-gold-light">tu ciudad</span></h3>
+                        <p class="text-white/90 mb-6">Tienes cupo disponible para esta semana.</p>
+                        <a href="#formulario" class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-gold-light to-gold-dark text-blue-primary font-bold text-lg rounded-full">
+                            Solicitar cupo en <span id="cityDisplay6" class="ml-1">tu ciudad</span>
                         </a>
                     </div>
                 </div>
@@ -220,182 +148,109 @@
         </div>
     </section>
 
-    <!-- DIFERENCIACIÓN CLARA (Solo aparece si califica) -->
-    <section id="diferenciacion" class="py-20 bg-gradient-to-br from-blue-primary to-blue-secondary hidden">
+    <!-- FORMULARIO -->
+    <section id="formulario" class="py-20 bg-black hidden">
         <div class="container mx-auto px-6">
-            <div class="max-w-6xl mx-auto">
-                <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 text-white">
-                    ¿Por qué el bioescáner es diferente?
-                </h2>
-                
-                <div class="grid md:grid-cols-3 gap-8">
-                    <!-- Lo que NO somos -->
-                    <div class="glass bg-red-frustration/10 border-red-frustration/30 rounded-3xl p-8">
-                        <h3 class="text-2xl font-bold text-red-300 mb-6 text-center">❌ No somos otro laboratorio</h3>
-                        <ul class="space-y-3 text-white/90">
-                            <li>• Sin agujas ni dolor</li>
-                            <li>• Sin ayuno de 12 horas</li>
-                            <li>• Sin esperas de días</li>
-                            <li>• Sin resultados que no entiendes</li>
-                            <li>• Sin doctores con prisa</li>
-                        </ul>
-                    </div>
-
-                    <!-- Lo que SÍ somos -->
-                    <div class="glass bg-green-relief/10 border-green-relief/30 rounded-3xl p-8">
-                        <h3 class="text-2xl font-bold text-green-300 mb-6 text-center">✅ Sí somos la solución</h3>
-                        <ul class="space-y-3 text-white/90">
-                            <li>• 5 minutos, resultados inmediatos</li>
-                            <li>• 45 parámetros vs 10-15 de laboratorio</li>
-                            <li>• Explicación en lenguaje humano</li>
-                            <li>• Plan de acción específico</li>
-                            <li>• Tiempo ilimitado para dudas</li>
-                        </ul>
-                    </div>
-
-                    <!-- Garantía -->
-                    <div class="glass bg-gold-light/10 border-gold-light/30 rounded-3xl p-8">
-                        <h3 class="text-2xl font-bold text-gold-light mb-6 text-center">🔒 Nuestra garantía</h3>
-                        <ul class="space-y-3 text-white/90">
-                            <li>• Si no obtienes información más clara que tus estudios anteriores</li>
-                            <li>• Si no entiendes perfectamente los resultados</li>
-                            <li>• Si no tienes un plan específico</li>
-                            <li><strong class="text-gold-light">Te devolvemos tu dinero</strong></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FORMULARIO CUALIFICADO -->
-    <section id="formulario" class="py-20 bg-gradient-to-r from-gray-900 via-black to-gray-900 hidden">
-        <div class="container mx-auto px-6">
-            <div class="max-w-2xl mx-auto text-center mb-12">
-                <h2 class="text-4xl md:text-5xl font-bold mb-6 text-white">
-                    Solicita tu cupo prioritario
-                </h2>
-                <p class="text-xl text-gold-light">Solo 3 sesiones por día • Cupos muy limitados</p>
-            </div>
-            
-            <div class="max-w-lg mx-auto glass-strong rounded-3xl p-8">
-                <!-- Urgency Banner -->
+            <div class="max-w-lg mx-auto glass rounded-3xl p-8">
                 <div class="bg-gradient-to-r from-red-frustration to-red-500 text-white text-center py-3 px-6 rounded-xl mb-8 font-semibold">
-                    🚨 Solo personas pre-calificadas • Cupos limitados
+                    🚨 Cupo reservado en <span id="cityDisplay7">tu ciudad</span>
                 </div>
                 
                 <form id="leadForm" class="space-y-6">
                     <div>
-                        <label for="nombre" class="block text-gold-light font-semibold mb-2">Nombre completo *</label>
-                        <input 
-                            type="text" 
-                            id="nombre" 
-                            name="nombre" 
-                            class="w-full px-4 py-3 bg-white/90 text-gray-900 rounded-xl border-2 border-transparent focus:border-gold-light focus:outline-none transition-all duration-300" 
-                            placeholder="Tu nombre completo" 
-                            required
-                        >
-                        <div id="error-nombre" class="text-red-400 text-sm mt-1 hidden">Mínimo 5 caracteres</div>
+                        <label class="block text-gold-light font-semibold mb-2">Nombre completo *</label>
+                        <input type="text" id="nombre" class="w-full px-4 py-3 bg-white/90 text-gray-900 rounded-xl" required>
                     </div>
-                    
                     <div>
-                        <label for="whatsapp" class="block text-gold-light font-semibold mb-2">WhatsApp (para confirmación inmediata) *</label>
-                        <input 
-                            type="tel" 
-                            id="whatsapp" 
-                            name="whatsapp" 
-                            class="w-full px-4 py-3 bg-white/90 text-gray-900 rounded-xl border-2 border-transparent focus:border-gold-light focus:outline-none transition-all duration-300" 
-                            placeholder="Ej: 644 123 4567" 
-                            required
-                        >
-                        <div id="error-whatsapp" class="text-red-400 text-sm mt-1 hidden">Número válido requerido</div>
+                        <label class="block text-gold-light font-semibold mb-2">WhatsApp *</label>
+                        <input type="tel" id="whatsapp" class="w-full px-4 py-3 bg-white/90 text-gray-900 rounded-xl" required>
                     </div>
                     
-                    <div>
-                        <label for="ciudad" class="block text-gold-light font-semibold mb-2">¿En qué ciudad estás? *</label>
-                        <select 
-                            id="ciudad" 
-                            name="ciudad" 
-                            class="w-full px-4 py-3 bg-white/90 text-gray-900 rounded-xl border-2 border-transparent focus:border-gold-light focus:outline-none transition-all duration-300" 
-                            required
-                        >
-                            <option value="">Selecciona tu ciudad</option>
-                            <option value="guaymas">Guaymas (disponible inmediatamente)</option>
-                            <option value="guadalajara">Guadalajara (disponible inmediatamente)</option>
-                            <option value="otra">Otra ciudad (consultar disponibilidad)</option>
-                        </select>
-                        <div id="error-ciudad" class="text-red-400 text-sm mt-1 hidden">Selecciona una ciudad</div>
-                    </div>
-                    
-                    <div id="otra-ciudad-group" class="hidden">
-                        <label for="otra-ciudad" class="block text-gold-light font-semibold mb-2">¿De qué ciudad? *</label>
-                        <input 
-                            type="text" 
-                            id="otra-ciudad" 
-                            name="otra-ciudad" 
-                            class="w-full px-4 py-3 bg-white/90 text-gray-900 rounded-xl border-2 border-transparent focus:border-gold-light focus:outline-none transition-all duration-300" 
-                            placeholder="Escribe tu ciudad"
-                        >
-                        <div id="error-otra-ciudad" class="text-red-400 text-sm mt-1 hidden">Ciudad requerida</div>
-                    </div>
-
-                    <!-- PREGUNTA FILTRO FINAL -->
-                    <div>
-                        <label for="presupuesto" class="block text-gold-light font-semibold mb-2">¿Cuál es tu presupuesto para encontrar respuestas sobre tu salud? *</label>
-                        <select 
-                            id="presupuesto" 
-                            name="presupuesto" 
-                            class="w-full px-4 py-3 bg-white/90 text-gray-900 rounded-xl border-2 border-transparent focus:border-gold-light focus:outline-none transition-all duration-300" 
-                            required
-                        >
-                            <option value="">Selecciona tu rango</option>
-                            <option value="menos-500">Menos de $500 (busco algo muy económico)</option>
-                            <option value="500-1000">$500 - $1,000 (dispuesto a invertir moderadamente)</option>
-                            <option value="1000-mas">$1,000+ (priorizo resultados sobre precio)</option>
-                        </select>
-                        <div id="error-presupuesto" class="text-red-400 text-sm mt-1 hidden">Selecciona tu presupuesto</div>
-                    </div>
-                    
-                    <button 
-                        type="submit" 
-                        class="w-full bg-gradient-to-r from-gold-light to-gold-dark text-blue-primary font-bold text-lg py-4 rounded-xl hover:scale-105 hover:shadow-2xl transition-all duration-300 flex items-center justify-center space-x-2"
-                    >
-                        <span class="btn-text">Solicitar cupo prioritario ahora</span>
-                        <span class="loading hidden">
-                            <svg class="animate-spin h-5 w-5" viewBox="0 0 24 24">
-                                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" fill="none"></circle>
-                                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    <!-- Ciudad detectada automáticamente -->
+                    <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-xl">
+                        <div class="flex items-center">
+                            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
                             </svg>
-                        </span>
-                    </button>
+                            <span class="font-semibold">Ciudad detectada: <span id="cityConfirm">Cargando...</span></span>
+                        </div>
+                        <p class="text-sm mt-1">Si esta no es tu ciudad, contáctanos para verificar disponibilidad.</p>
+                    </div>
                     
-                    <p class="text-center text-white/70 text-sm">
-                        🔒 Te contactaremos en menos de 5 minutos<br>
-                        Solo personas serias - No vendedores
-                    </p>
+                    <button type="submit" class="w-full bg-gradient-to-r from-gold-light to-gold-dark text-blue-primary font-bold py-4 rounded-xl">
+                        Solicitar cupo prioritario
+                    </button>
                 </form>
             </div>
         </div>
     </section>
 
-    <!-- DISCLAIMER -->
-    <div class="py-6 bg-gray-900 text-center">
-        <p class="text-gray-400 text-sm">Este servicio no sustituye un diagnóstico médico profesional.</p>
-    </div>
-
-    <!-- FOOTER -->
-    <footer class="py-8 bg-black">
-        <div class="container mx-auto px-6 text-center">
-            <p class="text-white/70">
-                &copy; 2025 La Red de Luz. Todos los derechos reservados. | 
-                <a href="aviso-privacidad.pdf" class="text-gold-light hover:text-gold-dark transition-colors duration-200 underline" target="_blank" rel="noopener">
-                    Aviso de privacidad
-                </a>
-            </p>
-        </div>
-    </footer>
-
     <script>
+        // URL Parameters y City Detection
+        const urlParams = new URLSearchParams(window.location.search);
+        const cityParam = urlParams.get('ciudad') || urlParams.get('city') || urlParams.get('c');
+        
+        // Configuración por ciudad
+        const cityConfig = {
+            'guaymas': {
+                name: 'Guaymas',
+                clientCount: 247,
+                phone: '6228558278',
+                availability: 'Disponible inmediatamente',
+                slots: '2 cupos disponibles hoy'
+            },
+            'guadalajara': {
+                name: 'Guadalajara',
+                clientCount: 428,
+                phone: '6221424577',
+                availability: 'Disponible inmediatamente',
+                slots: '1 cupo disponible hoy'
+            },
+            'hermosillo': {
+                name: 'Hermosillo',
+                clientCount: 156,
+                phone: '6221424577',
+                availability: 'Consultar disponibilidad',
+                slots: 'Lista de espera'
+            }
+        };
+        
+        // Ciudad detectada
+        let detectedCity = 'guadalajara'; // Default
+        if (cityParam) {
+            const cityKey = cityParam.toLowerCase();
+            if (cityConfig[cityKey]) {
+                detectedCity = cityKey;
+            }
+        }
+        
+        const currentCity = cityConfig[detectedCity];
+        
+        // Actualizar todos los elementos de ciudad en la página
+        function updateCityElements() {
+            const cityElements = [
+                'cityDisplay', 'cityDisplay2', 'cityDisplay3', 'cityDisplay4', 
+                'cityDisplay5', 'cityDisplay6', 'cityDisplay7', 'cityConfirm'
+            ];
+            
+            cityElements.forEach(id => {
+                const element = document.getElementById(id);
+                if (element) {
+                    element.textContent = currentCity.name;
+                }
+            });
+            
+            // Actualizar contadores específicos
+            const clientCountEl = document.getElementById('clientCount');
+            if (clientCountEl) clientCountEl.textContent = currentCity.clientCount;
+            
+            const availabilityEl = document.getElementById('availabilityText');
+            if (availabilityEl) availabilityEl.textContent = currentCity.availability;
+            
+            const slotsEl = document.getElementById('slotsText');
+            if (slotsEl) slotsEl.textContent = currentCity.slots;
+        }
+        
         // Quiz Logic
         let currentQuestion = 1;
         let quizAnswers = {};
@@ -404,157 +259,46 @@
             radio.addEventListener('change', function() {
                 quizAnswers[this.name] = this.value;
                 
-                if (currentQuestion < 4) {
-                    // Show next question
+                if (currentQuestion < 2) {
                     document.querySelector(`[data-question="${currentQuestion}"]`).classList.add('hidden');
                     currentQuestion++;
                     document.querySelector(`[data-question="${currentQuestion}"]`).classList.remove('hidden');
                 } else {
-                    // Evaluate quiz
                     evaluateQuiz();
                 }
             });
         });
 
         function evaluateQuiz() {
-            // Hide all questions
             document.querySelectorAll('.quiz-question').forEach(q => q.classList.add('hidden'));
             
-            // Check if user qualifies
-            const qualifies = 
-                quizAnswers.q1 === 'mas-3000' &&
-                quizAnswers.q2 === 'todos-cambios' &&
-                quizAnswers.q3 === 'necesito-respuestas' &&
-                quizAnswers.q4 === 'si-invierto';
-
-            if (qualifies) {
+            if (quizAnswers.q1 === 'mas-3000' && quizAnswers.q2 === 'todos-cambios') {
                 document.getElementById('si-califica').classList.remove('hidden');
-                document.getElementById('diferenciacion').classList.remove('hidden');
                 document.getElementById('formulario').classList.remove('hidden');
-                
-                // Scroll to result
-                setTimeout(() => {
-                    document.getElementById('si-califica').scrollIntoView({ behavior: 'smooth' });
-                }, 500);
             } else {
                 document.getElementById('no-califica').classList.remove('hidden');
-                
-                // Scroll to result
-                setTimeout(() => {
-                    document.getElementById('no-califica').scrollIntoView({ behavior: 'smooth' });
-                }, 500);
             }
         }
 
-        // Form handling (solo aparece si califican)
-        const ciudadSelect = document.getElementById('ciudad');
-        const otraCiudadGroup = document.getElementById('otra-ciudad-group');
-        const otraCiudadInput = document.getElementById('otra-ciudad');
-
-        if (ciudadSelect) {
-            ciudadSelect.addEventListener('change', function() {
-                if (this.value === 'otra') {
-                    otraCiudadGroup.classList.remove('hidden');
-                    otraCiudadInput.required = true;
-                } else {
-                    otraCiudadGroup.classList.add('hidden');
-                    otraCiudadInput.required = false;
-                    otraCiudadInput.value = '';
-                    document.getElementById('error-otra-ciudad').classList.add('hidden');
-                }
-            });
-        }
-
-        // Form submission with enhanced filtering
+        // Form submission
         document.getElementById('leadForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
-            const nombre = document.getElementById('nombre');
-            const whatsapp = document.getElementById('whatsapp');
-            const ciudad = document.getElementById('ciudad');
-            const otraCiudad = document.getElementById('otra-ciudad');
-            const presupuesto = document.getElementById('presupuesto');
-            
-            let valid = true;
-
-            // Reset errors
-            document.querySelectorAll('.text-red-400').forEach(error => {
-                error.classList.add('hidden');
-            });
-            document.querySelectorAll('input, select').forEach(input => {
-                input.classList.remove('border-red-500');
-            });
-
-            // Validate nombre
-            if (!nombre.value.trim() || nombre.value.trim().length < 5) {
-                nombre.classList.add('border-red-500');
-                document.getElementById('error-nombre').classList.remove('hidden');
-                valid = false;
-            }
-
-            // Validate WhatsApp
-            const phoneRegex = /^[\d\s\-\+\(\)]+$/;
-            if (!whatsapp.value.trim() || !phoneRegex.test(whatsapp.value) || whatsapp.value.length < 10) {
-                whatsapp.classList.add('border-red-500');
-                document.getElementById('error-whatsapp').classList.remove('hidden');
-                valid = false;
-            }
-
-            // Validate ciudad
-            if (!ciudad.value.trim()) {
-                ciudad.classList.add('border-red-500');
-                document.getElementById('error-ciudad').classList.remove('hidden');
-                valid = false;
-            }
-
-            // Validate otra ciudad if needed
-            if (ciudad.value === 'otra' && !otraCiudad.value.trim()) {
-                otraCiudad.classList.add('border-red-500');
-                document.getElementById('error-otra-ciudad').classList.remove('hidden');
-                valid = false;
-            }
-
-            // Validate presupuesto
-            if (!presupuesto.value.trim()) {
-                presupuesto.classList.add('border-red-500');
-                document.getElementById('error-presupuesto').classList.remove('hidden');
-                valid = false;
-            }
-
-            // Filter out low-budget leads
-            if (presupuesto.value === 'menos-500') {
-                alert('Entendemos tu situación. Te recomendamos comenzar con consultas médicas básicas. Nuestro servicio está diseñado para personas que ya han invertido significativamente en su salud.');
-                return;
-            }
-
-            if (!valid) return;
-
-            // Show loading state
-            const submitBtn = this.querySelector('button[type="submit"]');
-            const btnText = submitBtn.querySelector('.btn-text');
-            const loading = submitBtn.querySelector('.loading');
-            
-            submitBtn.disabled = true;
-            btnText.classList.add('hidden');
-            loading.classList.remove('hidden');
-
-            // Save enhanced data including quiz results
+            // Guardar datos incluyendo ciudad detectada
             const formData = {
-                nombre: nombre.value.trim(),
-                whatsapp: whatsapp.value.trim(),
-                ciudad: ciudad.value.trim(),
-                otraCiudad: ciudad.value === 'otra' ? otraCiudad.value.trim() : '',
-                presupuesto: presupuesto.value,
+                nombre: document.getElementById('nombre').value,
+                whatsapp: document.getElementById('whatsapp').value,
+                ciudad: detectedCity,
+                cityName: currentCity.name,
+                phone: currentCity.phone,
                 quizResults: quizAnswers,
                 qualified: true,
+                source: 'campaign_' + detectedCity,
                 timestamp: new Date().toISOString()
             };
+            
             localStorage.setItem('leadData', JSON.stringify(formData));
-
-            // Redirect to thank you page
-            setTimeout(() => {
-                window.location.href = 'gracias.html';
-            }, 1200);
+            window.location.href = 'gracias.html';
         });
 
         // Smooth scrolling
@@ -562,39 +306,23 @@
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
+                if (target) target.scrollIntoView({ behavior: 'smooth' });
             });
         });
 
-        // Real-time validation feedback
-        document.getElementById('nombre').addEventListener('input', function() {
-            if (this.value.trim().length >= 5) {
-                this.classList.remove('border-red-500');
-                this.classList.add('border-green-500');
-                document.getElementById('error-nombre').classList.add('hidden');
-            }
-        });
-
-        document.getElementById('whatsapp').addEventListener('input', function() {
-            const phoneRegex = /^[\d\s\-\+\(\)]+$/;
-            if (phoneRegex.test(this.value) && this.value.length >= 10) {
-                this.classList.remove('border-red-500');
-                this.classList.add('border-green-500');
-                document.getElementById('error-whatsapp').classList.add('hidden');
-            }
-        });
-
-        // Track quiz abandonment
-        let quizStartTime = Date.now();
-        window.addEventListener('beforeunload', function() {
-            if (currentQuestion > 1 && currentQuestion < 4) {
-                // Track partial quiz completion for optimization
-                console.log(`Quiz abandoned at question ${currentQuestion}`);
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            updateCityElements();
+            
+            // Log para tracking
+            console.log('City detected:', currentCity.name, 'from URL param:', cityParam);
+            
+            // Google Analytics event (si tienes GA configurado)
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'city_detected', {
+                    'city': currentCity.name,
+                    'source': cityParam ? 'url_param' : 'default'
+                });
             }
         });
     </script>

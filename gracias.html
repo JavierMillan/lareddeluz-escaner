@@ -247,7 +247,7 @@
 
     <!-- JavaScript -->
     <script>
-        // WhatsApp functionality with enhanced filtering
+        // WhatsApp functionality with city detection
         function setupWhatsappButton() {
             const whatsappButton = document.getElementById('whatsappButton');
             if (!whatsappButton) return;
@@ -260,18 +260,10 @@
                 return;
             }
 
-            let phone = '6221424577'; // Default (Guadalajara)
-
-            // Determine phone number based on city
-            if (
-                (leadData.ciudad && leadData.ciudad.trim().toLowerCase() === 'guaymas') ||
-                (leadData.otraCiudad && leadData.otraCiudad.trim().toLowerCase() === 'guaymas')
-            ) {
-                phone = '6228558278';
-            }
-
+            // Use phone from stored data (already detected in landing page)
+            const phone = leadData.phone || '6221424577';
             const nombre = leadData.nombre ? leadData.nombre.trim() : 'Cliente Calificado';
-            const ciudad = leadData.ciudad === 'otra' ? leadData.otraCiudad : leadData.ciudad;
+            const ciudad = leadData.cityName || leadData.ciudad || 'tu ciudad';
             const whatsappNum = leadData.whatsapp || 'No proporcionado';
 
             // Enhanced message for qualified leads
@@ -282,15 +274,16 @@ Hola, soy ${nombre} y acabo de completar el proceso de calificación para el bio
 📋 MIS RESPUESTAS AL QUIZ:
 ${getQuizSummary(leadData.quizResults || {})}
 
-📍 UBICACIÓN: ${ciudad}
+📍 CIUDAD: ${ciudad}
 📱 WHATSAPP: ${whatsappNum}
+🌐 FUENTE: ${leadData.source || 'website'}
 
 ✅ Estoy PRE-CALIFICADO y listo para agendar.
 ✅ Comprendo que la inversión es $499 por la sesión completa.
 ✅ Necesito respuestas REALES después de gastar tanto en estudios sin resultados.
 ✅ Estoy dispuesto/a a cambiar lo que sea necesario para mejorar mi salud.
 
-¿Cuándo puedo agendar mi cita prioritaria?`;
+¿Cuándo puedo agendar mi cita prioritaria en ${ciudad}?`;
 
             const url = `https://api.whatsapp.com/send?phone=521${phone}&text=${encodeURIComponent(message)}`;
             
