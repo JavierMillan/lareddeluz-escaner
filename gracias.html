@@ -8,42 +8,6 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="Gracias - La Red de Luz">
     <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
-    <link rel="stylesheet" href="css/styles.css">
-    <style>
-        body {
-            background: #f8f8f8;
-        }
-        .gracias-bg-overlay {
-            position: fixed;
-            inset: 0;
-            background: linear-gradient(120deg, #1a237e 0%, #1976d2 100%);
-            opacity: 0.65;
-            z-index: 0;
-        }
-        .gracias-bg-pattern {
-            position: fixed;
-            inset: 0;
-            z-index: 0;
-            pointer-events: none;
-            /* SVG inline base64 for cross-browser pattern with alternated and rotated logos */
-            background-image:
-                url("data:image/svg+xml;utf8,<svg width='48' height='48' xmlns='http://www.w3.org/2000/svg'><g opacity='0.11'><image href='assets/images/cuadrado.png' x='0' y='0' width='24' height='24'/><g transform='rotate(180 36 36)'><image href='assets/images/cuadrado.png' x='24' y='24' width='24' height='24'/></g></g></svg>");
-            background-size: 48px 48px;
-            background-repeat: repeat;
-            opacity: 1;
-            mix-blend-mode: lighten;
-        }
-        .gracias-main-container {
-            position: relative;<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>¡Gracias! | La Red de Luz</title>
-    <meta name="description" content="Gracias por confiar en nuestro bioescáner. Pronto nos pondremos en contacto contigo.">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Gracias - La Red de Luz">
-    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -112,16 +76,16 @@
                     
                     <!-- Main Headline -->
                     <h1 class="text-4xl md:text-6xl font-bold mb-6 text-white">
-                        ¡Felicitaciones por dar el primer paso hacia tu bienestar!
+                        ¡Felicitaciones por calificar!
                     </h1>
                     
                     <!-- Subtitle -->
                     <div class="text-xl md:text-2xl mb-8 text-white/90 leading-relaxed max-w-3xl mx-auto">
-                        <p>Has tomado una decisión importante para entender y mejorar tu salud.</p>
-                        <p>En <span class="font-bold text-gold-light">La Red de Luz</span> estamos comprometidos a acompañarte en este viaje de autodescubrimiento y sanación.</p>
+                        <p>Has demostrado que estás <span class="font-bold text-gold-light">realmente comprometido/a</span> con encontrar respuestas sobre tu salud.</p>
+                        <p>Eres exactamente el tipo de persona con la que trabajamos en <span class="font-bold text-gold-light">La Red de Luz</span>.</p>
                         
                         <div class="inline-block mt-4 px-6 py-3 bg-gradient-to-r from-gold-light to-gold-dark text-blue-primary font-bold rounded-2xl">
-                            ¡Estamos listos para apoyarte!
+                            🎯 LEAD CALIFICADO - PRIORIDAD ALTA
                         </div>
                     </div>
                     
@@ -142,28 +106,51 @@
                     
                     <!-- Next Steps -->
                     <div class="text-lg md:text-xl text-white/90 mb-8 leading-relaxed">
-                        <p>Para agendar tu sesión de bioescáner, haz clic en el botón de abajo.</p>
-                        <p>Te llevará directamente a WhatsApp donde podrás coordinar tu cita con nuestro equipo.</p>
+                        <p><strong>Como eres un lead pre-calificado</strong>, tendrás atención prioritaria.</p>
+                        <p>Haz clic en el botón de abajo para conectar inmediatamente con nuestro equipo especializado.</p>
                     </div>
                     
                     <!-- WhatsApp CTA Button -->
                     <button 
                         id="whatsappButton" 
-                        class="inline-flex items-center space-x-3 px-8 py-4 bg-gradient-to-r from-green-500 to-green-600 text-white font-bold text-lg rounded-full hover:scale-105 hover:shadow-2xl transition-all duration-300 group"
+                        class="inline-flex items-center space-x-3 px-8 py-4 bg-gradient-to-r from-green-500 to-green-600 text-white font-bold text-lg rounded-full hover:scale-105 hover:shadow-2xl transition-all duration-300 group animate-pulse-slow"
                     >
                         <svg class="w-6 h-6 group-hover:scale-110 transition-transform duration-300" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2zm.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 012.41 5.83c0 4.54-3.7 8.23-8.24 8.23-1.48 0-2.93-.39-4.19-1.15l-.3-.17-3.12.82.83-3.04-.2-.32a8.188 8.188 0 01-1.26-4.38c.01-4.54 3.7-8.24 8.25-8.24z"/>
                         </svg>
-                        <span>Agendar mi sesión</span>
+                        <span>Conectar con equipo especializado</span>
                         <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
                         </svg>
                     </button>
+                    
+                    <!-- Priority Benefits -->
+                    <div class="mt-8 glass rounded-2xl p-6 bg-gold-light/10 border-gold-light/30">
+                        <h3 class="text-xl font-bold text-gold-light mb-4">Como lead calificado recibes:</h3>
+                        <div class="grid md:grid-cols-2 gap-4 text-left">
+                            <div class="flex items-center space-x-3">
+                                <span class="text-2xl">🚀</span>
+                                <span>Atención prioritaria inmediata</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <span class="text-2xl">📞</span>
+                                <span>Llamada de pre-calificación hoy</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <span class="text-2xl">🎁</span>
+                                <span>Bonos incluidos ($800 valor)</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <span class="text-2xl">🔒</span>
+                                <span>Garantía total de satisfacción</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 
                 <!-- Process Timeline -->
                 <div class="mt-16 glass rounded-3xl p-8 animate-fade-in">
-                    <h2 class="text-3xl font-bold text-center mb-12 text-gold-light">¿Qué sigue ahora?</h2>
+                    <h2 class="text-3xl font-bold text-center mb-12 text-gold-light">Tu proceso prioritario</h2>
                     
                     <div class="grid md:grid-cols-4 gap-8">
                         <!-- Step 1 -->
@@ -172,7 +159,7 @@
                                 1
                             </div>
                             <h3 class="font-semibold text-gold-light mb-2">Contacto inmediato</h3>
-                            <p class="text-white/80 text-sm">Te contactamos vía WhatsApp en los próximos minutos</p>
+                            <p class="text-white/80 text-sm">Respuesta prioritaria en menos de 5 minutos</p>
                         </div>
                         
                         <!-- Step 2 -->
@@ -180,8 +167,8 @@
                             <div class="w-16 h-16 bg-gradient-to-r from-gold-light to-gold-dark rounded-full mx-auto mb-4 flex items-center justify-center font-bold text-blue-primary text-xl group-hover:scale-110 transition-transform duration-300">
                                 2
                             </div>
-                            <h3 class="font-semibold text-gold-light mb-2">Pre-calificación</h3>
-                            <p class="text-white/80 text-sm">Llamada breve de 5-10 minutos para entender tu situación</p>
+                            <h3 class="font-semibold text-gold-light mb-2">Confirmación rápida</h3>
+                            <p class="text-white/80 text-sm">Llamada de 5 minutos para confirmar datos</p>
                         </div>
                         
                         <!-- Step 3 -->
@@ -189,8 +176,8 @@
                             <div class="w-16 h-16 bg-gradient-to-r from-gold-light to-gold-dark rounded-full mx-auto mb-4 flex items-center justify-center font-bold text-blue-primary text-xl group-hover:scale-110 transition-transform duration-300">
                                 3
                             </div>
-                            <h3 class="font-semibold text-gold-light mb-2">Agendamos tu cita</h3>
-                            <p class="text-white/80 text-sm">Programamos tu sesión en el horario que mejor te convenga</p>
+                            <h3 class="font-semibold text-gold-light mb-2">Cita prioritaria</h3>
+                            <p class="text-white/80 text-sm">Cupo reservado en horario premium</p>
                         </div>
                         
                         <!-- Step 4 -->
@@ -198,42 +185,42 @@
                             <div class="w-16 h-16 bg-gradient-to-r from-gold-light to-gold-dark rounded-full mx-auto mb-4 flex items-center justify-center font-bold text-blue-primary text-xl group-hover:scale-110 transition-transform duration-300">
                                 4
                             </div>
-                            <h3 class="font-semibold text-gold-light mb-2">Tu bioescáner</h3>
-                            <p class="text-white/80 text-sm">5 minutos que cambiarán tu perspectiva sobre tu salud</p>
+                            <h3 class="font-semibold text-gold-light mb-2">Sesión completa</h3>
+                            <p class="text-white/80 text-sm">Bioescáner + bonos + seguimiento</p>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Testimonials -->
+                <!-- Testimonials de leads calificados -->
                 <div class="mt-16 animate-fade-in">
-                    <h2 class="text-3xl font-bold text-center mb-12 text-white">Lo que dicen nuestros clientes</h2>
+                    <h2 class="text-3xl font-bold text-center mb-12 text-white">Clientes que también calificaron</h2>
                     
                     <div class="grid md:grid-cols-3 gap-8">
                         <div class="glass rounded-2xl p-6 hover:scale-105 transition-all duration-300">
                             <div class="w-12 h-12 bg-gradient-to-r from-gold-light to-gold-dark rounded-full mx-auto mb-4 flex items-center justify-center text-xl">👩</div>
                             <p class="text-white/90 mb-4 italic text-center">
-                                "Por fin alguien me escuchó. Años buscando respuestas y las encontré en 5 minutos."
+                                "Gasté $4,000 sin respuestas. En 5 minutos de bioescáner encontré la causa real de mi fatiga."
                             </p>
                             <div class="text-gold-light font-semibold text-center">María G.</div>
-                            <div class="text-white/60 text-sm text-center">Guaymas</div>
+                            <div class="text-white/60 text-sm text-center">Lead calificado - Guaymas</div>
                         </div>
                         
                         <div class="glass rounded-2xl p-6 hover:scale-105 transition-all duration-300">
                             <div class="w-12 h-12 bg-gradient-to-r from-gold-light to-gold-dark rounded-full mx-auto mb-4 flex items-center justify-center text-xl">👨</div>
                             <p class="text-white/90 mb-4 italic text-center">
-                                "Cansado de laboratorios. El bioescáner me mostró exactamente qué cambiar."
+                                "Después de 15 estudios médicos sin resultados, el bioescáner me dio las respuestas que necesitaba."
                             </p>
                             <div class="text-gold-light font-semibold text-center">Carlos R.</div>
-                            <div class="text-white/60 text-sm text-center">Guadalajara</div>
+                            <div class="text-white/60 text-sm text-center">Lead calificado - Guadalajara</div>
                         </div>
                         
                         <div class="glass rounded-2xl p-6 hover:scale-105 transition-all duration-300">
                             <div class="w-12 h-12 bg-gradient-to-r from-gold-light to-gold-dark rounded-full mx-auto mb-4 flex items-center justify-center text-xl">👩</div>
                             <p class="text-white/90 mb-4 italic text-center">
-                                "Después de tantos 'todo está normal', por fin encontré respuestas reales."
+                                "Por fin entendí por qué tenía dolor de espalda constante. Valió cada peso invertido."
                             </p>
                             <div class="text-gold-light font-semibold text-center">Ana L.</div>
-                            <div class="text-white/60 text-sm text-center">Hermosillo</div>
+                            <div class="text-white/60 text-sm text-center">Lead calificado - Hermosillo</div>
                         </div>
                     </div>
                 </div>
@@ -285,7 +272,7 @@
 
             const nombre = leadData.nombre ? leadData.nombre.trim() : 'Cliente Calificado';
             const ciudad = leadData.ciudad === 'otra' ? leadData.otraCiudad : leadData.ciudad;
-            const presupuesto = leadData.presupuesto || 'no-especificado';
+            const whatsappNum = leadData.whatsapp || 'No proporcionado';
 
             // Enhanced message for qualified leads
             let message = `🔥 LEAD CALIFICADO - PRIORIDAD ALTA 🔥
@@ -295,13 +282,13 @@ Hola, soy ${nombre} y acabo de completar el proceso de calificación para el bio
 📋 MIS RESPUESTAS AL QUIZ:
 ${getQuizSummary(leadData.quizResults || {})}
 
-💰 PRESUPUESTO: ${getPresupuestoText(presupuesto)}
 📍 UBICACIÓN: ${ciudad}
-📱 WHATSAPP: ${leadData.whatsapp || 'No proporcionado'}
+📱 WHATSAPP: ${whatsappNum}
 
 ✅ Estoy PRE-CALIFICADO y listo para agendar.
 ✅ Comprendo que la inversión es $499 por la sesión completa.
 ✅ Necesito respuestas REALES después de gastar tanto en estudios sin resultados.
+✅ Estoy dispuesto/a a cambiar lo que sea necesario para mejorar mi salud.
 
 ¿Cuándo puedo agendar mi cita prioritaria?`;
 
@@ -324,16 +311,6 @@ ${getQuizSummary(leadData.quizResults || {})}
                     'no-cambios': 'No dispuesto a cambios',
                     'algunos-cambios': 'Cambios menores',
                     'todos-cambios': 'Dispuesto a cambios necesarios ✅'
-                },
-                q3: {
-                    'curioso': 'Solo curiosidad',
-                    'molestias-leves': 'Molestias tolerables',
-                    'necesito-respuestas': 'NECESITA respuestas YA ✅'
-                },
-                q4: {
-                    'muy-caro': 'Busca opciones gratuitas',
-                    'pensarlo': 'Necesita tiempo para decidir',
-                    'si-invierto': 'Listo para invertir ✅'
                 }
             };
 
@@ -343,16 +320,7 @@ ${getQuizSummary(leadData.quizResults || {})}
                 const text = answers[question] && answers[question][answer] || answer;
                 summary += `• ${text}\n`;
             }
-            return summary;
-        }
-
-        function getPresupuestoText(presupuesto) {
-            const textos = {
-                'menos-500': 'Menos de $500',
-                '500-1000': '$500-$1,000',
-                '1000-mas': '$1,000+ (Prioriza resultados) ✅'
-            };
-            return textos[presupuesto] || presupuesto;
+            return summary || '• Lead pre-calificado ✅';
         }
 
         // Initialize on page load
@@ -382,186 +350,5 @@ ${getQuizSummary(leadData.quizResults || {})}
             });
         });
     </script>
-</body>
-</html>
-            max-width: 900px;
-            margin: 2rem auto 1.2rem auto;
-            padding: 0 12px;
-            z-index: 1;
-        }
-        .gracias-card {
-            background: rgba(255,255,255,0.18);
-            border-radius: 28px;
-            box-shadow: 0 8px 48px 0 rgba(31,38,135,0.13);
-            padding: 1.7rem 1.5rem 2rem 1.5rem;
-            text-align: center;
-            backdrop-filter: blur(18px) saturate(160%);
-            -webkit-backdrop-filter: blur(18px) saturate(160%);
-            border: 1.5px solid rgba(255,255,255,0.32);
-        }
-        .gracias-card .hero-logo {
-            margin-bottom: 1.1rem;
-            max-width: 100px;
-            border-radius: 14px;
-            box-shadow: 0 2px 12px 0 rgba(31,38,135,0.10);
-            background: rgba(255,255,255,0.45);
-            padding: 0.4rem;
-        }
-        .gracias-card .hero__title {
-            font-size: 2rem;
-            font-weight: 800;
-            color: #232323;
-            margin: 0 auto 1rem auto;
-            max-width: 650px;
-            line-height: 1.15;
-            text-shadow: 0 2px 8px rgba(255,255,255,0.18);
-        }
-        .gracias-card .hero__subtitle {
-            max-width: 650px;
-            margin: 0 auto 1.1rem auto;
-            font-size: 1.08rem;
-            color: #232323;
-            font-weight: 500;
-            line-height: 1.5;
-            text-shadow: 0 2px 8px rgba(255,255,255,0.13);
-        }
-        .gracias-card .hero__subtitle b {
-            color: #1a237e;
-        }
-        .gracias-card .apoyo-highlight {
-            display: inline-block;
-            margin-top: 0.7rem;
-            padding: 0.35em 1.1em;
-            background: rgba(30,30,30,0.82);
-            color: #e4cd85;
-            font-weight: 700;
-            border-radius: 18px;
-            font-size: 1.08em;
-            box-shadow: 0 2px 12px 0 rgba(0,0,0,0.13);
-            letter-spacing: 0.5px;
-        }
-        .gracias-video-explain {
-            margin: 1.1rem auto 1.1rem auto;
-            max-width: 720px;
-            aspect-ratio: 16/9;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 4px 24px 0 rgba(31,38,135,0.10);
-            background: #000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .gracias-video-explain video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            background: #000;
-            display: block;
-        }
-        .gracias-next-step {
-            font-size: 1.02rem;
-            color: #232323;
-            margin: 1.1rem 0 1.7rem 0;
-        }
-        .gracias-whatsapp-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            background: rgba(255,255,255,0.18);
-            color: #128C7E;
-            font-weight: 700;
-            font-size: 1.13rem;
-            padding: 0.95rem 2.3rem;
-            border-radius: 40px;
-            border: 1.5px solid rgba(255,255,255,0.32);
-            box-shadow: 0 6px 24px 0 rgba(37, 211, 102, 0.13);
-            text-decoration: none;
-            transition: transform 0.15s, box-shadow 0.15s, background 0.2s, color 0.2s;
-            letter-spacing: 0.3px;
-            backdrop-filter: blur(12px) saturate(160%);
-            -webkit-backdrop-filter: blur(12px) saturate(160%);
-        }
-        .gracias-whatsapp-btn svg {
-            display: block;
-        }
-        .gracias-whatsapp-btn:hover, .gracias-whatsapp-btn:focus {
-            transform: translateY(-1px) scale(1.03);
-            box-shadow: 0 10px 32px 0 rgba(37, 211, 102, 0.18);
-            background: rgba(37, 211, 102, 0.18);
-            color: #128C7E;
-            text-decoration: none;
-        }
-        @media (max-width: 1000px) {
-            .gracias-main-container { max-width: 99vw; }
-            .gracias-card { padding: 1rem 0.5rem; }
-            .gracias-card .hero__title { font-size: 1.2rem; }
-            .gracias-card .hero-logo { max-width: 60px; }
-            .gracias-video-explain { max-width: 98vw; }
-        }
-        .footer {
-            background: rgba(255,255,255,0.18);
-            border-top: 1.5px solid rgba(255,255,255,0.32);
-            box-shadow: 0 -2px 24px 0 rgba(31,38,135,0.08);
-            backdrop-filter: blur(14px) saturate(160%);
-            -webkit-backdrop-filter: blur(14px) saturate(160%);
-            padding: 1.2rem 0 0.7rem 0;
-            margin-top: 2.5rem;
-        }
-        .footer-text {
-            color: #232323;
-            font-size: 1rem;
-            text-align: center;
-            text-shadow: 0 2px 8px rgba(255,255,255,0.13);
-        }
-        .footer-link {
-            color: #1a237e;
-            text-decoration: none;
-            transition: color 0.2s;
-            border-bottom: 1px solid #1a237e;
-        }
-        .footer-link:hover,
-        .footer-link:focus {
-            color: #e4cd85;
-            border-bottom: 1px solid #e4cd85;
-        }
-    </style>
-</head>
-<body>
-    <div class="gracias-bg-overlay"></div>
-    <div class="gracias-bg-pattern"></div>
-    <main>
-        <div class="gracias-main-container">
-            <div class="gracias-card">
-                <!-- Logo removido del contenido principal para dejar solo el pattern de fondo -->
-                <h1 class="hero__title">¡Felicitaciones por dar el primer paso hacia tu bienestar!</h1>
-                <p class="hero__subtitle">
-                    Has tomado una decisión importante para entender y mejorar tu salud.<br>
-                    En <b>La Red de Luz</b> estamos comprometidos a acompañarte en este viaje de autodescubrimiento y sanación.<br>
-                    <span class="apoyo-highlight">¡Estamos listos para apoyarte!</span>
-                </p>
-                <div class="gracias-video-explain">
-                    <video src="assets/videos/explicativo-placeholder.mp4" poster="assets/images/cuadrado.png" controls></video>
-                </div>
-                <div class="gracias-next-step">
-                    Para agendar tu sesión de bioescáner, haz clic en el botón de abajo.<br>
-                    Te llevará directamente a WhatsApp donde podrás coordinar tu cita con nuestro equipo.
-                </div>
-                <a href="#" id="whatsappButton" class="gracias-whatsapp-btn">
-                    <svg viewBox="0 0 24 24" width="22" height="22">
-                        <path fill="currentColor" d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2zm.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 012.41 5.83c0 4.54-3.7 8.23-8.24 8.23-1.48 0-2.93-.39-4.19-1.15l-.3-.17-3.12.82.83-3.04-.2-.32a8.188 8.188 0 01-1.26-4.38c.01-4.54 3.7-8.24 8.25-8.24z"/>
-                    </svg>
-                    <span>Agendar mi sesión</span>
-                </a>
-            </div>
-        </div>
-        <p class="disclaimer">Este servicio no sustituye un diagnóstico médico…</p>
-        <footer class="footer">
-            <div class="container">
-                <p class="footer-text">&copy; 2025 La Red de Luz. Todos los derechos reservados. | <a href="aviso-privacidad.pdf" class="footer-link" target="_blank" rel="noopener">Aviso de privacidad</a></p>
-            </div>
-        </footer>
-    </main>
-    <script src="js/main.js"></script>
 </body>
 </html>
