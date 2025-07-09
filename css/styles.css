@@ -152,57 +152,6 @@ main {
     }
 }
 
-/* Audience section */
-.audience-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-    max-width: 1000px;
-    margin: 0 auto;
-    width: 100%;
-}
-
-.audience-card {
-    background: rgba(255, 255, 255, 0.10);
-    border: 1.5px solid rgba(255, 255, 255, 0.25);
-    border-radius: 24px;
-    padding: 2rem;
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.10);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-}
-
-.audience-title {
-    color: var(--gold-light);
-    text-align: center;
-    margin-bottom: 1rem;
-    font-size: 1.6rem;
-}
-
-.audience-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-.audience-list li {
-    position: relative;
-    padding-left: 2rem;
-    margin-bottom: 0.8rem;
-}
-.audience-list li::before {
-    position: absolute;
-    left: 0;
-    top: 0;
-}
-.yes-list li::before { content: "✔️"; }
-.no-list li::before { content: "❌"; }
-
-@media (max-width: 900px) {
-    .audience-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
 /* Centrar video y formato horizontal */
 .video-explain {
     display: flex;
@@ -267,36 +216,6 @@ main {
     color: var(--gold-light);
 }
 
-/* Comparación de precios: fondo claro para contraste */
-.section.price-comparison {
-    background: var(--white);
-    color: var(--black);
-}
-.table-wrapper {
-    overflow-x: auto;
-    width: 100%;
-}
-.price-table {
-    width: 100%;
-    min-width: 320px;
-    border-collapse: collapse;
-    margin: var(--spacing-md) 0;
-}
-.price-table th,
-.price-table td {
-    border: 1px solid var(--gold-dark);
-    padding: 0.75rem;
-    text-align: left;
-}
-.price-table thead {
-    background: rgba(228,205,133,0.2);
-}
-.price-table tbody tr:nth-child(even) {
-    background: var(--gray-light);
-}
-.price-note {
-    margin-top: var(--spacing-sm);
-}
 /* Testimonios: fondo negro con glassmorphism y dorado */
 .section.testimonials {
     background: linear-gradient(120deg, #10131a 90%, #163384 100%);
@@ -909,14 +828,6 @@ p {
     color: var(--white);
 }
 
-/* Disclaimer text */
-.disclaimer {
-    font-size: 0.875rem;
-    color: var(--text-secondary);
-    text-align: center;
-    margin: 1rem auto;
-}
-
 /* Scrollbar Styles */
 ::-webkit-scrollbar {
     width: 12px;
@@ -1367,46 +1278,290 @@ p {
     border-radius: inherit;
 }
 
-/* FAQ SECTION */
-.faq {
-    background: linear-gradient(120deg, #13245a 80%, rgba(22,51,132,0.92) 100%);
-    color: var(--white);
-}
-.faq-list {
-    width: 100%;
-    max-width: 760px;
-    margin: 2rem auto 0 auto;
-}
-.faq-item {
-    background: rgba(255,255,255,0.08);
-    border: 1px solid var(--gold-light);
-    border-radius: 12px;
-    margin-bottom: 1rem;
-    overflow: hidden;
-    transition: box-shadow 0.3s;
-}
-.faq-item.active {
-    box-shadow: 0 8px 32px rgba(31,38,135,0.2);
-}
-.faq-question {
-    width: 100%;
-    padding: 1rem 1.2rem;
-    background: none;
-    border: none;
-    color: var(--gold-light);
+
+/* Badge de frustración */
+.frustration-badge {
+    display: inline-block;
+    background: #d32f2f;
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 25px;
+    font-size: 0.9rem;
     font-weight: 600;
-    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    animation: frustrationPulse 2s infinite;
+    box-shadow: 0 4px 16px rgba(211, 47, 47, 0.3);
+}
+
+@keyframes frustrationPulse {
+    0%, 100% { 
+        opacity: 1; 
+        transform: scale(1);
+        box-shadow: 0 4px 16px rgba(211, 47, 47, 0.3);
+    }
+    50% { 
+        opacity: 0.8; 
+        transform: scale(1.05);
+        box-shadow: 0 6px 20px rgba(211, 47, 47, 0.4);
+    }
+}
+
+/* Pain points en hero */
+.hero-pain-points {
+    background: rgba(211, 47, 47, 0.1);
+    border: 1px solid rgba(211, 47, 47, 0.3);
+    border-radius: 16px;
+    padding: 1.5rem;
+    margin: 2rem 0;
     text-align: left;
-    cursor: pointer;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
-.faq-answer {
-    max-height: 0;
-    overflow: hidden;
-    padding: 0 1.2rem;
+
+.pain-point {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.pain-point:last-child { 
+    margin-bottom: 0; 
+}
+
+.pain-icon {
+    color: #ff5252;
+    margin-right: 0.8rem;
+    font-size: 1.3rem;
+    flex-shrink: 0;
+}
+
+/* Sección VS Comparison */
+.vs-comparison {
+    background: linear-gradient(120deg, #1a1a1a 0%, #2d2d2d 100%);
+    padding: 60px 0;
+    margin: 0;
+}
+
+.vs-grid {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 2rem;
+    align-items: stretch;
+    margin-top: 2rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.vs-side {
+    padding: 2rem;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 2px solid;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+.frustration-side {
+    background: rgba(211, 47, 47, 0.1);
+    border-color: #d32f2f;
+    box-shadow: 0 8px 32px rgba(211, 47, 47, 0.1);
+}
+
+.solution-side {
+    background: rgba(46, 125, 50, 0.1);
+    border-color: #2e7d32;
+    box-shadow: 0 8px 32px rgba(46, 125, 50, 0.1);
+}
+
+.vs-divider {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--gold-light);
+    text-align: center;
+    align-self: center;
+    text-shadow: 0 2px 8px rgba(228, 205, 133, 0.3);
+}
+
+.vs-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.frustration-side .vs-title {
+    color: #ff5252;
+}
+
+.solution-side .vs-title {
+    color: #4caf50;
+}
+
+.vs-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex: 1;
+}
+
+.vs-list li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+    font-size: 1rem;
     color: var(--white);
-    transition: max-height 0.3s ease, padding 0.3s ease;
+    line-height: 1.4;
 }
-.faq-item.active .faq-answer {
-    padding: 1rem 1.2rem;
-    max-height: 200px;
+
+.vs-list li::before {
+    margin-right: 0.8rem;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+}
+
+.frustration-side .vs-list li::before {
+    content: "😤";
+}
+
+.solution-side .vs-list li::before {
+    content: "✨";
+}
+
+/* Sección de parámetros específicos */
+.parameters-section {
+    padding: 80px 0;
+    background: linear-gradient(120deg, var(--blue-accent) 0%, #2c5aa0 100%);
+}
+
+.parameters-intro {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.parameters-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.parameter-card {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 16px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 16px rgba(22, 51, 132, 0.1);
+}
+
+.parameter-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255,255,255,0.15);
+    border-color: var(--gold-light);
+    box-shadow: 0 8px 32px rgba(228, 205, 133, 0.2);
+}
+
+.parameter-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--gold-light);
+    filter: drop-shadow(0 2px 8px rgba(228, 205, 133, 0.3));
+}
+
+.parameter-title {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--white);
+    font-size: 1.1rem;
+}
+
+.parameter-example {
+    font-size: 0.9rem;
+    color: var(--gold-light);
+    font-style: italic;
+    line-height: 1.4;
+    opacity: 0.9;
+}
+
+/* Banner de urgencia en CTA */
+.urgency-banner {
+    background: linear-gradient(90deg, #d32f2f 0%, #ff5252 100%);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    font-weight: 600;
+    box-shadow: 0 4px 16px rgba(211, 47, 47, 0.3);
+    animation: urgencyPulse 2s infinite alternate;
+}
+
+@keyframes urgencyPulse {
+    0% { 
+        box-shadow: 0 4px 16px rgba(211, 47, 47, 0.3);
+        transform: scale(1);
+    }
+    100% { 
+        box-shadow: 0 8px 24px rgba(211, 47, 47, 0.5);
+        transform: scale(1.02);
+    }
+}
+
+/* Responsive para nuevas secciones */
+@media (max-width: 768px) {
+    .vs-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .vs-divider {
+        order: -1;
+        font-size: 2rem;
+        margin: 1rem 0;
+    }
+
+    .parameters-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .vs-side {
+        padding: 1.5rem;
+        min-height: auto;
+    }
+
+    .hero-pain-points {
+        padding: 1rem;
+        margin: 1.5rem 0;
+    }
+
+    .pain-point {
+        font-size: 1rem;
+    }
+
+    .parameter-card {
+        padding: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .frustration-badge {
+        font-size: 0.8rem;
+        padding: 0.4rem 1.2rem;
+    }
+
+    .vs-title {
+        font-size: 1.3rem;
+    }
+
+    .vs-list li {
+        font-size: 0.9rem;
+    }
 }

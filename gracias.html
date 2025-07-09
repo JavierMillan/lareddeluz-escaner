@@ -34,7 +34,356 @@
             mix-blend-mode: lighten;
         }
         .gracias-main-container {
-            position: relative;
+            position: relative;<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Gracias! | La Red de Luz</title>
+    <meta name="description" content="Gracias por confiar en nuestro bioescáner. Pronto nos pondremos en contacto contigo.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Gracias - La Red de Luz">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            light: '#e4cd85',
+                            DEFAULT: '#d4af37',
+                            dark: '#c08a2d'
+                        },
+                        blue: {
+                            primary: '#163384',
+                            secondary: '#2c5aa0'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'system-ui', 'sans-serif']
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'fade-in': 'fadeIn 0.8s ease-out'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .glass {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .pattern-bg {
+            background-image: 
+                radial-gradient(circle at 20% 80%, rgba(228, 205, 133, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(22, 51, 132, 0.1) 0%, transparent 50%);
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-blue-primary via-blue-secondary to-blue-primary min-h-screen text-white font-sans pattern-bg">
+    
+    <!-- Background Pattern -->
+    <div class="fixed inset-0 opacity-5 pointer-events-none">
+        <div class="absolute inset-0 bg-gradient-to-r from-transparent via-gold-light/20 to-transparent transform rotate-12"></div>
+        <div class="absolute inset-0 bg-gradient-to-l from-transparent via-blue-primary/20 to-transparent transform -rotate-12"></div>
+    </div>
+
+    <main class="relative z-10 py-12">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                
+                <!-- Main Thank You Card -->
+                <div class="glass rounded-3xl p-8 md:p-12 text-center animate-fade-in">
+                    
+                    <!-- Success Icon -->
+                    <div class="w-20 h-20 bg-gradient-to-r from-green-400 to-green-600 rounded-full mx-auto mb-8 flex items-center justify-center animate-pulse-slow">
+                        <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                    </div>
+                    
+                    <!-- Main Headline -->
+                    <h1 class="text-4xl md:text-6xl font-bold mb-6 text-white">
+                        ¡Felicitaciones por dar el primer paso hacia tu bienestar!
+                    </h1>
+                    
+                    <!-- Subtitle -->
+                    <div class="text-xl md:text-2xl mb-8 text-white/90 leading-relaxed max-w-3xl mx-auto">
+                        <p>Has tomado una decisión importante para entender y mejorar tu salud.</p>
+                        <p>En <span class="font-bold text-gold-light">La Red de Luz</span> estamos comprometidos a acompañarte en este viaje de autodescubrimiento y sanación.</p>
+                        
+                        <div class="inline-block mt-4 px-6 py-3 bg-gradient-to-r from-gold-light to-gold-dark text-blue-primary font-bold rounded-2xl">
+                            ¡Estamos listos para apoyarte!
+                        </div>
+                    </div>
+                    
+                    <!-- Video Section -->
+                    <div class="max-w-3xl mx-auto mb-8">
+                        <div class="aspect-video bg-black/50 rounded-2xl overflow-hidden glass border-gold-light/30">
+                            <video 
+                                class="w-full h-full object-cover" 
+                                poster="assets/images/cuadrado.png" 
+                                controls
+                                preload="metadata"
+                            >
+                                <source src="assets/videos/explicativo-placeholder.mp4" type="video/mp4">
+                                Tu navegador no soporta el elemento de video.
+                            </video>
+                        </div>
+                    </div>
+                    
+                    <!-- Next Steps -->
+                    <div class="text-lg md:text-xl text-white/90 mb-8 leading-relaxed">
+                        <p>Para agendar tu sesión de bioescáner, haz clic en el botón de abajo.</p>
+                        <p>Te llevará directamente a WhatsApp donde podrás coordinar tu cita con nuestro equipo.</p>
+                    </div>
+                    
+                    <!-- WhatsApp CTA Button -->
+                    <button 
+                        id="whatsappButton" 
+                        class="inline-flex items-center space-x-3 px-8 py-4 bg-gradient-to-r from-green-500 to-green-600 text-white font-bold text-lg rounded-full hover:scale-105 hover:shadow-2xl transition-all duration-300 group"
+                    >
+                        <svg class="w-6 h-6 group-hover:scale-110 transition-transform duration-300" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2zm.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 012.41 5.83c0 4.54-3.7 8.23-8.24 8.23-1.48 0-2.93-.39-4.19-1.15l-.3-.17-3.12.82.83-3.04-.2-.32a8.188 8.188 0 01-1.26-4.38c.01-4.54 3.7-8.24 8.25-8.24z"/>
+                        </svg>
+                        <span>Agendar mi sesión</span>
+                        <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                        </svg>
+                    </button>
+                </div>
+                
+                <!-- Process Timeline -->
+                <div class="mt-16 glass rounded-3xl p-8 animate-fade-in">
+                    <h2 class="text-3xl font-bold text-center mb-12 text-gold-light">¿Qué sigue ahora?</h2>
+                    
+                    <div class="grid md:grid-cols-4 gap-8">
+                        <!-- Step 1 -->
+                        <div class="text-center group">
+                            <div class="w-16 h-16 bg-gradient-to-r from-gold-light to-gold-dark rounded-full mx-auto mb-4 flex items-center justify-center font-bold text-blue-primary text-xl group-hover:scale-110 transition-transform duration-300">
+                                1
+                            </div>
+                            <h3 class="font-semibold text-gold-light mb-2">Contacto inmediato</h3>
+                            <p class="text-white/80 text-sm">Te contactamos vía WhatsApp en los próximos minutos</p>
+                        </div>
+                        
+                        <!-- Step 2 -->
+                        <div class="text-center group">
+                            <div class="w-16 h-16 bg-gradient-to-r from-gold-light to-gold-dark rounded-full mx-auto mb-4 flex items-center justify-center font-bold text-blue-primary text-xl group-hover:scale-110 transition-transform duration-300">
+                                2
+                            </div>
+                            <h3 class="font-semibold text-gold-light mb-2">Pre-calificación</h3>
+                            <p class="text-white/80 text-sm">Llamada breve de 5-10 minutos para entender tu situación</p>
+                        </div>
+                        
+                        <!-- Step 3 -->
+                        <div class="text-center group">
+                            <div class="w-16 h-16 bg-gradient-to-r from-gold-light to-gold-dark rounded-full mx-auto mb-4 flex items-center justify-center font-bold text-blue-primary text-xl group-hover:scale-110 transition-transform duration-300">
+                                3
+                            </div>
+                            <h3 class="font-semibold text-gold-light mb-2">Agendamos tu cita</h3>
+                            <p class="text-white/80 text-sm">Programamos tu sesión en el horario que mejor te convenga</p>
+                        </div>
+                        
+                        <!-- Step 4 -->
+                        <div class="text-center group">
+                            <div class="w-16 h-16 bg-gradient-to-r from-gold-light to-gold-dark rounded-full mx-auto mb-4 flex items-center justify-center font-bold text-blue-primary text-xl group-hover:scale-110 transition-transform duration-300">
+                                4
+                            </div>
+                            <h3 class="font-semibold text-gold-light mb-2">Tu bioescáner</h3>
+                            <p class="text-white/80 text-sm">5 minutos que cambiarán tu perspectiva sobre tu salud</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonials -->
+                <div class="mt-16 animate-fade-in">
+                    <h2 class="text-3xl font-bold text-center mb-12 text-white">Lo que dicen nuestros clientes</h2>
+                    
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="glass rounded-2xl p-6 hover:scale-105 transition-all duration-300">
+                            <div class="w-12 h-12 bg-gradient-to-r from-gold-light to-gold-dark rounded-full mx-auto mb-4 flex items-center justify-center text-xl">👩</div>
+                            <p class="text-white/90 mb-4 italic text-center">
+                                "Por fin alguien me escuchó. Años buscando respuestas y las encontré en 5 minutos."
+                            </p>
+                            <div class="text-gold-light font-semibold text-center">María G.</div>
+                            <div class="text-white/60 text-sm text-center">Guaymas</div>
+                        </div>
+                        
+                        <div class="glass rounded-2xl p-6 hover:scale-105 transition-all duration-300">
+                            <div class="w-12 h-12 bg-gradient-to-r from-gold-light to-gold-dark rounded-full mx-auto mb-4 flex items-center justify-center text-xl">👨</div>
+                            <p class="text-white/90 mb-4 italic text-center">
+                                "Cansado de laboratorios. El bioescáner me mostró exactamente qué cambiar."
+                            </p>
+                            <div class="text-gold-light font-semibold text-center">Carlos R.</div>
+                            <div class="text-white/60 text-sm text-center">Guadalajara</div>
+                        </div>
+                        
+                        <div class="glass rounded-2xl p-6 hover:scale-105 transition-all duration-300">
+                            <div class="w-12 h-12 bg-gradient-to-r from-gold-light to-gold-dark rounded-full mx-auto mb-4 flex items-center justify-center text-xl">👩</div>
+                            <p class="text-white/90 mb-4 italic text-center">
+                                "Después de tantos 'todo está normal', por fin encontré respuestas reales."
+                            </p>
+                            <div class="text-gold-light font-semibold text-center">Ana L.</div>
+                            <div class="text-white/60 text-sm text-center">Hermosillo</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Disclaimer -->
+    <div class="py-6 bg-gray-900/50 text-center backdrop-blur-sm">
+        <p class="text-gray-300 text-sm">Este servicio no sustituye un diagnóstico médico profesional.</p>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-8 bg-black/50 backdrop-blur-sm">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-white/70">
+                &copy; 2025 La Red de Luz. Todos los derechos reservados. | 
+                <a href="aviso-privacidad.pdf" class="text-gold-light hover:text-gold-dark transition-colors duration-200 underline" target="_blank" rel="noopener">
+                    Aviso de privacidad
+                </a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // WhatsApp functionality with enhanced filtering
+        function setupWhatsappButton() {
+            const whatsappButton = document.getElementById('whatsappButton');
+            if (!whatsappButton) return;
+
+            const leadData = JSON.parse(localStorage.getItem('leadData') || '{}');
+            
+            // Only proceed if user is qualified
+            if (!leadData.qualified) {
+                window.location.href = 'index.html';
+                return;
+            }
+
+            let phone = '6221424577'; // Default (Guadalajara)
+
+            // Determine phone number based on city
+            if (
+                (leadData.ciudad && leadData.ciudad.trim().toLowerCase() === 'guaymas') ||
+                (leadData.otraCiudad && leadData.otraCiudad.trim().toLowerCase() === 'guaymas')
+            ) {
+                phone = '6228558278';
+            }
+
+            const nombre = leadData.nombre ? leadData.nombre.trim() : 'Cliente Calificado';
+            const ciudad = leadData.ciudad === 'otra' ? leadData.otraCiudad : leadData.ciudad;
+            const presupuesto = leadData.presupuesto || 'no-especificado';
+
+            // Enhanced message for qualified leads
+            let message = `🔥 LEAD CALIFICADO - PRIORIDAD ALTA 🔥
+
+Hola, soy ${nombre} y acabo de completar el proceso de calificación para el bioescáner.
+
+📋 MIS RESPUESTAS AL QUIZ:
+${getQuizSummary(leadData.quizResults || {})}
+
+💰 PRESUPUESTO: ${getPresupuestoText(presupuesto)}
+📍 UBICACIÓN: ${ciudad}
+📱 WHATSAPP: ${leadData.whatsapp || 'No proporcionado'}
+
+✅ Estoy PRE-CALIFICADO y listo para agendar.
+✅ Comprendo que la inversión es $499 por la sesión completa.
+✅ Necesito respuestas REALES después de gastar tanto en estudios sin resultados.
+
+¿Cuándo puedo agendar mi cita prioritaria?`;
+
+            const url = `https://api.whatsapp.com/send?phone=521${phone}&text=${encodeURIComponent(message)}`;
+            
+            whatsappButton.addEventListener('click', function(e) {
+                e.preventDefault();
+                window.open(url, '_blank', 'noopener');
+            });
+        }
+
+        function getQuizSummary(quizResults) {
+            const answers = {
+                q1: {
+                    'menos-1000': 'Menos de $1,000 invertidos',
+                    '1000-3000': '$1,000-$3,000 invertidos', 
+                    'mas-3000': 'Más de $3,000 invertidos ✅'
+                },
+                q2: {
+                    'no-cambios': 'No dispuesto a cambios',
+                    'algunos-cambios': 'Cambios menores',
+                    'todos-cambios': 'Dispuesto a cambios necesarios ✅'
+                },
+                q3: {
+                    'curioso': 'Solo curiosidad',
+                    'molestias-leves': 'Molestias tolerables',
+                    'necesito-respuestas': 'NECESITA respuestas YA ✅'
+                },
+                q4: {
+                    'muy-caro': 'Busca opciones gratuitas',
+                    'pensarlo': 'Necesita tiempo para decidir',
+                    'si-invierto': 'Listo para invertir ✅'
+                }
+            };
+
+            let summary = '';
+            for (let question in quizResults) {
+                const answer = quizResults[question];
+                const text = answers[question] && answers[question][answer] || answer;
+                summary += `• ${text}\n`;
+            }
+            return summary;
+        }
+
+        function getPresupuestoText(presupuesto) {
+            const textos = {
+                'menos-500': 'Menos de $500',
+                '500-1000': '$500-$1,000',
+                '1000-mas': '$1,000+ (Prioriza resultados) ✅'
+            };
+            return textos[presupuesto] || presupuesto;
+        }
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            setupWhatsappButton();
+            
+            // Add fade-in animation to elements
+            const elements = document.querySelectorAll('.animate-fade-in');
+            elements.forEach((el, index) => {
+                setTimeout(() => {
+                    el.style.animationDelay = `${index * 0.2}s`;
+                    el.classList.add('opacity-100');
+                }, 100);
+            });
+        });
+
+        // Optional: Add some interactive effects
+        document.querySelectorAll('.glass').forEach(element => {
+            element.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-2px)';
+                this.style.boxShadow = '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)';
+            });
+            
+            element.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = '';
+            });
+        });
+    </script>
+</body>
+</html>
             max-width: 900px;
             margin: 2rem auto 1.2rem auto;
             padding: 0 12px;
