@@ -26,6 +26,10 @@
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
+
+        .quiz-result {
+            display: none;
+        }
     </style>
 </head>
 
@@ -75,7 +79,7 @@
                 </a>
 
                 <p class="text-white/70 text-sm mt-4">
-                    • Disponible en Guaymas y Guadalajara • $449 MXN
+                    • Disponible en Guaymas y Guadalajara • $499 MXN
                 </p>
             </div>
         </div>
@@ -198,108 +202,17 @@
         </div>
     </section>
 
-    <!-- QUIZ -->
+    <!-- QUIZ OPTIMIZADO -->
     <section id="quiz" class="py-16 bg-gray-900/50">
         <div class="container mx-auto px-6">
             <div class="max-w-3xl mx-auto">
-                <h2 class="text-3xl font-bold text-center mb-8 text-white">¿Calificas para el bioescáner?</h2>
-                <p class="text-center text-white/80 mb-12">3 preguntas rápidas:</p>
-
                 <div id="quiz-container" class="space-y-6">
-
-                    <div class="quiz-question glass rounded-xl p-6" data-question="1">
-                        <h3 class="text-xl font-bold mb-4 text-gold-light">1. ¿En qué ciudad estás?</h3>
-                        <div class="space-y-3">
-                            <label
-                                class="quiz-option flex items-center p-3 rounded-lg cursor-pointer hover:bg-white/10">
-                                <input type="radio" name="q1" value="guaymas" class="mr-3">
-                                <span>Guaymas, Sonora ✓</span>
-                            </label>
-                            <label
-                                class="quiz-option flex items-center p-3 rounded-lg cursor-pointer hover:bg-white/10">
-                                <input type="radio" name="q1" value="guadalajara" class="mr-3">
-                                <span>Guadalajara, Jalisco ✓</span>
-                            </label>
-                            <label
-                                class="quiz-option flex items-center p-3 rounded-lg cursor-pointer hover:bg-white/10">
-                                <input type="radio" name="q1" value="otra-ciudad" class="mr-3">
-                                <span>Otra ciudad (consultar disponibilidad)</span>
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="quiz-question glass rounded-xl p-6 hidden" data-question="2">
-                        <h3 class="text-xl font-bold mb-4 text-gold-light">2. ¿Cuál describe mejor tu situación?</h3>
-                        <div class="space-y-3">
-                            <label
-                                class="quiz-option flex items-center p-3 rounded-lg cursor-pointer hover:bg-white/10">
-                                <input type="radio" name="q2" value="sin-problemas" class="mr-3">
-                                <span>Me siento bien, solo tengo curiosidad</span>
-                            </label>
-                            <label
-                                class="quiz-option flex items-center p-3 rounded-lg cursor-pointer hover:bg-white/10">
-                                <input type="radio" name="q2" value="molestias-ocasionales" class="mr-3">
-                                <span>Tengo molestias ocasionales pero nada preocupante</span>
-                            </label>
-                            <label
-                                class="quiz-option flex items-center p-3 rounded-lg cursor-pointer hover:bg-white/10">
-                                <input type="radio" name="q2" value="sintomas-persistentes" class="mr-3">
-                                <span>Tengo síntomas persistentes que me preocupan ✓</span>
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="quiz-question glass rounded-xl p-6 hidden" data-question="3">
-                        <h3 class="text-xl font-bold mb-4 text-gold-light">3. ¿Estás dispuesto/a a invertir $449?</h3>
-                        <div class="space-y-3">
-                            <label
-                                class="quiz-option flex items-center p-3 rounded-lg cursor-pointer hover:bg-white/10">
-                                <input type="radio" name="q3" value="muy-caro" class="mr-3">
-                                <span>Me parece muy caro</span>
-                            </label>
-                            <label
-                                class="quiz-option flex items-center p-3 rounded-lg cursor-pointer hover:bg-white/10">
-                                <input type="radio" name="q3" value="pensarlo" class="mr-3">
-                                <span>Necesito pensarlo más</span>
-                            </label>
-                            <label
-                                class="quiz-option flex items-center p-3 rounded-lg cursor-pointer hover:bg-white/10">
-                                <input type="radio" name="q3" value="si-vale-pena" class="mr-3">
-                                <span>Sí, si me da respuestas claras vale la pena ✓</span>
-                            </label>
-                        </div>
-                    </div>
-
-                    <!-- NO CALIFICA -->
-                    <div id="no-califica" class="glass rounded-xl p-6 hidden text-center bg-red-500/20">
-                        <h3 class="text-xl font-bold mb-4 text-red-300">Puede que no sea el momento indicado</h3>
-                        <p class="text-white/80 mb-6">
-                            Por tus respuestas, creo que nuestro servicio podría no ser la mejor opción para ti en este
-                            momento.
-                        </p>
-                        <button onclick="location.reload()"
-                            class="px-6 py-3 bg-gold-light text-blue-primary rounded-lg font-semibold">
-                            Responder de nuevo
-                        </button>
-                    </div>
-
-                    <!-- SÍ CALIFICA -->
-                    <div id="si-califica" class="glass rounded-xl p-6 hidden text-center bg-green-600/20">
-                        <h3 class="text-xl font-bold mb-4 text-green-300">¡Perfecto! Calificas para el bioescáner</h3>
-                        <p class="text-white/90 mb-6">
-                            Por tus respuestas, el bioescáner puede darte las respuestas que estás buscando.
-                        </p>
-                        <a href="#precio"
-                            class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-gold-light to-gold-dark text-blue-primary font-bold text-lg rounded-full">
-                            Ver tu sesión completa
-                        </a>
-                    </div>
+                    <!-- El contenido se genera dinámicamente con main.js -->
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- PRECIO CON PSICOLOGÍA -->
     <!-- PRECIO CON PSICOLOGÍA -->
     <section id="precio" class="py-16 bg-blue-primary/30 hidden">
         <div class="container mx-auto px-6">
@@ -338,7 +251,7 @@
                         <div class="text-3xl mb-4">💰</div>
                         <h3 class="font-bold text-gold-light mb-3">Sin presión de ventas</h3>
                         <p class="text-white/80 text-sm">
-                            Pagas $449 y recibes tu sesión completa. Sin paquetes ni presión.
+                            Pagas $499 y recibes tu sesión completa. Sin paquetes ni presión.
                             Los suplementos son opcionales.
                         </p>
                     </div>
@@ -435,8 +348,8 @@
                         <div class="border-t border-white/20 pt-6 text-center">
                             <div class="mb-4">
                                 <p class="text-white/70 line-through text-lg">Valor total: $1,180</p>
-                                <p class="text-3xl font-bold text-gold-light">Tu precio hoy: $449</p>
-                                <p class="text-green-400 font-semibold text-lg">Ahorras $731 (62% descuento)</p>
+                                <p class="text-3xl font-bold text-gold-light">Tu precio hoy: $499</p>
+                                <p class="text-green-400 font-semibold text-lg">Ahorras $681 (58% descuento)</p>
                             </div>
                         </div>
                     </div>
@@ -504,10 +417,10 @@
                                 Los estudios médicos tradicionales te costarían <strong>más de $8,000</strong> y
                                 tomarían
                                 semanas o meses en completarse. Aquí obtienes un panorama integral de 45 parámetros
-                                en 5 minutos de escaneo y 30 de explicación por solo <strong>$449</strong>.
+                                en 5 minutos de escaneo y 40 minutos de explicación por solo <strong>$499</strong>.
                             </p>
                             <p class="text-green-300 text-sm font-semibold mt-2">
-                                Eso es 95% menos costo y 99% menos tiempo.
+                                Eso es 94% menos costo y 99% menos tiempo.
                             </p>
                         </div>
 
@@ -531,7 +444,7 @@
                 <div class="text-center">
                     <a href="#formulario"
                         class="inline-flex items-center px-12 py-5 bg-gradient-to-r from-gold-light to-gold-dark text-blue-primary font-bold text-2xl rounded-full hover:scale-105 transition-all duration-300 mb-4">
-                        Agendar mi bioescáner - $449
+                        Agendar mi bioescáner - $499
                     </a>
                     <p class="text-white/70 text-sm">Pago en efectivo al momento del servicio</p>
                     <p class="text-gold-light text-sm mt-2">⚡ Oferta especial válida por tiempo limitado</p>
@@ -568,7 +481,7 @@
                 </form>
 
                 <p class="text-white/70 text-xs mt-4 text-center">
-                    La ciudad se detectó automáticamente en el quiz
+                    La ciudad se detectó automáticamente
                 </p>
             </div>
         </div>
@@ -624,7 +537,7 @@
                             </svg>
                         </button>
                         <div class="faq-answer px-6 pb-4 text-white/80" style="display: none;">
-                            No tienes ninguna obligación de comprar nada. Pagas $449 por tu sesión completa y eso
+                            No tienes ninguna obligación de comprar nada. Pagas $499 por tu sesión completa y eso
                             incluye todo. Si mencionamos suplementos, es solo una recomendación opcional - la decisión
                             es 100% tuya.
                         </div>
@@ -641,7 +554,7 @@
                             </svg>
                         </button>
                         <div class="faq-answer px-6 pb-4 text-white/80" style="display: none;">
-                            La cita completa dura aproximadamente 45-50 minutos: 5 minutos de escaneo y 30 minutos para
+                            La cita completa dura aproximadamente 45-50 minutos: 5 minutos de escaneo y 40 minutos para
                             explicarte los resultados, responder tus preguntas y darte tu plan personalizado.
                         </div>
                     </div>
@@ -691,8 +604,7 @@
                         </button>
                         <div class="faq-answer px-6 pb-4 text-white/80" style="display: none;">
                             Actualmente ofrecemos servicio directo en Guaymas y Guadalajara. Para otras ciudades,
-                            contáctanos - a veces organizamos visitas o podemos recomendarte facilitadores certificados
-                            en tu zona.
+                            el bioescáner puede detectarlo y te daremos información sobre futuras expansiones.
                         </div>
                     </div>
 
@@ -777,7 +689,7 @@
                 </p>
                 <a href="#quiz"
                     class="inline-flex items-center px-10 py-4 bg-gradient-to-r from-gold-light to-gold-dark text-blue-primary font-bold text-xl rounded-full hover:scale-105 transition-all">
-                    Ver si califico - $449
+                    Ver si califico - $499
                 </a>
                 <p class="text-white/60 text-sm mt-4">
                     Disponible en Guaymas y Guadalajara • Servicio a domicilio
@@ -800,112 +712,8 @@
         </div>
     </footer>
 
-    <script>
-        // Quiz Logic
-        let currentQuestion = 1;
-        let quizAnswers = {};
-
-        document.querySelectorAll('input[type="radio"]').forEach(radio => {
-            radio.addEventListener('change', function () {
-                quizAnswers[this.name] = this.value;
-
-                if (currentQuestion < 3) {
-                    document.querySelector(`[data-question="${currentQuestion}"]`).classList.add('hidden');
-                    currentQuestion++;
-                    document.querySelector(`[data-question="${currentQuestion}"]`).classList.remove('hidden');
-                } else {
-                    evaluateQuiz();
-                }
-            });
-        });
-
-        function evaluateQuiz() {
-            document.querySelectorAll('.quiz-question').forEach(q => q.classList.add('hidden'));
-
-            // Calificación: ubicación + síntomas + presupuesto
-            const hasLocation = (quizAnswers.q1 === 'guaymas' || quizAnswers.q1 === 'guadalajara' || quizAnswers.q1 === 'otra-ciudad');
-            const hasSymptoms = quizAnswers.q2 === 'sintomas-persistentes';
-            const willingToInvest = quizAnswers.q3 === 'si-vale-pena';
-
-            if (hasLocation && hasSymptoms && willingToInvest) {
-                document.getElementById('si-califica').classList.remove('hidden');
-                document.getElementById('precio').classList.remove('hidden');
-                document.getElementById('formulario').classList.remove('hidden');
-            } else {
-                document.getElementById('no-califica').classList.remove('hidden');
-            }
-        }
-
-        // Form submission
-        document.getElementById('leadForm').addEventListener('submit', function (e) {
-            e.preventDefault();
-
-            // Loading state
-            const submitBtn = this.querySelector('button[type="submit"]');
-            const btnText = submitBtn.querySelector('.btn-text');
-            const loading = submitBtn.querySelector('.loading');
-
-            submitBtn.disabled = true;
-            btnText.style.display = 'none';
-            loading.style.display = 'inline-block';
-            loading.innerHTML = '<span style="display:inline-block;width:1em;height:1em;border:2px solid #163384;border-top:2px solid transparent;border-radius:50%;animation:spin 0.7s linear infinite;"></span>';
-
-            // Save data
-            const formData = {
-                nombre: document.getElementById('nombre').value,
-                whatsapp: document.getElementById('whatsapp').value,
-                ciudad: quizAnswers.q1, // del quiz
-                quizResults: quizAnswers,
-                qualified: true,
-                source: 'bioscanner_landing',
-                timestamp: new Date().toISOString()
-            };
-
-            localStorage.setItem('leadData', JSON.stringify(formData));
-
-            setTimeout(() => {
-                window.location.href = 'gracias.html';
-            }, 1200);
-        });
-
-        // FAQ accordion
-        document.querySelectorAll('.faq-question').forEach(btn => {
-            btn.addEventListener('click', () => {
-                const item = btn.parentElement;
-                const answer = item.querySelector('.faq-answer');
-                const icon = btn.querySelector('.faq-icon');
-                const wasActive = item.classList.contains('active');
-
-                // Close all
-                document.querySelectorAll('.faq-item').forEach(otherItem => {
-                    otherItem.classList.remove('active');
-                    otherItem.querySelector('.faq-answer').style.display = 'none';
-                    otherItem.querySelector('.faq-icon').style.transform = 'rotate(0deg)';
-                });
-
-                // Toggle current
-                if (!wasActive) {
-                    item.classList.add('active');
-                    answer.style.display = 'block';
-                    icon.style.transform = 'rotate(180deg)';
-                }
-            });
-        });
-
-        // Smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) target.scrollIntoView({ behavior: 'smooth' });
-            });
-        });
-
-        // CSS animation
-        const style = document.createElement('style');
-        style.innerHTML = `@keyframes spin { 0%{transform:rotate(0deg);} 100%{transform:rotate(360deg);} }`;
-        document.head.appendChild(style);
-    </script>
+    <!-- SCRIPT -->
+    <script src="js/main.js"></script>
 </body>
 
 </html>
