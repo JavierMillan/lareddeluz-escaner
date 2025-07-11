@@ -61,7 +61,7 @@
                     <p class="text-white/90 text-sm leading-relaxed">
                         Creemos en el crecimiento integral: <strong>mental, emocional, físico y espiritual</strong>.
                         Tu cuerpo es la base que sostiene todo lo demás. Sin bienestar físico, es difícil avanzar
-                        en otras áreas de tu vida. Por eso desarrollamos esta herramienta complementaria.
+                        en otras áreas de tu vida. Por eso ofrecemos este servicio complementario.
                     </p>
                     <p class="text-gold-light text-xs mt-2">
                         <a href="https://lareddeluz.com" target="_blank" class="hover:underline">→ Conoce más sobre La
@@ -79,7 +79,7 @@
                 </a>
 
                 <p class="text-white/70 text-sm mt-4">
-                    • Disponible en Guaymas y Guadalajara • $499 MXN
+                    • Disponible en Guaymas y Guadalajara • $449 MXN
                 </p>
             </div>
         </div>
@@ -251,7 +251,7 @@
                         <div class="text-3xl mb-4">💰</div>
                         <h3 class="font-bold text-gold-light mb-3">Sin presión de ventas</h3>
                         <p class="text-white/80 text-sm">
-                            Pagas $499 y recibes tu sesión completa. Sin paquetes ni presión.
+                            Pagas $449 y recibes tu sesión completa. Sin paquetes ni presión.
                             Los suplementos son opcionales.
                         </p>
                     </div>
@@ -348,7 +348,7 @@
                         <div class="border-t border-white/20 pt-6 text-center">
                             <div class="mb-4">
                                 <p class="text-white/70 line-through text-lg">Valor total: $1,180</p>
-                                <p class="text-3xl font-bold text-gold-light">Tu precio hoy: $499</p>
+                                <p class="text-3xl font-bold text-gold-light">Tu precio hoy: $449</p>
                                 <p class="text-green-400 font-semibold text-lg">Ahorras $681 (58% descuento)</p>
                             </div>
                         </div>
@@ -417,7 +417,7 @@
                                 Los estudios médicos tradicionales te costarían <strong>más de $8,000</strong> y
                                 tomarían
                                 semanas o meses en completarse. Aquí obtienes un panorama integral de 45 parámetros
-                                en 5 minutos de escaneo y 40 minutos de explicación por solo <strong>$499</strong>.
+                                en 5 minutos de escaneo y 40 minutos de explicación por solo <strong>$449</strong>.
                             </p>
                             <p class="text-green-300 text-sm font-semibold mt-2">
                                 Eso es 94% menos costo y 99% menos tiempo.
@@ -444,7 +444,7 @@
                 <div class="text-center">
                     <a href="#formulario"
                         class="inline-flex items-center px-12 py-5 bg-gradient-to-r from-gold-light to-gold-dark text-blue-primary font-bold text-2xl rounded-full hover:scale-105 transition-all duration-300 mb-4">
-                        Agendar mi bioescáner - $499
+                        Agendar mi bioescáner - $449
                     </a>
                     <p class="text-white/70 text-sm">Pago en efectivo al momento del servicio</p>
                     <p class="text-gold-light text-sm mt-2">⚡ Oferta especial válida por tiempo limitado</p>
@@ -454,12 +454,13 @@
     </section>
 
     <!-- FORMULARIO -->
+    <!-- FORMULARIO EN index.html - SECCIÓN FORMULARIO -->
     <section id="formulario" class="py-16 bg-black/50 hidden">
         <div class="container mx-auto px-6">
             <div class="max-w-md mx-auto glass rounded-2xl p-8">
 
                 <h3 class="text-2xl font-bold text-gold-light mb-4 text-center">Reserva tu cita</h3>
-                <p class="text-white/80 mb-6 text-center">Datos básicos para contactarte:</p>
+                <p class="text-white/80 mb-6 text-center">Completa tus datos y preferencias:</p>
 
                 <form id="leadForm" class="space-y-4">
                     <div>
@@ -467,10 +468,33 @@
                         <input type="text" id="nombre" class="w-full px-4 py-3 bg-white/90 text-gray-900 rounded-lg"
                             required>
                     </div>
+
                     <div>
                         <label class="block text-gold-light font-semibold mb-1">WhatsApp *</label>
                         <input type="tel" id="whatsapp" class="w-full px-4 py-3 bg-white/90 text-gray-900 rounded-lg"
                             required>
+                    </div>
+
+                    <!-- NUEVOS CAMPOS DINÁMICOS -->
+                    <div>
+                        <label class="block text-gold-light font-semibold mb-1">¿Dónde prefieres tu sesión? *</label>
+                        <select id="serviceLocation" class="w-full px-4 py-3 bg-white/90 text-gray-900 rounded-lg"
+                            required>
+                            <option value="">Selecciona una opción</option>
+                            <option value="domicilio">A domicilio (vienen a mi casa)</option>
+                            <option value="punto-encuentro">En un punto de encuentro</option>
+                            <option value="flexible">Soy flexible con el lugar</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-gold-light font-semibold mb-1">¿Cómo prefieres pagar? *</label>
+                        <select id="paymentMethod" class="w-full px-4 py-3 bg-white/90 text-gray-900 rounded-lg"
+                            required>
+                            <option value="">Selecciona una opción</option>
+                            <option value="efectivo">Efectivo al momento del servicio</option>
+                            <option value="transferencia">Transferencia bancaria</option>
+                        </select>
                     </div>
 
                     <button type="submit"
@@ -481,7 +505,7 @@
                 </form>
 
                 <p class="text-white/70 text-xs mt-4 text-center">
-                    La ciudad se detectó automáticamente
+                    La ciudad se detectó automáticamente. Todas tus respuestas se incluirán en el mensaje.
                 </p>
             </div>
         </div>
@@ -537,7 +561,7 @@
                             </svg>
                         </button>
                         <div class="faq-answer px-6 pb-4 text-white/80" style="display: none;">
-                            No tienes ninguna obligación de comprar nada. Pagas $499 por tu sesión completa y eso
+                            No tienes ninguna obligación de comprar nada. Pagas $449 por tu sesión completa y eso
                             incluye todo. Si mencionamos suplementos, es solo una recomendación opcional - la decisión
                             es 100% tuya.
                         </div>
@@ -689,7 +713,7 @@
                 </p>
                 <a href="#quiz"
                     class="inline-flex items-center px-10 py-4 bg-gradient-to-r from-gold-light to-gold-dark text-blue-primary font-bold text-xl rounded-full hover:scale-105 transition-all">
-                    Ver si califico - $499
+                    Ver si califico - $449
                 </a>
                 <p class="text-white/60 text-sm mt-4">
                     Disponible en Guaymas y Guadalajara • Servicio a domicilio
